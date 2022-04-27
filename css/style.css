@@ -1,0 +1,18 @@
+body{
+  background-color: lightgrey;
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
+img{
+  width: 400px;
+}
+h2{
+  color:blue;
+  margin-top:20px;
+}
+ul{
+  font-size: 20px;
+}
+li{
+  font-size: 20px;
+}
