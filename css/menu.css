@@ -5,6 +5,10 @@ body{
   text-align: center;
 }
 
-.link{
-  text-align: left;
+img{
+  width: 400px;
+}
+
+table{
+  align-content: center;
 }
