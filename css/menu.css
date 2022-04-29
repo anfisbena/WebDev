@@ -1,8 +1,10 @@
 body{
   font-size: 18px;
-  color: yellow;
-  background-color: rgb(73, 16, 15);
+  font-style: tahoma;
+  color: rebeccapurple;
+  background-color: mediumpurple;
   text-align: center;
+  line-height: 1.5;
 }
 
 img{
@@ -11,4 +13,12 @@ img{
 
 table{
   align-content: center;
+}
+
+.title{
+  color: rgb(157, 4, 4);
+}
+
+.foot{
+  font-size: 12px;
 }
