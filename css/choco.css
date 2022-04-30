@@ -1,0 +1,16 @@
+body{
+  background-image: url("http://3.bp.blogspot.com/-HSjH6zvviAY/ViD8QKj1yoI/AAAAAAAEnPM/XkXaVUrsiCE/s1600/005.jpg");
+  font-size: 20px;
+}
+
+img{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table{
+  margin-left: 300px;
+  margin-right: 300px;
+  background-color: rgb(136, 227, 142);
+}
