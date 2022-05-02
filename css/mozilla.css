@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html{
+  font-size: 11px;
+  font-family: "Open Sans",sans-serif;
+}
+
+h1{
+  margin: 0;
+  padding: 20px 0;
+  font-size: 60px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px orange;
+}
+
+p,li{
+  font-size: 16px;
+  line-height: 2; /*interlineado*/
+  letter-spacing: 1px;
+}
+
+body{
+  width: 600px;
+  margin: 0 auto;
+  background-color: #FF9500;
+  color:white;
+  padding: 0 20px 20px 20px;
+  border: 5px solid orange;
+}
+
+img{
+display: block;
+margin: 0 auto;
+}
