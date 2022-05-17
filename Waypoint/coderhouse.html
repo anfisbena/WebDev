@@ -8,9 +8,111 @@
   <title>Document</title>
 </head>
 <body>
+  <section>
   <strong style="color: rgb(5, 167, 5);">Nombre y apellido:</strong> Andres Arcila Carmona
   <br/>
   <strong style="color: rgb(5, 167, 5);">Nombre y apellido del docente:</strong> Juan Manuel Crego
   <hr/>
+  <table border="">
+    <tr>
+      <th>Producto</th>
+      <th>Talle</th>
+      <th>Color</th>
+      <th>Precio</th>
+      <th>Promocion</th>
+    </tr>
+    <tr>
+      <td>Remera</td>
+      <td>XL</td>
+      <td>Negra</td>
+      <td>$4500</td>
+      <td>20%</td>
+    </tr>
+  </table>
+</section>
+  <hr/>
+  <!--Without Fieldset-->
+  <section>
+  <h2>Formulario sin fieldset</h2>
+  <form>
+    <label for="nombre">Tu nombre</label>
+    <input type="text" name="nombre">
+    <label for="apellido">Tu apellido</label>
+    <input type="text" name="apellido">
+    <br/>
+    <select>
+      <option selected="selected">Selecciona Localidad</option>
+      <option value="1">Medellin</option>
+      <option value="2">Bello</option>
+      <option value="3">Envigado</option>
+      <option value="4">Itagüi</option>
+    </select>
+    <br/>
+    <label>Para quien es?</label>
+    <br/>
+    <span>para mi</span>
+    <input type="radio" name="mi">
+    <span>para otro</span>
+    <input type="radio" name="mi">
+    <br/>
+    <label>Deseas recibir nuestras notificaciones?</label>
+    <label for="notificacion"></label>
+    <input type="checkbox" name="notificacion">
+    <br/>
+    <label>Acepto terminos y condiciones bb </label>
+    <input type="checkbox" name="">
+    <hr/>
+    <label for="Hable">Hable pues que mas quiere decir</label>
+    <br/>
+    <textarea name="Hable" cols="50" rows="10"></textarea>
+    <hr/>
+    <input type="submit" value="DALEEE">
+    <input type="reset" value="LPTM Des-cagarla">
+  </form>
+</section>
+<!--With Fieldset-->
+<section>
+  <h2>Formulario con fieldset</h2>
+  <form>
+    <fieldset>
+    <label for="nombre">Tu nombre</label>
+    <input type="text" name="nombre" value="Marikon hpta">
+    <label for="apellido">Tu apellido</label>
+    <input type="text" name="apellido">
+    <br/>
+    <select>
+      <option selected="selected">Selecciona Localidad</option>
+      <option value="1">Medellin</option>
+      <option value="2">Bello</option>
+      <option value="3">Envigado</option>
+      <option value="4">Itagüi</option>
+    </select>
+    <br/>
+    <label>Para quien es?</label>
+    <br/>
+    <span>para mi</span>
+    <input type="radio" name="mi">
+    <span>para otro</span>
+    <input type="radio" name="mi">
+    <br/>
+    <label>Deseas recibir nuestras notificaciones?</label>
+    <label for="notificacion"></label>
+    <input type="checkbox" name="notificacion">
+    <br/>
+    <label>Acepto terminos y condiciones bb </label>
+    <input type="checkbox" name="">
+    <hr/>
+    <label for="Hable">Hable pues que mas quiere decir</label>
+    <br/>
+    <textarea name="Hable" cols="50" rows="10"></textarea>
+    <hr/>
+    <input type="submit" value="DALEEE">
+    <input type="reset" value="LPTM Des-cagarla">
+  </fieldset>
+  </form>
+</section>
 </body>
 </html>
+
+<a href="./caca.html">relative</a>
+<a href="#head">internal who redirect to the id #head</a>
