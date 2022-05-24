@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <!--Navigation bar-->
-<header>
-  <nav>
-    <img src="../assets/images/waypointMax.png" alt="waypoint" srcset="">
-    <ul>
-      <li><a href="../pages/contact-us.html">Contact Us</a></li>
-      <li>Our Services</li>
-      <li><a href="../pages/about.html">About us</a></li>
-    </ul>
-  </nav>
-</header>
-<hr/>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Waypoint Yatch</title>
+    <link rel="shortcut icon" href="../assets/images/waypointMax.png">
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <header>
+      <nav class="nav-yatch">
+        <img src="../assets/images/waypointMax.png" alt="waypoint" srcset="" class="logo">
+        <ul>
+          <li><a href="../pages/contact-us.html">Contact Us</a></li>
+          <li>Our Services</li>
+          <li><a href="../pages/about.html">About us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr/>
 <!--body-->
-<section>
-  <p>WOW Tour<br>
-  Miami-La Habana-Bahamas<br>
-  +Coco-Bongo VIP Night<br>
-  +Island Tour in ATV's</p>
-  <p>SAILS IN 14 DAYS 6 HOURS</p>
-  <img src="../assets/images/yatch.jpg" alt="" srcset="">
-</section>
-<div>
-  <table>
-    <tr>
-      <td><img src="../assets/images/track wh.png" alt="quote"></td>
-      <td><img src="../assets/images/calculator wh.png" alt="track"></td>
-    </tr>
-    <tr>
-      <td>quote</td>
-      <td>track</td>
-    </tr>
-  </table>
-</div>
-<div>
-  <form>
-    <label for="location">1 CHOOSE YOUR DESTINATION</label>
-    <br/>
-    <input type="text" name="location" id="">
-    <button type="submit">Find</button>
-</form>
-  <!--MAP-->
-  <div id="m" style="width:402px;height:433px;background:green"></div>
-  <script>
-  function sample() {
-  var m1 = {
-  center: new google.maps.LatLng(52.3, -0.14),
-  zoom: 13,
-  mapss: google.maps.MapTypeId.HYBRID
-  }
-  var m2 = new google.maps.Map(document.getElementById("m"), m1);
-  }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=sample"></script>
-  <form>
-    <label for="location">2 TELL US YOUR REQUIREMENTS</label>
-    <br/>
-    <textarea></textarea>
-    <button type="submit">SUBMIT</button>
-  </form>
-</div>
-  <footer>
+    <section class="body-yatch">
+      <p>WOW Tour<br>
+      Miami-La Habana-Bahamas<br>
+      +Coco-Bongo VIP Night<br>
+      +Island Tour in ATV's</p>
+      <p>SAILS IN 14 DAYS 6 HOURS</p>
+      <img src="../assets/images/yatch.jpg" alt="" srcset="">
+      <div>
+        <table>
+          <tr>
+            <td><img src="../assets/images/track wh.png" alt="quote"></td>
+            <td><img src="../assets/images/calculator wh.png" alt="track"></td>
+          </tr>
+          <tr>
+            <td>quote</td>
+            <td>track</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <form>
+          <label for="location">1 CHOOSE YOUR DESTINATION</label>
+          <br/>
+          <input type="text" name="location" id="">
+          <button type="submit">Find</button>
+        </form>
+<!--MAP-->
+        <div id="m" style="width:402px;height:433px;background:green"></div>
+        <script>
+          function sample() {
+          var m1 = {
+          center: new google.maps.LatLng(52.3, -0.14),
+          zoom: 13,
+          mapss: google.maps.MapTypeId.HYBRID
+          }
+          var m2 = new google.maps.Map(document.getElementById("m"), m1);
+          }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=sample"></script>
+        <form>
+          <label for="location">2 TELL US YOUR REQUIREMENTS</label>
+          <br/>
+          <textarea></textarea>
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+    <footer>
       <table>
         <tr>
           <td><p>add1</p></td>
@@ -78,9 +80,7 @@
       <img src="../assets/images/faceboo.png" alt="facebook" class="button-footer">
       <img src="../assets/images/linkedin.png" alt="linkedin" class="button-footer">
       <img src="../assets/images/instagram.png" alt="instagram" class="button-footer">
-      <span id="line-bottom">
-        <p>all rights reserved</p>
-      </span>
+      <span id="line-bottom"><p>all rights reserved</p></span>
     </footer>
-</body>
+  </body>
 </html>

@@ -1,0 +1,36 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body .body-yatch{
+  background-image: url(../assets/images/background\ yatch.jpg);
+}
+
+body .body-navy{
+  background-image: url(../assets/images/background\ navy.jpg);
+}
+
+.img-dod{
+  width: 500px;
+  height: 500px;
+
+}
+
+.img-yatch{
+  width: 500px;
+  height: 500px;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+}
+
+.nav-navy{
+  background-color: #161C27;
+  color: white;
+
+  
+}
+
