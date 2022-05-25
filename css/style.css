@@ -1,36 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
 *{
   margin:0;
   padding:0;
+  font-family: 'Raleway', sans-serif
 }
 
-body .body-yatch{
-  background-image: url(../assets/images/background\ yatch.jpg);
+/*css For Index page*/
+.index-img-dod{
+  width: 500px;
+  height: 500px;
+
 }
+
+.index-img-yatch{
+  width: 500px;
+  height: 500px;
+}
+
+
+/*css for navy page*/
 
 body .body-navy{
   background-image: url(../assets/images/background\ navy.jpg);
+  background-size: auto;
 }
 
-.img-dod{
-  width: 500px;
-  height: 500px;
+/* .menu-navy img{ 
+  width: 60px;
+  height: 55.4px;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: left;
+}*/
 
-}
-
-.img-yatch{
-  width: 500px;
-  height: 500px;
-}
-
-.logo{
-  width: 50px;
-  height: 50px;
-}
-
-.nav-navy{
+.menu-navy{
   background-color: #161C27;
-  color: white;
-
-  
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  text-align: right;
+}
+.menu-navy li{
+  display: inline-block;
+  text-align: center;
 }
 
+.menu-navy li a{
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/*ANIMATIONS*/
+.menu-navy li a:hover{
+  background: #F4E0C9;
+  transition: 0.4s;
+  color: #5E675C;
+
+}
+
+/*css for Yatch page*/
+body .body-yatch{
+  background-image: url(../assets/images/background\ yatch.jpg);
+}
