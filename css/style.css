@@ -4,6 +4,7 @@
   margin:0;
   padding:0;
   font-family: 'Raleway', sans-serif
+
 }
 
 /*css For Index page*/
@@ -26,13 +27,13 @@ body .body-navy{
   background-size: auto;
 }
 
-/* .menu-navy img{ 
+.menu-navy img{ 
   width: 60px;
   height: 55.4px;
   display: inline-block;
   margin-top: 10px;
-  text-align: left;
-}*/
+  padding: 0;
+}
 
 .menu-navy{
   background-color: #161C27;
@@ -57,9 +58,8 @@ body .body-navy{
 
 /*ANIMATIONS*/
 .menu-navy li a:hover{
-  background: #F4E0C9;
+  background: #3c4c69;
   transition: 0.4s;
-  color: #5E675C;
 
 }
 
