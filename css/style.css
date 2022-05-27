@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100&family=Raleway:wght@700&display=swap');
 
 *{
   margin:0;
@@ -19,15 +20,8 @@
   height: 500px;
 }
 
-
-/*css for navy page*/
-
-body .body-navy{
-  background-image: url(../assets/images/background\ navy.jpg);
-  background-size: auto;
-}
-
-.menu-navy img{ 
+/*CSS for menu*/
+#logo{ 
   width: 60px;
   height: 55.4px;
   display: inline-block;
@@ -55,6 +49,53 @@ body .body-navy{
   display: inline-block;
   font-weight: bold;
 }
+
+/*css for navy page*/
+
+main{
+  background-image: url(../assets/images/background\ navy.jpg);
+  background-size: contain;
+}
+
+main img{
+  width: auto;
+  height: auto;
+}
+main h2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 45px;
+  text-decoration: underline;
+  text-underline-position: 0;
+  color: #2085ce; 
+}
+
+main p{
+  max-width: 80%;
+  font-size: 21px;
+  font-weight: 700;
+  color: #3f463d;
+}
+
+#business-unit table{
+  border: 10px solid;
+  border-radius: 20px;
+  padding: 50px;
+  font-size: 30px;
+}
+
+#business-unit img{
+  width: 90px;
+  align-items: center;
+
+}
+
+
+.circle-mini{
+  width: 300px;
+  height: auto;
+
+}
+
 
 /*ANIMATIONS*/
 .menu-navy li a:hover{
