@@ -79,14 +79,16 @@ main p{
 #business-unit table{
   border: 10px solid;
   border-radius: 20px;
+  border-color:#2085ce;
   padding: 50px;
   font-size: 30px;
+  font-weight: bold;
+  width: 30%;
+  text-align: center;
 }
 
 #business-unit img{
   width: 90px;
-  align-items: center;
-
 }
 
 
