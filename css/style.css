@@ -14,25 +14,22 @@
   height: 550px;
   border-radius: 250px 0px 0px 0px;
   position: absolute;
-  margin-right: 10%;
+  display: inline-block;
+  margin-top: 10%;
+  margin-left: 11%;
 }
 
 .index-img-yatch{
   width: 550px;
   height: 550px;
   border-radius: 0px 0px 250px 0px;
-
-}
-
-.index #dod{
-  text-align: left;
+  position: absolute;
   display: inline-block;
+  margin-top: 10%;
+  margin-left: 49%;
 }
 
-.index #yatch{
-  text-align: right;
-  display: inline-block;
-}
+
 
 
 /*CSS for menu*/
@@ -116,8 +113,18 @@ main p{
 
 /*ANIMATIONS*/
 
+.index-img-dod:hover{
+  width: 570px;
+  height: 570px;
+  margin-left: 9%;
+  transition:0.4s;
+}
+
 .index-img-yatch:hover{
-  width: 550px;
+  width: 570px;
+  height: 570px;
+  margin-left: 48%;
+  transition:0.4s;
 }
 
 .menu-navy li a:hover{

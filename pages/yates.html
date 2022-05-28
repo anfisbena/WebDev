@@ -10,65 +10,67 @@
   </head>
   <body>
     <!--Navigation bar-->
-    <header>
-      <nav class="menu-yatch">
-        <img src="../assets/images/waypointMax.png" alt="waypoint" srcset="" class="logo">
+    <header class="menu-navy">
+      <nav>
         <ul>
-          <li><a href="../pages/contact-us.html">Contact Us</a></li>
-          <li>Our Services</li>
+          <img src="../assets/images/waypoint max invert.png" alt="waypoint" srcset="" id="logo">
+          <li><a href="../pages/contact-us.html">Providers</a></li>
+          <li><a href="#">Our Services</a></li>
           <li><a href="../pages/about.html">About us</a></li>
         </ul>
       </nav>
     </header>
     <hr/>
 <!--body-->
-    <section class="body-yatch">
-      <p>WOW Tour<br>
-      Miami-La Habana-Bahamas<br>
-      +Coco-Bongo VIP Night<br>
-      +Island Tour in ATV's</p>
-      <p>SAILS IN 14 DAYS 6 HOURS</p>
-      <img src="../assets/images/yatch.jpg" alt="" srcset="">
-      <div>
-        <table>
-          <tr>
-            <td><img src="../assets/images/track wh.png" alt="quote"></td>
-            <td><img src="../assets/images/calculator wh.png" alt="track"></td>
-          </tr>
-          <tr>
-            <td>quote</td>
-            <td>track</td>
-          </tr>
-        </table>
-      </div>
-      <div>
-        <form>
-          <label for="location">1 CHOOSE YOUR DESTINATION</label>
-          <br/>
-          <input type="text" name="location" id="">
-          <button type="submit">Find</button>
-        </form>
-<!--MAP-->
-        <div id="m" style="width:402px;height:433px;background:green"></div>
-        <script>
-          function sample() {
-          var m1 = {
-          center: new google.maps.LatLng(52.3, -0.14),
-          zoom: 13,
-          mapss: google.maps.MapTypeId.HYBRID
-          }
-          var m2 = new google.maps.Map(document.getElementById("m"), m1);
-          }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=sample"></script>
-        <form>
-          <label for="location">2 TELL US YOUR REQUIREMENTS</label>
-          <br/>
-          <textarea></textarea>
-          <button type="submit">SUBMIT</button>
-        </form>
-      </div>
-    </section>
+    <main>
+      <section class="body-yatch">
+        <p>WOW Tour<br>
+        Miami-La Habana-Bahamas<br>
+        +Coco-Bongo VIP Night<br>
+        +Island Tour in ATV's</p>
+        <p>SAILS IN 14 DAYS 6 HOURS</p>
+        <img src="../assets/images/yatch.jpg" alt="" srcset="">
+        <div>
+          <table>
+            <tr>
+              <td><img src="../assets/images/track wh.png" alt="quote"></td>
+              <td><img src="../assets/images/calculator wh.png" alt="track"></td>
+            </tr>
+            <tr>
+              <td>quote</td>
+              <td>track</td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <form>
+            <label for="location">1 CHOOSE YOUR DESTINATION</label>
+            <br/>
+            <input type="text" name="location" id="">
+            <button type="submit">Find</button>
+          </form>
+  <!--MAP-->
+          <div id="m" style="width:402px;height:433px;background:green"></div>
+          <script>
+            function sample() {
+            var m1 = {
+            center: new google.maps.LatLng(52.3, -0.14),
+            zoom: 13,
+            mapss: google.maps.MapTypeId.HYBRID
+            }
+            var m2 = new google.maps.Map(document.getElementById("m"), m1);
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=sample"></script>
+          <form>
+            <label for="location">2 TELL US YOUR REQUIREMENTS</label>
+            <br/>
+            <textarea></textarea>
+            <button type="submit">SUBMIT</button>
+          </form>
+        </div>
+      </section>
+    </main>
     <footer>
       <table>
         <tr>
