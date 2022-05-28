@@ -10,15 +10,30 @@
 
 /*css For Index page*/
 .index-img-dod{
-  width: 500px;
-  height: 500px;
-
+  width: 550px;
+  height: 550px;
+  border-radius: 250px 0px 0px 0px;
+  position: absolute;
+  margin-right: 10%;
 }
 
 .index-img-yatch{
-  width: 500px;
-  height: 500px;
+  width: 550px;
+  height: 550px;
+  border-radius: 0px 0px 250px 0px;
+
 }
+
+.index #dod{
+  text-align: left;
+  display: inline-block;
+}
+
+.index #yatch{
+  text-align: right;
+  display: inline-block;
+}
+
 
 /*CSS for menu*/
 #logo{ 
@@ -52,7 +67,7 @@
 
 /*css for navy page*/
 
-main{
+.main-ship{
   background-image: url(../assets/images/background\ navy.jpg);
   background-size: contain;
 }
@@ -100,6 +115,11 @@ main p{
 
 
 /*ANIMATIONS*/
+
+.index-img-yatch:hover{
+  width: 550px;
+}
+
 .menu-navy li a:hover{
   background: #3c4c69;
   transition: 0.4s;
