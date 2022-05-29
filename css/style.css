@@ -125,11 +125,38 @@
 }
 
 
-.circle-mini{
+.main-yatch{
+  background-image: url(../assets/images/background\ yatch.jpg);
+  background-size: contain;
+}
+
+.main-yatch img{
+  width: auto;
+  height: auto;
+}
+
+.main-yatch p{
+  max-width: 80%;
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.form-submit{
+  background-color: #2165E8;
+}
+
+/*Misc*/
+
+  .circle-mini{
   width: 300px;
   height: auto;
-
 }
+
+.p-orange{
+  color:#E87521;
+}
+
 
 /*ANIMATIONS*/
 
