@@ -62,18 +62,39 @@
   font-weight: bold;
 }
 
+.menu-yatch{
+  background-color: #F4E0C9 ;
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  text-align: right;
+}
+.menu-yatch li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu-yatch li a{
+  text-decoration: none;
+  text-align: center;
+  color: #3f463d;
+  padding: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+
 /*css for navy page*/
 
-.main-ship{
+.main-navy{
   background-image: url(../assets/images/background\ navy.jpg);
   background-size: contain;
 }
 
-main img{
+.main-navy img{
   width: auto;
   height: auto;
 }
-main h2{
+.main-navy h2{
   font-family: 'Raleway', sans-serif;
   font-size: 45px;
   text-decoration: underline;
@@ -81,14 +102,14 @@ main h2{
   color: #2085ce; 
 }
 
-main p{
+.main-navy p{
   max-width: 80%;
   font-size: 21px;
   font-weight: 700;
   color: #3f463d;
 }
 
-#business-unit table{
+.main-navy #business-unit table{
   border: 10px solid;
   border-radius: 20px;
   border-color:#2085ce;
@@ -99,7 +120,7 @@ main p{
   text-align: center;
 }
 
-#business-unit img{
+.main-navy #business-unit img{
   width: 90px;
 }
 
@@ -109,7 +130,6 @@ main p{
   height: auto;
 
 }
-
 
 /*ANIMATIONS*/
 
@@ -130,7 +150,11 @@ main p{
 .menu-navy li a:hover{
   background: #3c4c69;
   transition: 0.4s;
+}
 
+.menu-yatch li a:hover{
+  background: #958879;
+  transition: 0.4s;
 }
 
 /*css for Yatch page*/
