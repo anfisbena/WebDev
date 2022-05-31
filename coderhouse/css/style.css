@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns:100px repeat(2, 1fr) 100px;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: solid black;
+  }
+
+
+.dod {
+  grid-column: 2;
+  grid-row: 2;
+  background-color:red;
+  }
+.yatch {
+  grid-row-start: 2;
+  grid-column-start:3;
+  background-color:violet;
+}
+
+img{
+  border-radius: 10px 0 0 0;
+  object-fit: contain;
+}
