@@ -10,19 +10,19 @@
   </head>
   <body>
     <!--Navigation bar-->
-    <header class="menu-yatch">
+    <header class="menu clear_orange menu_hover_orange">
       <nav>
         <ul>
           <img src="../assets/images/waypointMax.png" alt="waypoint" srcset="" id="logo">
-          <li><a href="../pages/contact-us.html">Providers</a></li>
-          <li><a href="#">Our Services</a></li>
-          <li><a href="../pages/about.html">About us</a></li>
+          <li><a href="../pages/contact-us.html"class='dark_green'>Providers</a></li>
+          <li><a href="#" class='dark_green'>Our Services</a></li>
+          <li><a href="../pages/about.html" class='dark_green'>About us</a></li>
         </ul>
       </nav>
     </header>
     <hr/>
 <!--body-->
-    <main class="main-yatch">
+    <main class="main yatch white">
       <section id="promo">
         <p id="promo_font_big"><span class="orange">WOW</span> Tour</p>
         <p id="promo_details">
@@ -47,7 +47,7 @@
         </div>
         <div>
           <form>
-            <label for="location"><p class="background-orange">1 CHOOSE YOUR DESTINATION</p></label>
+            <span class="circle background-orange">1</span><span class="background-orange font_mid">CHOOSE YOUR DESTINATION</span>
             <br/>
             <input type="text" name="location" id="">
             <button type="submit" class="form-submit"><p>Find</p></button>
@@ -67,7 +67,8 @@
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=sample"></script>
 
           <form>
-            <label for="location"><p class="background-orange">2 TELL US YOUR REQUIREMENTS</p></label>
+            <label for="location">
+              <span class="circle background-orange">2</span><span class="background-orange font_mid">TELL US YOUR REQUIREMENTS</span>
             <br/>
             <textarea></textarea>
             <button type="submit" class="form-submit"><p>SUBMIT</p></button>
