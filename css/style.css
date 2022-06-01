@@ -24,25 +24,25 @@
 
 }
 
-.box1{
+.index_box1{
   grid-row: 2;
   grid-column: 2;
   justify-self: end;
 }
 
-.box2{
+.index_box2{
   grid-row: 2;
   grid-column: 3;
   justify-self: start;
 }
 
-.box3{
+.index_box3{
   grid-row: 1;
   grid-column-start: 2;
   grid-column-end:4;
   justify-self:center;
 }
-.box3 img{
+.index_box3 img{
   width: 100px;
 }
 
@@ -283,13 +283,58 @@ padding: 0px 20px 0px 20px;
 /*/////////////////////////////////END////////////////////////////////////////*/
 
 
-
-
-
 /*TESTING*/
-
 .menu_container{
   display: grid;
   grid-template-columns: repeat(6,1fr);
-  grid-gap: 10px;
+  border: solid #E87521;
+}
+.menu_logo{
+  grid-column: 1;
+  justify-self:center;
+} 
+.menu_logo img{ 
+  width: 50px;
+  height: auto;
+  margin: 0.4rem 0px 0px 2rem;
+  padding: 0;
+}
+.menu_box1{
+  grid-column: 2;
+  border: 1px solid #00cda7;
+}
+.menu_box2{
+  grid-column: 3;
+  border: 1px solid #00cda7;
+}
+.menu_box3{
+  grid-column: 5;
+  border: 1px solid #00cda7;
+}
+
+
+.menu_container a{
+  text-decoration: none;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+/*MAIN*/
+.main p{
+  max-width: 80%;
+  font-size: 21px;
+  font-weight: 700;   
+  display: block;
+}
+
+/*ANIMATIONS*/
+.menu_hover_blue a:hover{
+  background: #3c4c69;
+  transition: 0.4s;
+}
+
+.menu_hover_orange a:hover{
+  background: #bb9f7f;
+  transition: 0.4s;
 }
