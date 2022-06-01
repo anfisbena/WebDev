@@ -14,7 +14,7 @@
                                 /*css For Index page*/
 .index_container{
   display: grid;
-  grid-template-rows: 100px auto 300px;
+  grid-template-rows: 100px auto;
   grid-template-columns: 1fr repeat(2,2fr) 1fr;
   grid-gap: 10px;
 }
@@ -35,12 +35,22 @@
   grid-column: 3;
   justify-self: start;
 }
+
+.box3{
+  grid-row: 1;
+  grid-column-start: 2;
+  grid-column-end:4;
+  justify-self:center;
+}
+.box3 img{
+  width: 100px;
+}
+
 #dod{
   border-radius: 250px 0px 0px 0px;
 }
 #yatch{
   border-radius: 0px 0px 250px 0px;
-
 }
 
 /*ANIMATIONS*/
@@ -48,14 +58,14 @@
   width: 62vh;
   height: 62vh;
   margin-left: 1%;
-  transition:0.4s;
+  transition:0.2s;
 }
 
 #yatch:hover{
   width: 62vh;
   height: 62vh;
   margin-left: 1%;
-  transition:0.4s;
+  transition:0.2s;
 
 }
 /*/////////////////////////////////END////////////////////////////////////////*/
@@ -90,7 +100,15 @@
   font-weight: bold;
 }
 
+/*MAIN*/
+.main p{
+  max-width: 80%;
+  font-size: 21px;
+  font-weight: 700;   
+  display: block;
+}
 
+/*ANIMATIONS*/
 .menu_hover_blue a:hover{
   background: #3c4c69;
   transition: 0.4s;
@@ -101,13 +119,6 @@
   transition: 0.4s;
 }
 
-/*MAIN*/
-.main p{
-  max-width: 80%;
-  font-size: 21px;
-  font-weight: 700;   
-  display: block;
-}
 
 /*/////////////////////////////////END////////////////////////////////////////*/
 
@@ -236,8 +247,6 @@ padding: 0px 20px 0px 20px;
   background-color: #00cda7;
 }
 
-
-
 /*/////////////////////////////////END////////////////////////////////////////*/
 
 
@@ -272,3 +281,15 @@ padding: 0px 20px 0px 20px;
 
 
 /*/////////////////////////////////END////////////////////////////////////////*/
+
+
+
+
+
+/*TESTING*/
+
+.menu_container{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-gap: 10px;
+}
