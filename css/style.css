@@ -338,10 +338,27 @@ padding: 0px 20px 0px 20px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   background-color: #acd1ca;
-  
-  
 }
 
+.yatch_box1{
+grid-row: 1;
+grid-column:1/4;
+width: auto;
+height: auto;
+overflow: hidden;
+max-height: 56vh;
+border: solid #E87521;
+}
+
+.yatch_box1 img{
+  width: 100%;
+
+}
+
+.yatch_box2{
+  grid-row: 1;
+  grid-column: 1/4;
+}
 
 #promo{
   margin-top: auto;
