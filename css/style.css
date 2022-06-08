@@ -13,57 +13,57 @@
 
 /*/////////////////////////////////INDEX////////////////////////////////////////*/
 .index_container{
-  display: grid;
-  grid-template-rows: 100px auto;
-  grid-template-columns: 1fr repeat(2,2fr) 1fr;
-  grid-gap: 10px;
-}
-.index-img{
-  width: 60vh;
-  height: 60vh;
-  transition: 0.3s;
+  display: grid; 
+  grid-template-columns: 1% 1fr 1fr 1%; 
+  grid-template-rows: 0.5fr 1fr; 
+  gap: 0% 1%; 
+  grid-template-areas: 
+    ". ind1 ind1 ."
+    ". ind2 ind2 .";
 }
 
-.index_box1{
-  grid-row: 2;
-  grid-column: 2;
-  justify-self: end;
+.index_container img{
+  width: 300px;
+  height: 300px;
 }
-
-.index_box2{
-  grid-row: 2;
-  grid-column: 3;
-  justify-self: start;
+.ind1 {
+  justify-self: center; 
+  align-self: flex-end; 
+  grid-area: ind1;
+  position: sticky;
 }
-
-.index_box3{
-  grid-row: 1;
-  grid-column-start: 2;
-  grid-column-end:4;
-  justify-self:center;
-}
-.index_box3 img{
-  width: 100px;
+.ind2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  grid-area: ind2;
+  overflow: hidden;
 }
 
 #dod{
+  width: 50vh;
+  height: 50vh;
   border-radius: 250px 0px 0px 0px;
+  margin: 10px;
 }
 #yatch{
+  width: 50vh;
+  height: 50vh;
   border-radius: 0px 0px 250px 0px;
+  margin: 10px;
 }
 
 /*ANIMATIONS*/
 #dod:hover{
-  width: 60.5vh;
-  height: 60.5vh;
+  width: 50.5vh;
+  height: 50.5vh;
   margin-left: 1%;
   transition:0.2s;
 }
 
 #yatch:hover{
-  width: 61vh;
-  height: 61vh;
+  width: 50.5vh;
+  height: 50.5vh;
   margin-left: 1%;
   transition:0.3s;
 }
