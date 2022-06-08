@@ -148,7 +148,7 @@
 }
 
 .navy_container h2{
-  font-size: 30px;
+  font-size: 4.5vh;
   text-decoration: underline;
   text-underline-position: 0;
   color: #2085ce; 
@@ -156,7 +156,7 @@
 }
 
 .navy_container p{
-  font-size: 16px;
+  font-size: 2vh;
   font-weight: 700;   
   display: block;
   text-align: center;
@@ -168,7 +168,11 @@
   align-items: center;
   justify-content: center;
   overflow:hidden;
+  background-image: url("../assets/images/Husbanding cut.jpeg");
+  background-size: cover;
+  background-position: center;
 }
+
 
 .nb2 {  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -180,7 +184,6 @@
     "nb2_1 nb2_3 nb2_3"
     "nb2_1 nb2_4 nb2_4";
   grid-area: nb2;
-  border: solid #cd0000;
 }
 
 .nb2_1 { 
@@ -280,7 +283,6 @@
 .nb4_3{
   display: flex;
   grid-area: nb4_3;
-  border: solid #00cda7;
   justify-content: space-evenly;
   align-items: end;
   overflow: hidden;
@@ -305,7 +307,6 @@
     "nb_foot1 nb_foot2 nb_foot3"
     "nb_foot1 nb_foot2 nb_foot4"
     "nb_foot5 nb_foot5 nb_foot5";
-  border: solid #cd0000;
 }
 
 .nb_foot1 { grid-area: nb_foot1; }
@@ -320,10 +321,13 @@
   display: flex;
   grid-area: nb_foot5; 
   background-color: #161C27;
-  border: solid #cd0000;
   justify-content: baseline;
   height: 35px;
   align-self: flex-end;
+}
+.nb_foot5 p{
+  font-size: 16px;
+  padding: 1vh;
 }
 
 #business-unit table{
