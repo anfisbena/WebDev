@@ -222,14 +222,13 @@
 .nb3 {  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 2fr 0.5fr;
-  gap: 2% 0px;
+  gap: 2% ;
   grid-auto-flow: row;
   grid-template-areas:
     "nb3_1 nb3_1 nb3_1"
     "nb3_2 nb3_2 nb3_2"
     "nb3_3 nb3_3 nb3_3";
   grid-area: nb3;
-  max-height: 552px;
 }
 
 .nb3_1 { grid-area: nb3_1; }
@@ -319,8 +318,13 @@
 .nb_foot4 { grid-area: nb_foot4;}
 
 .nb_foot5 { 
+  display: flex;
   grid-area: nb_foot5; 
   background-color: #161C27;
+  border: solid #cd0000;
+  justify-content: baseline;
+  height: 35px;
+  align-self: flex-end;
 }
 
 #business-unit table{
