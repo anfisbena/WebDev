@@ -22,15 +22,14 @@
     ". ind2 ind2 .";
 }
 
-.index_container img{
-  width: 300px;
-  height: 300px;
-}
 .ind1 {
+  display: flex;
   justify-self: center; 
   align-self: flex-end; 
   grid-area: ind1;
-  position: sticky;
+  width: 15vh;
+  height: 15vh;
+  margin-bottom: 5px;
 }
 .ind2 {
   display: flex;
@@ -43,14 +42,14 @@
 #dod{
   width: 50vh;
   height: 50vh;
-  border-radius: 250px 0px 0px 0px;
-  margin: 10px;
+  border-radius: 25% 0px 0px 0px;
+  border: 5px solid rgb(255, 255, 255,0%);
 }
 #yatch{
   width: 50vh;
   height: 50vh;
-  border-radius: 0px 0px 250px 0px;
-  margin: 10px;
+  border-radius: 0px 0px 25% 0px;
+  border: 5px solid rgb(255, 255, 255,0%);
 }
 
 /*ANIMATIONS*/
