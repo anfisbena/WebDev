@@ -15,7 +15,7 @@
 .index_container{
   display: grid; 
   grid-template-columns: 1% 1fr 1fr 1%; 
-  grid-template-rows: 0.5fr 1fr; 
+  grid-template-rows: auto 1fr; 
   gap: 0% 1%; 
   grid-template-areas: 
     ". ind1 ind1 ."
@@ -29,7 +29,8 @@
   grid-area: ind1;
   width: 15vh;
   height: 15vh;
-  margin-bottom: 5px;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 .ind2 {
   display: flex;
@@ -66,6 +67,8 @@
   margin-left: 1%;
   transition:0.3s;
 }
+
+
 /*/////////////////////////////////END////////////////////////////////////////*/
 
 /*/////////////////////////////////COMMON ITEMS////////////////////////////////////////*/
@@ -173,16 +176,14 @@
   background-position: center;
 }
 
-
 .nb2 {  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "nb2_1 nb2_2 nb2_2"
-    "nb2_1 nb2_3 nb2_3"
-    "nb2_1 nb2_4 nb2_4";
+    "nb2_1 nb2_2 nb2_2";
+
   grid-area: nb2;
 }
 
@@ -199,27 +200,13 @@
 
 .nb2_2 { 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   grid-area: nb2_2;
   align-items: center;
-  justify-content: center;
   overflow:hidden;
 }
 
-.nb2_3 { 
-  display:flex;
-  grid-area: nb2_3;
-  align-items: center;
-  justify-content: center;
-  overflow:hidden;
-}
-
-.nb2_4 { 
-  display:flex;
-  grid-area: nb2_4; 
-  align-items: center;
-  justify-content: center;
-  overflow:hidden;
-}
 
 .nb3 {  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -269,7 +256,6 @@
     border-radius: 50%;
     overflow: hidden;
   }
-
 
 .nb4_2 { 
   display: flex;
@@ -330,24 +316,29 @@
   padding: 1vh;
 }
 
-#business-unit table{
-  border: 10px solid;
-  border-radius: 20px;
-    border-color:#2085ce;
-  width: 30%;
-}
-
-#business-unit table td{
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  padding: 20px 20px 0px 20px;
+#business-unit{
+  display: flex;
+  flex-direction: row;
 }
 
 #business-unit img{
   width: 80px;
 }
 
+/* MOBILE VERSION */
+@media screen and (max-width:480px) {
+  .nb2 {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "nb2_2"
+      "nb2_1"
+      "nb2_3"
+      "nb2_4";
+  }
+}
 
 /*/////////////////////////////////END////////////////////////////////////////*/
 
@@ -535,3 +526,5 @@ overflow: hidden;
   width: 9vh;
   transition: 0.3s;
 }
+
+
