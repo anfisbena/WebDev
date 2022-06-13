@@ -84,7 +84,7 @@
   width: 100%;
 }
 
-.menu_logo img{ 
+.menu_container img{ 
   width: 5vh;
   height: auto;
   margin: 0.4rem 0px 5px 2rem;
@@ -92,20 +92,19 @@
 }
 .menu_container li{
   list-style: none;
-  border: solid #00cda7;
+  align-self: center;
 }
 
 .menu_container ul{
   grid-area: prr;
   display: flex;
-  justify-content: space-between;
-  border: solid #00cda7;
+  justify-content: flex-end;
 }
 
 .menu_container a{
+  font-weight: 600;
   text-decoration: none;
-  padding: 20px;
-  font-weight: bold;
+  padding: 2vh;
 }
 
 /*ANIMATIONS*/
@@ -125,6 +124,52 @@
 
 /*/////////////////////////////////NAVY////////////////////////////////////////*/
 /* grid.layoutit.com?id=BJG9bSy */
+
+/* MOBILE VERSION */
+@media screen and (max-width:480px) {
+
+  .nb2 {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "nb2_2"
+      "nb2_1"
+      "nb2_3"
+      "nb2_4";
+  }
+  
+  .nb2_1 { 
+    display: flex;
+    grid-area: nb2_1;
+    border-radius: 50%;
+    height: 52vh;
+    width: 52vh;
+    align-items: center;
+    overflow:hidden;
+  }
+
+  .nb4_2 { 
+    display: flex;
+    grid-area: nb4_2;
+    border-radius: 50%;
+    height: 52vh;
+    width: 52vh;
+    overflow: hidden;
+  }
+
+  #business-unit img{
+    width: 8vh;
+    height: 8vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+  #business-unit p{
+    font-size: 2vh;
+  }
+}
+
 
 .navy_bg{
   background-image: url('../assets/images/background\ navy.jpg');
@@ -269,8 +314,8 @@
   display: flex;
   grid-area: nb4_2;
   border-radius: 50%;
-  height: 58vh;
-  width: 58vh;
+  height: 52vh;
+  width: 52vh;
   overflow: hidden;
 }
 
@@ -322,51 +367,6 @@
 .nb_foot5 p{
   font-size: 1.5vh;
   padding: 1vh;
-}
-
-/* MOBILE VERSION */
-@media screen and (max-width:480px) {
-
-  .nb2 {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: column;
-    grid-template-areas:
-      "nb2_2"
-      "nb2_1"
-      "nb2_3"
-      "nb2_4";
-  }
-  
-  .nb2_1 { 
-    display: flex;
-    grid-area: nb2_1;
-    border-radius: 50%;
-    height: 52vh;
-    width: 52vh;
-    align-items: center;
-    overflow:hidden;
-  }
-
-  .nb4_2 { 
-    display: flex;
-    grid-area: nb4_2;
-    border-radius: 50%;
-    height: 52vh;
-    width: 52vh;
-    overflow: hidden;
-  }
-
-  #business-unit img{
-    width: 8vh;
-    height: 8vh;
-    padding-left: 5vh;
-    padding-right: 5vh;
-  }
-  #business-unit p{
-    font-size: 2vh;
-  }
 }
 
 /*/////////////////////////////////END////////////////////////////////////////*/
@@ -454,7 +454,7 @@ overflow: hidden;
 }
 
 .dark_blue{
-  background-color: #161C27;
+  background: linear-gradient(to bottom,  #050720,  #000000);
 }
 
 .white{
