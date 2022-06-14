@@ -385,6 +385,42 @@
       "nb3_3 nb3_3 nb3_3";
     grid-area: nb3;
   }
+
+  .nb4 {  display: grid;
+    grid-area: nb4;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1% 1%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nb4_1 nb4_1 nb4_1"
+      ". nb4_2 ."
+      ". . .";
+  }
+
+  .nb4_2 { 
+    display: flex;
+    grid-area: nb4_2;
+    border-radius: 50%;
+    height: 60vw;
+    width: 60vw;
+    overflow: hidden;
+  }
+  
+  .nb4_3{
+    display: flex;
+    grid-area: nb4_3;
+    justify-content: space-evenly;
+    align-items: end;
+    overflow: hidden;
+  }
+  
+  .nb4_3  img{
+    display: flex;
+    border-radius: 50%;
+    width: 0vw;
+    height: 0vw;
+  }
 }
 
 /*/////////////////////////////////END////////////////////////////////////////*/
