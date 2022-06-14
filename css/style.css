@@ -126,49 +126,187 @@
 /* grid.layoutit.com?id=BJG9bSy */
 
 /* MOBILE VERSION */
-@media screen and (max-width:480px) {
-
-  .nb2 {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: column;
+@media screen and (min-width:1024px) {
+}
+  .navy_container {  display: grid;
+    grid-template-columns: 1% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr 2.6fr 1fr 1%;
+    grid-template-rows: 600px 1fr 1fr 1fr 8%;
+    gap: 5% 1%;
     grid-template-areas:
-      "nb2_2"
-      "nb2_1"
-      "nb2_3"
-      "nb2_4";
+      "nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1"
+      ". nb2 nb2 nb2 nb2 nb2 nb2 nb2 nb2 nb2 nb2 ."
+      ". nb3 nb3 nb3 nb3 nb3 nb3 nb3 nb3 nb3 nb3 ."
+      ". nb4 nb4 nb4 nb4 nb4 nb4 nb4 nb4 nb4 nb4 ."
+      "nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot";
+  }
+  
+  .nb1 { 
+    display: flex;
+    grid-area: nb1; 
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    background-image: url("../assets/images/Husbanding cut.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .nb2 {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nb2_1 nb2_2 nb2_2";
+  
+    grid-area: nb2;
   }
   
   .nb2_1 { 
     display: flex;
     grid-area: nb2_1;
     border-radius: 50%;
-    height: 52vh;
-    width: 52vh;
+    height: 35vw;
+    width: 35vw;
     align-items: center;
+    justify-content: center;
     overflow:hidden;
   }
-
+  
+  .nb2_2 { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: nb2_2;
+    align-items: center;
+    overflow:hidden;
+    flex-wrap: wrap;
+  }
+  
+  #business-unit{
+    display: flex;
+  }
+  
+  #business-unit img{
+    width: 8vw;
+    height: 8vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  
+  #business-unit p{
+    font-size: 2vw;
+  }
+  
+  .nb3 {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    gap: 2% ;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nb3_1 nb3_1 nb3_1"
+      "nb3_2 nb3_2 nb3_2"
+      "nb3_3 nb3_3 nb3_3";
+    grid-area: nb3;
+  }
+  
+  .nb3_1 { grid-area: nb3_1; }
+  
+  .nb3_2 { 
+    display: flex;
+    grid-area: nb3_2;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .nb3_3 { grid-area: nb3_3;}
+  
+  .nb4 {  display: grid;
+    grid-area: nb4;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1.5fr;
+    gap: 1% 1%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nb4_1 nb4_1 nb4_2"
+      "nb4_1 nb4_1 nb4_2"
+      "nb4_3 nb4_3 nb4_2";
+  }
+  
+  .nb4_1 { grid-area: nb4_1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .nb4_1 img{
+      height: 20vw;
+      width: 20vw;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  
   .nb4_2 { 
     display: flex;
     grid-area: nb4_2;
     border-radius: 50%;
-    height: 52vh;
-    width: 52vh;
+    height: 40vw;
+    width: 40vw;
     overflow: hidden;
   }
+  
+  .nb4_3{
+    display: flex;
+    grid-area: nb4_3;
+    justify-content: space-evenly;
+    align-items: end;
+    overflow: hidden;
+  }
+  
+  .nb4_3  img{
+    display: flex;
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+  }
+  
+  .nb_foot {  
+    grid-area: nb_foot;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nb_foot1 nb_foot2 nb_foot3"
+      "nb_foot1 nb_foot2 nb_foot3"
+      "nb_foot1 nb_foot2 nb_foot4"
+      "nb_foot5 nb_foot5 nb_foot5";
+  }
+  
+  .nb_foot1 { grid-area: nb_foot1; }
+  
+  .nb_foot2 { grid-area: nb_foot2;}
+  
+  .nb_foot3 { grid-area: nb_foot3;}
+  
+  .nb_foot4 { grid-area: nb_foot4;}
+  
+  .nb_foot5 { 
+    display: flex;
+    grid-area: nb_foot5; 
+    background-color: #161C27;
+    justify-content: baseline;
+    height: 30px;
+    align-self: flex-end;
+  }
+  .nb_foot5 p{
+    font-size: 1.5vh;
+    padding: 1vh;
+  }
 
-  #business-unit img{
-    width: 8vh;
-    height: 8vh;
-    padding-left: 5vh;
-    padding-right: 5vh;
-  }
-  #business-unit p{
-    font-size: 2vh;
-  }
-}
+
 
 
 .navy_bg{
@@ -176,198 +314,22 @@
   background-size: fill;
 }
 
-.navy_container {  display: grid;
-  grid-template-columns: 1% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr 2.6fr 1fr 1%;
-  grid-template-rows: 600px 1fr 1fr 1fr 8%;
-  gap: 5% 1%;
-  grid-template-areas:
-    "nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1 nb1"
-    ". nb2 nb2 nb2 nb2 nb2 nb2 nb2 nb2 nb2 nb2 ."
-    ". nb3 nb3 nb3 nb3 nb3 nb3 nb3 nb3 nb3 nb3 ."
-    ". nb4 nb4 nb4 nb4 nb4 nb4 nb4 nb4 nb4 nb4 ."
-    "nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot nb_foot";
-}
-
 .navy_container h2{
-  font-size: 4.5vh;
+  font-size: 4.5vw;
   text-decoration: underline;
   text-underline-position: 0;
-  color: #2085ce; 
+  color: #050720; 
   text-align: center;
 }
 
 .navy_container p{
-  font-size: 2vh;
+  font-size: 2vw;
   font-weight: 700;   
   display: block;
   text-align: center;
+  color: #3f463d;
 }
 
-.nb1 { 
-  display: flex;
-  grid-area: nb1; 
-  align-items: center;
-  justify-content: center;
-  overflow:hidden;
-  background-image: url("../assets/images/Husbanding cut.jpeg");
-  background-size: cover;
-  background-position: center;
-}
-
-.nb2 {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "nb2_1 nb2_2 nb2_2";
-
-  grid-area: nb2;
-}
-
-.nb2_1 { 
-  display: flex;
-  grid-area: nb2_1;
-  border-radius: 50%;
-  height: 54vh;
-  width: 54vh;
-  align-items: center;
-  justify-content: center;
-  overflow:hidden;
-}
-
-.nb2_2 { 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-area: nb2_2;
-  align-items: center;
-  overflow:hidden;
-  flex-wrap: wrap;
-}
-
-#business-unit{
-  display: flex;
-}
-
-#business-unit img{
-  width: 10vh;
-  height: 10vh;
-  padding-left: 5vh;
-  padding-right: 5vh;
-}
-
-#business-unit p{
-  font-size: 3vh;
-}
-
-.nb3 {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 2fr 0.5fr;
-  gap: 2% ;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "nb3_1 nb3_1 nb3_1"
-    "nb3_2 nb3_2 nb3_2"
-    "nb3_3 nb3_3 nb3_3";
-  grid-area: nb3;
-}
-
-.nb3_1 { grid-area: nb3_1; }
-
-.nb3_2 { 
-  display: flex;
-  grid-area: nb3_2;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.nb3_3 { grid-area: nb3_3;}
-
-.nb4 {  display: grid;
-  grid-area: nb4;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1.5fr;
-  gap: 1% 1%;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "nb4_1 nb4_1 nb4_2"
-    "nb4_1 nb4_1 nb4_2"
-    "nb4_3 nb4_3 nb4_2";
-}
-
-.nb4_1 { grid-area: nb4_1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.nb4_1 img{
-    height: 20vh;
-    width: 20vh;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-.nb4_2 { 
-  display: flex;
-  grid-area: nb4_2;
-  border-radius: 50%;
-  height: 52vh;
-  width: 52vh;
-  overflow: hidden;
-}
-
-.nb4_3{
-  display: flex;
-  grid-area: nb4_3;
-  justify-content: space-evenly;
-  align-items: end;
-  overflow: hidden;
-}
-
-.nb4_3  img{
-  display: flex;
-  border-radius: 50%;
-  width: 25vh;
-  height: 25vh;
-}
-
-.nb_foot {  
-  grid-area: nb_foot;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "nb_foot1 nb_foot2 nb_foot3"
-    "nb_foot1 nb_foot2 nb_foot3"
-    "nb_foot1 nb_foot2 nb_foot4"
-    "nb_foot5 nb_foot5 nb_foot5";
-}
-
-.nb_foot1 { grid-area: nb_foot1; }
-
-.nb_foot2 { grid-area: nb_foot2;}
-
-.nb_foot3 { grid-area: nb_foot3;}
-
-.nb_foot4 { grid-area: nb_foot4;}
-
-.nb_foot5 { 
-  display: flex;
-  grid-area: nb_foot5; 
-  background-color: #161C27;
-  justify-content: baseline;
-  height: 30px;
-  align-self: flex-end;
-}
-.nb_foot5 p{
-  font-size: 1.5vh;
-  padding: 1vh;
-}
 
 /*/////////////////////////////////END////////////////////////////////////////*/
 
