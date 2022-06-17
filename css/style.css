@@ -1,35 +1,8 @@
-/* index */
-.index_logo{
-  border: solid salmon;
-  width: 15vw;
+.navbar img{
+  width: 6vh;
   height: auto;
 }
 
-.index_dod{
-  width: 15vw;
-  border: 15vw;
-}
-
-.index_yatch{
-  width: 15vw; 
-
-}
-
-/* END */
-
-/* DOD */
-
-.navbar-brand{
-  width: 5vh;
-  height: auto;
-}
-
-.menu_container li{
-  list-style: none;
-  align-self: center;
-}
-
-.navbar li{
-  list-style: none;
-  align-self: center;
+.navbar ul li{
+  border: solid black;
 }
