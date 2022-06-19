@@ -3,28 +3,104 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Waypoint</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">[logo]</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Our Services</a>
-            </li>
-          </ul>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="navy.html"><img src="../assets/images/waypoint max invert no text.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./our-services.html">Our Services</a>
+              </li>
+              <li class="nav-item bg-opacity-50 text-bg-success">
+                <a class="nav-link" href="../pages/contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <img src="../assets/images/Husbanding cut.jpeg" alt="" style="width:100%">
+      <div class="container">
+        <div class="row">
+<!-- HEADER -->
+          <div class="col-xl-5 col-lg-5">
+            <img src="../assets/images/2 cut.jpeg" alt="" srcset="" id="img-hus">
+          </div>
+<!-- DOC 1 -->
+          <div class="col-xl-7 col-lg-7 doc1">
+            <h1>Lorem?</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit illum odio dolor. Velit incidunt iste mollitia animi natus. Dolore dignissimos tenetur officia aliquam sint voluptatibus dolores deleniti tempora numquam incidunt!</p>
+            <div id="business-unit">
+              <figure>
+                <img src="../assets/images/husbanding mini E.png" alt="husbanding" srcset="" ></td>
+                <figcaption><p class="text-center">Husbanding</p></figcaption>
+              </figure>
+              <figure>
+                <img src="../assets/images/provisions mini E.png" alt="provisions" srcset=""></td>
+                <figcaption><p class="text-center">Provisions</p></figcaption>
+              </figure>
+              <figure>
+                <img src="../assets/images/exped mini E.png" alt="expeditionary" srcset=""></td>
+                <figcaption><p class="text-center">expeditionary</p></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+<!-- DOC 2 -->
+        <div class="col-auto">
+          <div>
+            <h1 class="text-center">Rekkdos</h1>
+            <img src="../assets/images/mil1 cut.jpeg" alt="" srcset="" style="width:100%">
+          </div>
+          <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur est cum saepe doloremque provident vero deserunt quod totam facere consequatur! Porro commodi consectetur numquam sint explicabo neque rerum, dolorum non?</p>
+        </div>
+<!-- DOC 3 -->
+        <div class="row">
+          <div class="col-xl-7 col-lg-7 doc1">
+            <h2 class="text-center">part 3</h2>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum fugit molestiae hic quis laborum beatae consequatur odit dolore possimus provident itaque odio atque nam reprehenderit ipsam aliquam, iure impedit perspiciatis.</p>
+          </div>
+          <div class="col-xl-5 col-lg-5">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="../assets/images/social1.jpeg" class="d-block w-100 h-auto" alt="...">
+                </div>
+                <div class="carousel-item active">
+                  <img src="../assets/images/social2.jpeg" class="d-block w-100 h-auto" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/images/social3.jpeg" class="d-block w-100 h-auto" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+    </main>
+    <footer>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>
