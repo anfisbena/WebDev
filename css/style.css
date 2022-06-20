@@ -30,13 +30,13 @@
 #dod{
   width: 50vh;
   height: 50vh;
-  border-radius: 25% 0px 0px 0px;
+  border-radius: 50% 0px 0px 0px;
   border: 5px solid rgb(255, 255, 255,0%);
 }
 #yatch{
   width: 50vh;
   height: 50vh;
-  border-radius: 0px 0px 25% 0px;
+  border-radius: 0px 0px 50% 0px;
   border: 5px solid rgb(255, 255, 255,0%);
 }
 
@@ -80,7 +80,7 @@
   height: auto;
 }
 
-#business-unit{
+.business-unit{
   display: flex;
   justify-content: space-around;
   padding-left: 4vw;
@@ -88,20 +88,21 @@
   align-items: flex-end;
 }
 
-#business-unit img{
+.business-unit img{
   width: 100px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+
 }
 
-#business-unit p{
+.business-unit p{
   font-size: 2vh;
   text-align: center;
 }
 /* END */
 
 /*______ About ______*/
-.business_unit{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+
 /* END */
