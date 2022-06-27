@@ -1,0 +1,60 @@
+@use 'variables';
+
+
+/*/////////////////////////////////INDEX////////////////////////////////////////*/
+.index_container{
+  display: grid; 
+  grid-template-columns: 1% 1fr 1fr 1%; 
+  grid-template-rows: auto 1fr; 
+  gap: 0% 1%; 
+  grid-template-areas: 
+    ". ind1 ind1 ."
+    ". ind2 ind2 .";
+}
+
+.ind1 {
+  display: flex;
+  justify-self: center; 
+  align-self: flex-end; 
+  grid-area: ind1;
+  width: 15vh;
+  height: 15vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+.ind2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  grid-area: ind2;
+  overflow: hidden;
+}
+
+#dod{
+  width: 50vh;
+  height: 50vh;
+  border-radius: 50% 0px 0px 0px;
+  border: 5px solid variables.$black;
+
+  &:hover{
+    width: 50.5vh;
+    height: 50.5vh;
+    margin-left: 1%;
+    transition:0.2s;
+  }
+}
+
+#yatch{
+  width: 50vh;
+  height: 50vh;
+  border-radius: 0px 0px 50% 0px;
+  border: 5px solid variables.$black;
+  
+  &:hover{
+    width: 50.5vh;
+    height: 50.5vh;
+    margin-left: 1%;
+    transition:0.3s;
+  }
+}
+/* END */
