@@ -1,5 +1,17 @@
 @use 'variables';
 
+@mixin index_animation{
+  width: 50.5vh;
+  height: 50.5vh;
+  margin-left: 1%;
+  transition:0.2s;
+}
+
+@mixin img_props{
+  width: 50vh;
+  height: 50vh;
+  border: 5px solid variables.$black;
+}
 
 /*/////////////////////////////////INDEX////////////////////////////////////////*/
 .index_container{
@@ -31,30 +43,20 @@
 }
 
 #dod{
-  width: 50vh;
-  height: 50vh;
+  @include img_props;
   border-radius: 50% 0px 0px 0px;
-  border: 5px solid variables.$black;
-
+  
   &:hover{
-    width: 50.5vh;
-    height: 50.5vh;
-    margin-left: 1%;
-    transition:0.2s;
+    @include index_animation;
   }
 }
 
 #yatch{
-  width: 50vh;
-  height: 50vh;
+  @include img_props;
   border-radius: 0px 0px 50% 0px;
-  border: 5px solid variables.$black;
   
   &:hover{
-    width: 50.5vh;
-    height: 50.5vh;
-    margin-left: 1%;
-    transition:0.3s;
+    @include index_animation;
   }
 }
 /* END */
