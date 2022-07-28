@@ -1,0 +1,23 @@
+.contactUs{
+  background-color: antiquewhite;
+  margin: 5vh auto;
+
+  h1,h2,h3,p{
+    text-align: center;
+  }
+  form{
+
+    input,textarea{
+      background-color: rgb(248, 213, 169);
+    }
+
+    button[type="submit"] {
+      display: block;
+      width: 30%;
+      margin: 0 auto;
+      height: 2em;
+      font-size: 1.1rem;
+
+    }
+  }
+}
