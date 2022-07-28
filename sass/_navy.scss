@@ -1,4 +1,12 @@
 @use 'variables';
+*{
+  padding: 0;
+  margin:0;
+}
+
+.navy{
+  background-color: antiquewhite;
+}
 
 /*______ NAVY ______*/
 .container{
@@ -42,6 +50,22 @@
   }
 }  
 /* END */
+
+.card{
+  padding: 0;
+  margin: 0;
+  border: 1px solid red;
+  img{
+    padding: 0;
+    margin: 0;
+  }
+  .card-body{
+    background-color: white;
+  }
+  .card-text{
+    background-color: white;
+  }
+}
 
 .video-background {
   position: relative;
