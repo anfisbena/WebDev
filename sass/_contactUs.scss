@@ -1,5 +1,7 @@
+@use"variables";
 .contactUs{
   background-color: antiquewhite;
+  color:variables.$mil-green;
   margin: 5vh auto;
 
   h1,h2,h3,p{

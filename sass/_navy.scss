@@ -9,6 +9,7 @@
 }
 
 .navy{
+  color:variables.$mil-green;
   background-color: antiquewhite;
   font-size: 1.2rem;
   box-sizing: border-box;
@@ -72,7 +73,7 @@
         padding: 0 1.618em;
         background: variables.$mil_green;
         border-right: 0.125rem solid antiquewhite;
-        color: antiquewhite;
+        color: white;
         cursor: pointer;
         top: 0;
         transition: all 0.25s;
@@ -88,8 +89,8 @@
         top: 2.75em;
         left: 0;
         padding: 1.618rem;
-        background: #fff;
-        color: #2c3e50;
+        background: rgba(5, 51, 20, 0.63);
+        color: white;
         border-bottom: 0.25rem solid #bdc3c7;
         opacity: 0;
         transition: all 0.35s;
@@ -125,12 +126,12 @@
         margin: 0;
       }
       .card-body{
-        background-color: white;
+        background-color: rgba(5, 51, 20, 0.63);
       }
       .card-text{
-        background-color: white;
         font-size: 0.9rem;
         font-weight: bold;
+        color: white;
       }
     }
   }

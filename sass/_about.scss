@@ -1,7 +1,9 @@
 @use "navy";
+@use"variables";
 
 .about{
   background-color: antiquewhite;
+  color:variables.$mil-green;
 
   .background_special{
     display: flex;
