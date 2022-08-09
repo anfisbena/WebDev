@@ -39,7 +39,7 @@
       width: 100%;
       height: auto;
     }
-    .wrapper {
+    .tab-box {
       max-width: 50rem;
       width: 100%;
       margin: 0 auto;
@@ -132,6 +132,9 @@
         font-size: 0.9rem;
         font-weight: bold;
         color: white;
+      }
+      &:hover{
+        top:0.25rem;
       }
     }
   }
