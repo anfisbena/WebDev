@@ -1,13 +1,10 @@
+//VARIABLE DECLARATION
 let heladoDisponible,vuelto,total,boleto,cantidadBoletos;
 let usuarios={
   us01:{name:'Roberto',money:0},
   us02:{name:'Pedro',money:0},
   us03:{name:'Cofla',money:0},
 }
-for(let usuario in usuarios){
-  usuarios[usuario].money=prompt(`ingresa cuanto tienes ${usuarios[usuario].name}`);
-}
-
 let helados={
   h1:{price:0.6,name:'Palito de helado de agua'},
   h2:{price:1,name:'Palito de helado con crema'},
@@ -16,11 +13,13 @@ let helados={
   h5:{price:1.8,name:'Bombón de helado marca Helardo'},
   h6:{price:2.9,name:'Potecito de helado con confites'},
   h7:{price:2.9,name:'Pote de 1/4 KG'},
-
-
-
 };
 
+//DEFINE HOW MUCH MONEY THE USER HAS
+for(let usuario in usuarios){
+  usuarios[usuario].money=prompt(`ingresa cuanto tienes ${usuarios[usuario].name}`);
+}
+//DEFINE INDIVIDUALLY, WHICH HELADO THE USER CAN AFFORD
 for (let usuario in usuarios){ 
   if (usuarios[usuario].money<=0.6){heladoDisponible=`${usuarios[usuario].name}, andate mas bien que das es lastima`;}
   else if(usuarios[usuario].money>=2.9){heladoDisponible=`${usuarios[usuario].name}, Podes escoger entre ${helados.h7.name} y ${helados.h6.name}, ambos cuestan $2.9 y te dan un vuelto de $${(usuarios[usuario].money-2.9).toFixed(2)}`;}
@@ -33,6 +32,7 @@ for (let usuario in usuarios){
   document.write(`<h1>${heladoDisponible}</h1>`);
 };
 
+//DEFINE HOW MUCH THE GROUP HAVE
 total=parseFloat(usuarios.us01.money)+parseFloat(usuarios.us02.money)+parseFloat(usuarios.us03.money);
 
 if(total>=2.9){heladoDisponible=`podrían escoger entre ${helados.h7.name} y ${helados.h6.name}, este helado cuesta C/U $${helados.h7.price}, lo que deja un vuelto de $${(total-helados.h7.price).toFixed(2)}`;}
