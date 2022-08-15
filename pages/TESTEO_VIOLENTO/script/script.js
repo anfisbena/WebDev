@@ -44,16 +44,3 @@ else if(total>=0.6&&total<1){  heladoDisponible=`podrían escoger ${helados.h1.n
 else{heladoDisponible=`No podrían escoger ningún helado`;}
 
 document.write(`<h1>Pero si reunen todo, en total tendrían $${(total).toFixed(2)}, ${heladoDisponible}</h1>`);
-/* 
-boleto=13;
-vuelto=total-heladoCaro.price;
-if(vuelto/boleto>3){
-  cantidadBoletos=` 3 boletos y devuelve $${vuelto-boleto*3}`;
-}else{
-  cantidadBoletos=`${Math.floor(vuelto/boleto)} boletos y devuelve $${vuelto%boleto}`;
-}
-document.write(`Presupuesto total es ${total} 
-  y te alcanza para comprar ${heladoCaro.name}, 
-  ademas de eso te sobran ${vuelto}<br/>
-  Ahora bien, el gamin va comparar ${cantidadBoletos}`);
-*/
