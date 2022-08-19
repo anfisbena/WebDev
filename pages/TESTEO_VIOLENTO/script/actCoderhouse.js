@@ -45,12 +45,12 @@ function alerta(){
   }
 }
 
-function productos(){
-  let lista=[]
-  for (let i = 0; i < 4; i++) {
-    while (lista[i]==null||lista[i]==""){
-      lista[i]=prompt(`Porfavor ingresa un producto`);
-    }
+function personaje(){
+  let personaje;
+  switch(personaje){
+    case 1:return(`<h1>Elegiste a Homero</h1>`);
+    case 2:return(`<h1>Elegiste a Marge</h1>`);
+    case 3:return(`<h1>Elegiste a Bart</h1>`);
+    case 4:return(`<h1>Elegiste a Lisa</h1>`);
   }
-  document.write(`<h1>tu lista de productos es, ${lista[0]}, ${lista[1]}, ${lista[2]} y ${lista[3]}</h1>`);
 }
