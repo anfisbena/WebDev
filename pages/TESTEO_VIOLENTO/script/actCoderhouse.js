@@ -75,3 +75,101 @@ function vacio(){
   }
   return cesta;
 }
+
+//CLASE 3
+function pizarron(){
+  let frase=prompt(`Dime una frase`);
+  let repeticion=prompt(`Dime cuantas veces quieres repetir la frase`);
+  for(let i=0;i<repeticion;i++){
+    document.write(`Y dice: ${frase}<br/>`);
+  }
+}
+
+function cuadradoOrdinario(){
+  let lados=parseInt(prompt(`Dime cuantos lados tiene el cuadrado`));
+  document.write(`Ya veo, el cuadrado tiene ${lados} lados, contemos:<br/>`)
+  for (let i=0;i<lados;i++){
+    if(i<4){document.write(`-Lado ${i+1}<br/>`); }
+    else{break;}
+  }
+}
+
+function alumnos(){
+  let alumnos='';  
+  for (let i=0;i<10;i++){
+    alumnos+=prompt(`cual es el nombre del almunmo #${i+1}`)+'\n';
+  }
+  return alumnos;
+};
+
+function innombrable(){
+  let nombre='',mago;  
+  while(true){
+    mago=prompt(`Cual es el nombre del mago`);
+    switch(mago){
+      case 'Harry Potter':
+        nombre+=mago+'\n';
+        alert(`El niño que vivio`);
+        continue;
+      case 'Voldemort':
+        alert(`Has dicho el innombrable`);
+        return alert(nombre);
+      default: 
+        nombre+=mago+'\n';
+    }
+  }
+}
+
+function comprador(){
+  let producto;
+  let lista=[
+    {
+      nombre:'Tomate',
+      cantidad:0,
+    },
+    {
+      nombre:'Papa',
+      cantidad:0,
+    },
+    {
+      nombre:'Carne',
+      cantidad:0,
+    },
+    {
+      nombre:'Pollo',
+      cantidad:0,
+    },
+  ];
+  do{
+    producto=prompt(`Dime el numero del producto entre 1-4`);
+    switch(producto){
+      case 'ESC': 
+      break;
+      case '1':
+        lista[0].cantidad++;
+        continue;
+      case '2':
+        lista[1].cantidad++;
+        continue;
+      case '3':
+        lista[2].cantidad++;
+        continue;
+      case '4':
+        lista[3].cantidad++;
+        continue;
+      default:
+        alert(`No existe ese producto`);
+        continue;
+    }
+  }
+  while(producto!='ESC');
+  document.write(`
+  <h1>Tu lista consta de:</h1>
+  <ul>
+    <li>${lista[0].cantidad} ${lista[0].nombre}</li>
+    <li>${lista[1].cantidad} ${lista[1].nombre}</li>
+    <li>${lista[2].cantidad} ${lista[2].nombre}</li>
+    <li>${lista[3].cantidad} ${lista[3].nombre}</li>
+  </ul>
+  `)
+}
