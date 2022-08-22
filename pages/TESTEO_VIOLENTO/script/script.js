@@ -115,16 +115,23 @@ function asistencia(){
 }
 
 //-----------------------INICIO
-class animal{
+class Animal{
   constructor(pelo,ojos){
-    this.pelo=pelo
-    this.ojos=ojos
+    this.pelo=pelo;
+    this.ojos=ojos;
+    this.info=`<h1>Este animal tiene pelo ${this.pelo} y ojos ${this.ojos}</h1>`;
   }
-  // METODO DE LA CLASE V1.0
-  info(){
-    document.write(`<h1>Este animal tiene pelo ${this.pelo} y ojos ${this.ojos}</h1>`)
+  verInfo(){
+    document.write(this.info);
   }
 }
-// const perro=new animal("largo","morados")
-// perro.info();
+class Perro extends Animal{
+  constructor(pelo,ojos,raza){
+    super(pelo,ojos);
+    this.raza=raza
+  }
+
+}
+const perro=new Perro("largo","morados",'Labrador')
+perro.verInfo();
 //-----------------------FIN
