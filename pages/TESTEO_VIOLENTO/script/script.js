@@ -64,4 +64,67 @@ function sumar(a,b){
   return a+b;
 }
 
-document.write(sumar(3,4));
+function discoteca(){
+  let usuarios=[],nombre,edad,hora,trigger,pago;
+  do{
+    nombre=prompt("Ingresa tu nombre");
+    edad=prompt("Ingresa tu edad");
+    if(edad<18){
+      alert("No puedes entrar");
+      continue;};
+    hora=parseInt(prompt("Ingresa la hora"));
+    pago=hora>2&&hora<10?false:true;
+    usuarios.push({
+      nombre:nombre,
+      edad:edad,
+      hora:hora,
+      pago:pago
+    });
+    trigger=prompt("¿Deseas ingresar un usuario? (y/n)");
+  }
+  while(trigger!="n");
+  for (i in usuarios){
+    document.write(`<h1>usuario #${i} Nombre: ${usuarios[i].nombre}, edad: ${usuarios[i].edad}, hora ingreso:${usuarios[i].hora} pago?:${usuarios[i].pago}</h1>`)
+  }
+}
+
+function asistencia(){
+  let estudiantes=[],nombre,asistencia,trigger;
+  do{
+    nombre=prompt("Ingresa nombre");
+    asistencia=prompt('Estatus de asistencia (a/p)');
+    if(asistencia=='p'){
+      if(estudiantes.findIndex((est)=>est.nombre==nombre)==-1){
+        estudiantes.push({
+          nombre:nombre,
+          asistencia:1,
+        })
+      }
+      else{
+        estudiantes[estudiantes.findIndex((est)=>est.nombre==nombre)].asistencia++;
+      }
+    }
+    trigger=prompt("¿Deseas ingresar un usuario? (y/n)");
+  }
+  while(trigger!="n");
+  document.write(`<h1>LISTA DE ASISTENCIA</h1><br/>`);
+  for (i in estudiantes){
+    document.write(
+      `<p>${estudiantes[i].nombre} || ${estudiantes[i].asistencia} || ${((estudiantes[i].asistencia)/30)*100}%</p>`)
+  }
+}
+
+//-----------------------INICIO
+class animal{
+  constructor(pelo,ojos){
+    this.pelo=pelo
+    this.ojos=ojos
+  }
+  // METODO DE LA CLASE V1.0
+  info(){
+    document.write(`<h1>Este animal tiene pelo ${this.pelo} y ojos ${this.ojos}</h1>`)
+  }
+}
+// const perro=new animal("largo","morados")
+// perro.info();
+//-----------------------FIN
