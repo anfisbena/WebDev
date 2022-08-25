@@ -173,3 +173,70 @@ function comprador(){
   </ul>
   `)
 }
+//CLASE 4
+class actividad1{
+  constructor(valor){
+    this.valor=valor
+  }
+
+  entrada(){
+    return prompt(`inserte valor`);  
+  }
+  procesamiento(valor){
+    return `ingresaste ${valor}`;
+  }
+  salida(valor){
+    return alert(valor);
+  }
+}
+// const objeto1=new actividad1();
+// objeto1.salida(objeto1.procesamiento(objeto1.entrada()));
+
+class redondeo extends actividad1{
+  constructor(valor){
+    super(valor)
+  }
+
+  procesamiento2(valor){
+    return Math.round(valor);
+  }
+}
+//const objeto1=new redondeo();
+//objeto1.salida(objeto1.procesamiento2(objeto1.entrada()));
+
+class facturadora{
+  constructor(){}
+
+  valor(precio,porcentaje){
+    return document.write(`el precio es ${precio} + impuestos, tendria un costo total de: ${precio*(1+(porcentaje/100))}<br/>`);
+  };
+  
+  preguntaPrecio(){
+    return prompt(`cual es el precio`);
+  }
+  
+  preguntaTax(){
+    return prompt(`Cual es el impuesto`);
+  }
+}
+// const cajero=new facturadora();
+// for(let i=0;i<5;i++){
+//   cajero.valor(cajero.preguntaPrecio(),cajero.preguntaTax())
+// }
+
+class convertidor{
+  constructor(tasa){
+    this.tasa=tasa;
+  }
+
+  cotizarDolar(pesos){
+    return pesos*this.tasa;
+  }
+
+  cotizarPesos(dolar){
+    return dolar*(1+this.tasa);
+  }
+}
+
+const cajero=new convertidor();
+//falta terminar este ejercicio
