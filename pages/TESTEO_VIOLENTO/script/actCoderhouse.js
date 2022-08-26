@@ -226,17 +226,30 @@ class facturadora{
 
 class convertidor{
   constructor(tasa){
-    this.tasa=tasa;
+    this.tasa=(tasa);
   }
+  cotizarDolar(pesos){return `$${pesos} pesos equivalen a $${pesos/this.tasa} dolares<br/>`;}
+  cotizarPesos(dolar){return `$${dolar} dolares equivalen a $${dolar*this.tasa} pesos<br/>`;}
+}
+// const cajero=new convertidor(150);
+// document.write(cajero.cotizarDolar(100));
+// document.write(cajero.cotizarPesos(100));
 
-  cotizarDolar(pesos){
-    return pesos*this.tasa;
-  }
-
-  cotizarPesos(dolar){
-    return dolar*(1+this.tasa);
+class validacion{
+  constructor(){}
+  
+  validar(){
+    do{
+      if(this.cadena!=''){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    while(this.cadena!='ESC');
   }
 }
+// const dandola=new validacion();
+// document.write(dandola.validar());
 
-const cajero=new convertidor();
-//falta terminar este ejercicio
