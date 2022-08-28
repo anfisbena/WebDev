@@ -1,0 +1,7 @@
+class functions{
+  constructor(){}
+
+  modal(){
+    
+  }
+}
