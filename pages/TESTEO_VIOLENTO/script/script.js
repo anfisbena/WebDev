@@ -135,3 +135,18 @@ class Perro extends Animal{
 const perro=new Perro("largo","morados",'Labrador')
 perro.verInfo();
 //-----------------------FIN
+
+class gato{
+  constructor(pelo,color,nombre,raza){
+    this.pelo=pelo;
+    this.color=color;
+    this.nombre=nombre;
+    this.raza=raza;
+  }
+  explicar(){
+    return `este ${this.nombre} es un ${this.raza} de color ${this.color} y tiene un pelo ${this.pelo}`;
+  }
+}
+
+let gato1=new gato("largo","cafe","Dara","Labrador");
+document.write(gato1.explicar());
