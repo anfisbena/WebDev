@@ -130,23 +130,46 @@ class Perro extends Animal{
     super(pelo,ojos);
     this.raza=raza
   }
-
+  ladrar(){
+    return `el ${this.raza} esta ladrando`;
+  }
 }
-const perro=new Perro("largo","morados",'Labrador')
-perro.verInfo();
-//-----------------------FIN
 
-class gato{
-  constructor(pelo,color,nombre,raza){
-    this.pelo=pelo;
-    this.color=color;
+class gato extends Animal{
+  constructor(nombre,raza,color,pelo){
+    super(pelo,ojos);
     this.nombre=nombre;
     this.raza=raza;
+    this.color=color;
   }
   explicar(){
     return `este ${this.nombre} es un ${this.raza} de color ${this.color} y tiene un pelo ${this.pelo}`;
   }
 }
 
+const perro=new Perro("largo","morados",'Labrador')
+perro.verInfo();
 let gato1=new gato("largo","cafe","Dara","Labrador");
 document.write(gato1.explicar());
+//-----------------------FIN
+
+//-----------------------GETTERS Y SETTERS
+class vaca extends Animal{
+  constructor(pelo,ojos,raza){
+    super(pelo,ojos);
+    this.raza=raza
+  }
+  cambioRaza(nuevaRaza){
+    this.raza=nuevaRaza;
+  }
+
+  set nuevoCambioRaza(nuevaRaza){
+    this.raza=nuevaRaza;
+  }
+}
+const lola=new vaca('largo','verdes','carechimba');
+lola.cambioRaza('hijueputa'); //metodo NORMAL
+lola.nuevoCambioRaza='hijueputa' //metodo SETTER
+
+
+//-----------------------FIN GETTERS Y SETTERS
