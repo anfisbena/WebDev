@@ -55,27 +55,32 @@ const trufas=[
 const waffles=[
   {
     nombre:'kiwi',
-    valor:'',
+    valor:'800',
     cantidad:0,
   },
   {
     nombre:'fresa',
-    valor:'',
+    valor:'800',
     cantidad:0,
   },
   {
     nombre:'durazno',
-    valor:'',
+    valor:'800',
     cantidad:0,
   },
   {
     nombre:'chocolate',
-    valor:'',
+    valor:'500',
     cantidad:0,
   },
   {
     nombre:'crema',
-    valor:'',
+    valor:'500',
     cantidad:0,
   },
 ];
+
+let totalPostres,totalTrufas,totalWaffles;
+postres.forEach(postre=>{totalPostres+=postre.cantidad*postre.valor});
+trufas.forEach(trufa=>{totalTrufas+=trufa.cantidad*trufa.valor});
+postres.forEach(waffle=>{totalWaffles+=waffle.cantidad*waffle.valor});
