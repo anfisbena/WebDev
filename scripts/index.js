@@ -80,6 +80,28 @@ const waffles=[
   },
 ];
 
+
+class carrito{
+  constructor(){}
+
+  agregar(producto,opcion,cantidad){
+    for(producto of postres){
+      if(producto.nombre==opcion){
+        producto.cantidad+=cantidad;
+      }
+    }
+  }
+
+  agregar2(producto,opcion,cantidad){
+    producto.forEach(i=>{
+      if(i.nombre==opcion){
+        i.cantidad+=cantidad;
+      }
+    });
+  }
+}
+
+
 let totalPostres,totalTrufas,totalWaffles;
 postres.forEach(postre=>{totalPostres+=postre.cantidad*postre.valor});
 trufas.forEach(trufa=>{totalTrufas+=trufa.cantidad*trufa.valor});
