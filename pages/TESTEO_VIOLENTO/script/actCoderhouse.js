@@ -253,3 +253,42 @@ class validacion{
 // const dandola=new validacion();
 // document.write(dandola.validar());
 
+//clase 5
+
+//5.1
+class tienda{
+  constructor(nombre,direccion,propietario,rubro){
+    this.nombre=nombre;
+    this.direccion=direccion;
+    this.propietario=propietario;
+    this.rubro=rubro;
+  }
+
+  estaAbierto(hora){
+    (hora>=8&&hora<=12)||(hora>=15&&hora<=19);
+  }
+}
+let d1=new tienda('d1','cualquiera','Santos','7/11');
+let ara=new tienda('ara','cualquiera','Santo Domingo','7/11');
+let hym=new tienda('hym','cualquiera','el putas','7/11');
+
+
+//5.2
+let listaTiendas=[];
+for (let i=0;i<5;i++){
+  let tiendaLista=new tienda(
+  prompt(`ingrese el nombre de la tienda`),
+  prompt(`ingrese la direccion de la tienda`),
+  prompt(`ingrese el propietario de la tienda`),
+  prompt(`ingrese el rubro de la tienda`)
+  );
+  listaTiendas.push({
+    nombre:tiendaLista.nombre,
+    direccion:tiendaLista.direccion,
+    propietario:tiendaLista.propietario,
+    rubro:tiendaLista.rubro
+  });
+  alert(`tienda(${i+1}/5) agregada`)
+}
+//listaTiendas.forEach(i=>console.log(i.nombre));
+

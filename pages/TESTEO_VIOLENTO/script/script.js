@@ -136,7 +136,7 @@ class Perro extends Animal{
 }
 
 class gato extends Animal{
-  constructor(nombre,raza,color,pelo){
+  constructor(nombre,raza,color,pelo,ojos){
     super(pelo,ojos);
     this.nombre=nombre;
     this.raza=raza;
@@ -163,6 +163,9 @@ class vaca extends Animal{
     this.raza=nuevaRaza;
   }
 
+  /**
+   * @param {string} nuevaRaza
+   */
   set nuevoCambioRaza(nuevaRaza){
     this.raza=nuevaRaza;
   }
