@@ -1,3 +1,4 @@
+//lista de items
 const postres=[
   {
     nombre:'mora',
@@ -80,7 +81,7 @@ const waffles=[
   },
 ];
 
-
+//clase carrito para contar y calcular precios
 class carrito{
   constructor(){}
 
@@ -101,7 +102,7 @@ class carrito{
   }
 }
 
-
+//total CADA UNO
 let totalPostres,totalTrufas,totalWaffles;
 postres.forEach(postre=>{totalPostres+=postre.cantidad*postre.valor});
 trufas.forEach(trufa=>{totalTrufas+=trufa.cantidad*trufa.valor});
