@@ -292,3 +292,14 @@ for (let i=0;i<5;i++){
 }
 //listaTiendas.forEach(i=>console.log(i.nombre));
 
+
+//llamo el elemento
+let formulario=document.getElementById('formulario');
+//creo el evento al darle submit
+formulario.onsubmit=(e)=>{
+  e.preventDefault();//esto sirve para que no se recargue la pagina y se vea en el console log
+  //el target es el objeto html que se genera cada vez que hay un evento
+  Array.from(e.target.children).forEach(element => {
+    console.log(element.value)
+  });
+}
