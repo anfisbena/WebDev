@@ -81,30 +81,14 @@ const waffles=[
   },
 ];
 
-//clase carrito para contar y calcular precios
-// class carrito{
-//   constructor(){}
-
-//   agregar(producto,opcion,cantidad){
-//     for(producto of postres){
-//       if(producto.nombre==opcion){
-//         producto.cantidad+=cantidad;
-//       }
-//     }
-//   }
-
-//   agregar2(producto,opcion,cantidad){
-//     producto.forEach(i=>{
-//       if(i.nombre==opcion){
-//         i.cantidad+=cantidad;
-//       }
-//     });
-//   }
-// }
 
 //total CADA UNO
-let formPostres=document.getElementsByClassName('formPostres');
-formPostres.onmouseover=()=>{console.log("hola")};
+let formPostres=document.getElementsByClassName('form').onsubmit=(e)=>{
+  e.preventDefault();
+  Array.from(e.target).forEach(element => {
+    console.log(element.value);})
+  }
+
 
 
 // let totalPostres,totalTrufas,totalWaffles;
