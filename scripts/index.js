@@ -1,94 +1,119 @@
 //lista de items
 const postres=[
   {
+    id:'postreFresa',
+    nombre:'fresa',
+    valor:3500,
+    cantidad:0,
+  },
+  {
+    id:'postreMora',
     nombre:'mora',
-    valor:'3500',
+    valor:3500,
     cantidad:0,
   },
   {
+    id:'postreChocolate',
     nombre:'chocolate',
-    valor:'3500',
+    valor:3500,
     cantidad:0,
   },
   {
+    id:'postreMilo',
     nombre:'milo',
-    valor:'3500',
+    valor:3500,
     cantidad:0,
   },
 ];
 const trufas=[
   {
-    nombre:'balones',
+    id:'balones',
     valor:'800',
     cantidad:0,
   },
   {
-    nombre:'chocoratas',
+    id:'chocoratas',
     valor:'300',
     cantidad:0,
   },
   {
-    nombre:'corazones1',
+    id:'corazones1',
     valor:'400',
     cantidad:0,
   },
   {
-    nombre:'corazones3',
+    id:'corazones3',
     valor:'700',
     cantidad:0,
   },
   {
-    nombre:'tulipan',
+    id:'tulipan',
     valor:'600',
     cantidad:0,
   },
   {
-    nombre:'manzanillap',
+    id:'manzanillap',
     valor:'600',
     cantidad:0,
   },
   {
-    nombre:'orquidea',
+    id:'orquidea',
     valor:'900',
     cantidad:0,
   },
 ];
 const waffles=[
   {
-    nombre:'kiwi',
+    id:'agregarKiwi',
     valor:'800',
-    cantidad:0,
+    agregar:false,
   },
   {
-    nombre:'fresa',
+    id:'agregarFresa',
     valor:'800',
-    cantidad:0,
+    agregar:false,
   },
   {
-    nombre:'durazno',
+    id:'agregarDurazno',
     valor:'800',
-    cantidad:0,
+    agregar:false,
   },
   {
-    nombre:'chocolate',
+    id:'agregarChocolate',
     valor:'500',
-    cantidad:0,
+    agregar:false,
   },
   {
-    nombre:'crema',
+    id:'agregarCrema',
     valor:'500',
-    cantidad:0,
+    agregar:false,
   },
 ];
 
-
-//total CADA UNO
-let formPostres=document.getElementsByClassName('form').onsubmit=(e)=>{
-  e.preventDefault();
+//funcion para agregar items a la lista
+document.getElementById('formPostre').onsubmit=(e)=>{
   Array.from(e.target).forEach(element => {
-    console.log(element.value);})
-  }
+    if(element.id!=''){
+      postres[postres.findIndex((item)=>item.id===element.id)].cantidad=parseInt(element.value);
+    }
+  })
+};
 
+document.getElementById('formTrufa').onsubmit=(e)=>{
+  Array.from(e.target).forEach(element => {
+    if(element.id!=''){
+      trufas[trufas.findIndex((item)=>item.id===element.id)].cantidad=parseInt(element.value);
+    }
+  })
+};
+
+document.getElementById('formWaffle').onsubmit=(e)=>{
+  Array.from(e.target).forEach(element => {
+    if(element.id!=''){
+      waffles[waffles.findIndex((item)=>item.id===element.id)].agregar=element.value;
+    }
+  })
+};
 
 
 // let totalPostres,totalTrufas,totalWaffles;
