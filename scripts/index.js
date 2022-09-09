@@ -1,10 +1,12 @@
 //lista de items
+let totalPostres,totalTrufas,totalWaffles;
 const postres=[
   {
     id:'postreFresa',
     nombre:'fresa',
     valor:3500,
     cantidad:0,
+    total:,
   },
   {
     id:'postreMora',
@@ -115,8 +117,4 @@ document.getElementById('formWaffle').onsubmit=(e)=>{
   })
 };
 
-
-// let totalPostres,totalTrufas,totalWaffles;
-// postres.forEach(postre=>{totalPostres+=postre.cantidad*postre.valor});
-// trufas.forEach(trufa=>{totalTrufas+=trufa.cantidad*trufa.valor});
-// postres.forEach(waffle=>{totalWaffles+=waffle.cantidad*waffle.valor});
+//funciones para saber total
