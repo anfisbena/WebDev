@@ -118,3 +118,4 @@ document.getElementById('formWaffle').onsubmit=(e)=>{
 };
 
 //funciones para saber total
+localStorage.setItem('key',JSON.parse(object));
