@@ -6,7 +6,6 @@ const postres=[
     nombre:'fresa',
     valor:3500,
     cantidad:0,
-    total:,
   },
   {
     id:'postreMora',
@@ -93,6 +92,7 @@ const waffles=[
 ];
 
 //funcion para agregar items a la lista
+
 document.getElementById('formPostre').onsubmit=(e)=>{
   Array.from(e.target).forEach(element => {
     if(element.id!=''){
@@ -100,6 +100,8 @@ document.getElementById('formPostre').onsubmit=(e)=>{
     }
   })
 };
+sessionStorage.setItem('postres',JSON.stringify(postres));
+
 
 document.getElementById('formTrufa').onsubmit=(e)=>{
   Array.from(e.target).forEach(element => {
@@ -108,14 +110,16 @@ document.getElementById('formTrufa').onsubmit=(e)=>{
     }
   })
 };
+sessionStorage.setItem('trufas',JSON.stringify(trufas));
+
 
 document.getElementById('formWaffle').onsubmit=(e)=>{
   Array.from(e.target).forEach(element => {
     if(element.id!=''){
-      waffles[waffles.findIndex((item)=>item.id===element.id)].agregar=element.value;
+      waffles[waffles.findIndex((item)=>item.id===element.id)].cantidad=parseint(element.value);
     }
   })
 };
+sessionStorage.setItem('waffles',JSON.stringify(waffles));
 
-//funciones para saber total
-localStorage.setItem('key',JSON.parse(object));
+console.log(sessionStorage);
