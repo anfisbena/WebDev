@@ -114,12 +114,11 @@ sessionStorage.setItem('trufas',JSON.stringify(trufas));
 
 
 document.getElementById('formWaffle').onsubmit=(e)=>{
+  console.log(e);
   Array.from(e.target).forEach(element => {
     if(element.id!=''){
-      waffles[waffles.findIndex((item)=>item.id===element.id)].cantidad=parseint(element.value);
+      waffles[waffles.findIndex((item)=>item.id===element.id)].agregar=element.checked;
     }
   })
 };
-sessionStorage.setItem('waffles',JSON.stringify(waffles));
-
-console.log(sessionStorage);
+// sessionStorage.setItem('waffles',JSON.stringify(waffles));
