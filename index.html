@@ -1,333 +1,202 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manu Postres</title>
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-  </head>
-  <body>
-
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text">Marketing Site</li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="#">Three</a></li>
-          <li><a href="#">Four</a></li>
-          <li><a href="#">Five</a></li>
-          <li><a href="#">Six</a></li>
-          <li><a href='./pages/Waypoint_Site/index.html'>Waypoint's Site</a></li>
-          <li><a href='./pages/TESTEO_VIOLENTO/index.html'>testeo violento</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End Top Bar -->
-
-
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-      <ul class="orbit-container">
-        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-        <li class="orbit-slide is-active">
-          <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-      </ul>
-    </div>
-
-    <div class="row column text-center">
-      <h2>La carta de nuestros productos</h2>
-      <hr>
-    </div>
-<!-- MENUS -->
-    <div class="row small-up-1 large-up-3">
-  <!-- POSTRES -->
-      <div class="column">
-        <img class="thumbnail" src="./assets/Images/torta-sm.jpg">
-        <h5>Tortas y postres</h5>
-        <p>Buenos para el postre del almuerzo o para tardear</p>
-        <a data-open="modalPostre" href="#" class="button expanded">Selecciona</a>
-    <!-- OPCIONES -->
-        <div class="reveal" id="modalPostre" data-reveal>
-          <div class="text-center">
-            <h1>Escoge tu sabor</h1>
-            <p class="lead">Todos nuestros postres son a $3500</p>  
-          
-          <form id="formPostre">
-            <fieldset>
-              <div class="row">
-                <div class="columns">
-                  <label for="postreFresa" class="text-right middle small-9">Fresa</label>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dulces Manu🍫</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/Images/m.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Manu Logo </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Sobre Nosotros</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Nuestros productos</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Mas vendidos</a></li>
+                                <li><a class="dropdown-item" href="#!">Productos nuevos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Carrito
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
                 </div>
-                <div class="columns">
-                  <input type="number" id="postreFresa">
+            </div>
+        </nav>
+        <!-- Product section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="assets/Images/trufas-caseras -600x700.jpg" alt="..." /></div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">SKU: CHO-01</div>
+                        <h1 class="display-5 fw-bolder">Chocolates</h1>
+                        <div class="fs-5 mb-5">
+                            <span class="text-decoration-line-through">$45.00</span>
+                            <span>$40.00</span>
+                        </div>
+                        <p class="lead">Deliciosos dulces de chocolate puro para varios gustos, Todos hechos a mano con amor y con mucha dulzura.
+                        </p>
+                        <form class="mt-3 mb-3 formTrufa"action="" id="formTrufa">
+                            <label for="dropdown">Escoge tu chocolate:</label>
+                            <fieldset class="d-flex mb-3">
+                                <select name="dropdown" id="dropdown">
+                                    <option value="" selected>Seleccione una opcion</option>
+                                    <option value="balones">balones</option>
+                                    <option value="chocoratas">chocoratas</option>
+                                    <option value="corazones1">Corazones X 1</option>
+                                    <option value="corazones3">Corazones X 3</option>
+                                    <option value="tulipan">Tulipan</option>
+                                    <option value="manzanilla">Manzanilla</option>
+                                    <option value="orquidea">Orquidea</option>
+                                </select>
+                                <input class="form-control text-center me-3 ml-4" id="cantidad" type="num" value="1" style="max-width: 3rem"/>
+                            </fieldset>
+                            <button class="btn btn-outline-dark flex-shrink-0" type="submit">
+                                <i class="bi-cart-fill me-1"></i>
+                                Añadir al carrito
+                            </button>
+                        </form>
+                    </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="postreMora" class="text-right middle small-9">Mora</label>
+            </div>
+        </section>
+        <!-- Related items section-->
+        <section class="py-5 bg-light">
+            <div class="container px-4 px-lg-5 mt-5">
+                <h2 class="fw-bolder mb-4">Related products</h2>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <!-- Product price-->
+                                    $40.00 - $80.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Special Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Sale Item</h5>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    $25.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Popular Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="columns">
-                  <input type="number" id="postreMora">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="postreChocolate" class="text-right middle small-9">Chocolate</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="postreChocolate">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="postreMilo" class="text-right middle small-9">Milo</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="postreMilo">
-                </div>
-              </div>
-              <button class="submit success button small-5" data-close aria-label="Close reveal">Save</button>
-            </fieldset>
-          </form>
-          <button class="close-button" data-close aria-label="Close reveal" type="button">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-        </div>
-
-      </div>
-  <!-- TRUFAS -->
-      <div class="column">
-        <img class="thumbnail" src="./assets/Images/trufas-caseras-sm.jpg">
-        <h5>Ricos chocolates</h5>
-        <p>Ideales para llevar comer en el dia</p>
-        <a data-open="trufaModal" href="#" class="button expanded">Selecciona</a>
-    <!-- OPCIONES -->
-        <div class="reveal" id="trufaModal" data-reveal>
-          <div class="text-center">
-            <h1>Escoge tu sabor</h1> 
-          <form id="formTrufa">
-            <fieldset>
-              <div class="row">
-                <div class="columns">
-                  <label for="balones" class="text-right middle small-9">Balones(x1)</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="balones">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="chocoratas" class="text-right middle small-9">Chocoratas(x1)</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="chocoratas">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="corazones1" class="text-right middle small-9">Corazones(x1)</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="corazones1">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="corazones3" class="text-right middle small-9">Corazones(x3)</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="corazones3">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="tulipan" class="text-right middle small-9">Tulipan(x1)</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="tulipan">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="manzanillap" class="text-right middle small-9">Manzanilla pequeña(x1)</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="manzanillap">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="orquidea" class="text-right middle small-9">Orquidea(x1)</label>
-                </div>
-                <div class="columns">
-                  <input type="number" id="orquidea">
-                </div>
-                <button class="submit success button small-5" data-close aria-label="Close reveal">Save</button>
-              </div>
-            </fieldset>
-          </form>
-          <button class="close-button" data-close aria-label="Close reveal" type="button">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          </div> 
-        </div>
-      </div>
-  <!-- WAFFLES -->
-      <div class="column">
-        <img class="thumbnail" src="./assets/Images/waffles-sm.jpeg">
-        <h5>Los Waffles</h5>
-        <p>Nuestro producto estrella, ricos y suaves</p>
-        <a data-open="waffleModal" href="#" class="button expanded">Selecciona</a>
-    <!-- OPCIONES -->
-        <div class="reveal" id="waffleModal" data-reveal>
-          <div class="text-center">
-            <h1>Escoge tu sabor</h1>
-            <p class="lead">El costo base es de $2000 + adiciones</p>
-          <form id="formWaffle">
-            <fieldset>
-              <div class="row text-center">
-                <p>Todas nuestras preparaciones incluyen 2 waffles</p>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="agregarKiwi" class="text-right middle small-9">Kiwi</label>
-                </div>
-                <div class="columns">
-                  <input type="checkbox" id="agregarKiwi">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="agregarFresa" class="text-right middle small-9">Fresa</label>
-                </div>
-                <div class="columns">
-                  <input type="checkbox" id="agregarFresa">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="agregarDurazno" class="text-right middle small-9">Durazno</label>
-                </div>
-                <div class="columns">
-                  <input type="checkbox" id="agregarDurazno">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="agregarChocolate" class="text-right middle small-9">Salsa de chocolate</label>
-                </div>
-                <div class="columns">
-                  <input type="checkbox" id="agregarChocolate">
-                </div>
-              </div>
-              <div class="row">
-                <div class="columns">
-                  <label for="agregarCrema" class="text-right middle small-9">chantilli</label>
-                </div>
-                <div class="columns">
-                  <input type="checkbox" id="agregarCrema">
-                </div>
-              </div>
-              <button class="submit success button small-5" data-close aria-label="Close reveal">Save</button>
-            </fieldset>
-          </form>
-          <button class="close-button" data-close aria-label="Close reveal" type="button">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row column">
-      <div class="callout primary">
-        <h3>Quiero poner un banner animado tipo letretro LED</h3>
-      </div>
-    </div>
-
-    <hr>
-
-    <hr>
-    <div class="row">
-
-      <div class="medium-4 columns">
-        <h4>Postre recomendado</h4>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
-          </div>
-          <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="medium-4 columns">
-        <h4>Chocolate recomendado</h4>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
-          </div>
-          <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="medium-4 columns">
-        <h4>Top Products</h4>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
-          </div>
-          <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="callout large secondary">
-      <div class="row">
-        <div class="large-4 columns">
-          <h5>Direccion</h5>
-          <p>Pequeño Mensaje y horarios.</p>
-        </div>
-        <div class="large-3 columns">
-          <ul class="menu vertical">
-            <li><a href="#">FB</a></li>
-            <li><a href="#">TWT</a></li>
-            <li><a href="#">Inst</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>$(document).foundation();</script>
-    <script src="./scripts/index.js"></script>
-  </body>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
-
