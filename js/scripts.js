@@ -1,40 +1,40 @@
 //lista de items
-let totalTrufas;
+let totalTrufas,objectPos,subtotal;
 
 const trufas=[
   {
     id:'balones',
-    valor:'800',
+    valor:800,
     cantidad:0,
   },
   {
     id:'chocoratas',
-    valor:'300',
+    valor:300,
     cantidad:0,
   },
   {
     id:'corazones1',
-    valor:'400',
+    valor:400,
     cantidad:0,
   },
   {
     id:'corazones3',
-    valor:'700',
+    valor:700,
     cantidad:0,
   },
   {
     id:'tulipan',
-    valor:'600',
+    valor:600,
     cantidad:0,
   },
   {
     id:'manzanilla',
-    valor:'600',
+    valor:600,
     cantidad:0,
   },
   {
     id:'orquidea',
-    valor:'900',
+    valor:900,
     cantidad:0,
   },
 ];
@@ -42,12 +42,14 @@ const trufas=[
 //funcion para agregar items a la lista
 
 document.getElementById('formTrufa').onsubmit=(e)=>{
-
   Array.from(e.target[1]).forEach(element => {
     if(element.selected==true){
-      trufas[trufas.findIndex((item)=>item.id===element.value)].cantidad=parseInt(e.target[2].value);
+      objectPos=trufas.findIndex((item)=>item.id===element.value);
+      trufas[objectPos].cantidad=parseInt(e.target[2].value);
     }
   })
+  // sessionStorage.setItem('trufas',JSON.stringify(trufas));
 };
-  sessionStorage.setItem('trufas',JSON.stringify(trufas));
-
+  
+console.log(trufas.forEach((item)=>{parseInt(item.cantidad)*parseInt(item.valor);}));
+document.querySelector('.subtotal').innerHTML=`$${subtotal}`;
