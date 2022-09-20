@@ -35,16 +35,28 @@ const trufas=[
 //funcion para agregar items a la lista
 function agregarItem(){
   document.getElementById('formTrufa').onsubmit=(e)=>{
-    e.preventDefault();
     Array.from(e.target[1]).forEach(element => {
       if(element.selected){
-        console.log(element.value)
         let indice=trufas.findIndex((item)=>item.id===element.value);
-        sessionStorage.setItem(trufas[indice].id,JSON.stringify(trufas[indice].valor));
-        sessionStorage.setItem(trufas[indice].id,JSON.stringify(trufas[indice].cantidad=e.target[2].value));
+        sessionStorage.setItem(trufas[indice].id,JSON.stringify(parseInt(e.target[2].value)));
+        document.querySelector('.text-decoration-line-through.valorUd').innerHTML=`$${trufas[indice].valor}`;
       }
     })
   }; 
 }
 
+
+
+document.getElementById('dropdown').onchange=(e)=>{
+  Array.from(e.target).forEach(element => {
+    if(element.selected && element.value!='Seleccione una opcion'){
+      let indice=trufas.findIndex((item)=>item.id===element.value);
+      document.querySelector('.valorUd').innerHTML=`$${trufas[indice].valor}`;
+      document.querySelector('.subtotal').innerHTML=``;
+    }
+  })
+}; 
+
 agregarItem();
+//contador de items
+document.querySelector(".badge.bg-dark.text-white.ms-1.rounded-pill").innerHTML=sessionStorage.length-1;
