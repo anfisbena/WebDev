@@ -1,5 +1,5 @@
 //lista de items
-let totalTrufas,objectPos,subtotal;
+let totalTrufas,objectPos,subtotal,valorUD,cantidad;
 
 const trufas=[
   {
@@ -33,30 +33,47 @@ const trufas=[
 ];
 
 //funcion para agregar items a la lista
-function agregarItem(){
-  document.getElementById('formTrufa').onsubmit=(e)=>{
-    Array.from(e.target[1]).forEach(element => {
-      if(element.selected){
-        let indice=trufas.findIndex((item)=>item.id===element.value);
-        sessionStorage.setItem(trufas[indice].id,JSON.stringify(parseInt(e.target[2].value)));
-        document.querySelector('.text-decoration-line-through.valorUd').innerHTML=`$${trufas[indice].valor}`;
-      }
-    })
-  }; 
+class usuario{
+
+  agregarItem(){
+    document.getElementById('formTrufa').onsubmit=(e)=>{
+      Array.from(e.target[1]).forEach(element => {
+        if(element.selected){
+          let indice=trufas.findIndex((item)=>item.id===element.value);
+          sessionStorage.setItem(trufas[indice].id,JSON.stringify(
+            {
+              'cantidad':parseInt(e.target[2].value),
+              'valorUD':trufas[indice].valor,
+            }
+          ));
+        }
+      })
+    }; 
+  }
+
+  muestraPrecio(){
+    document.getElementById('dropdown').onchange=(e)=>{
+      Array.from(e.target).forEach(element => {
+        if(element.selected && element.value!='Seleccione una opcion'){
+          let indice=trufas.findIndex((item)=>item.id===element.value);
+          document.querySelector('.valorUd').innerHTML=`$${trufas[indice].valor}`;
+          document.querySelector('.subtotal').innerHTML=``;
+        }
+      })
+    }; 
+  }
+
+  carrito(){
+    // console.log(JSON.parse(sessionStorage.getItem('corazones1')).cantidad*JSON.parse(sessionStorage.getItem('corazones1')).valorUD);
+    document.querySelector(".badge.bg-dark.text-white.ms-1.rounded-pill").innerHTML=sessionStorage.length-1==-1?0:sessionStorage.length-1;
+  }
 }
 
 
 
-document.getElementById('dropdown').onchange=(e)=>{
-  Array.from(e.target).forEach(element => {
-    if(element.selected && element.value!='Seleccione una opcion'){
-      let indice=trufas.findIndex((item)=>item.id===element.value);
-      document.querySelector('.valorUd').innerHTML=`$${trufas[indice].valor}`;
-      document.querySelector('.subtotal').innerHTML=``;
-    }
-  })
-}; 
+const usuarioActual=new usuario();
+usuarioActual.agregarItem();
+usuarioActual.muestraPrecio();
+usuarioActual.carrito();
 
-agregarItem();
 //contador de items
-document.querySelector(".badge.bg-dark.text-white.ms-1.rounded-pill").innerHTML=sessionStorage.length-1;
