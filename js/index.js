@@ -36,12 +36,13 @@ const trufas=[
 class usuario{
 
   agregarItem(){
-    document.getElementById('formTrufa').onsubmit=(e)=>{
+    document.querySelector('.mt-3.mb-3.formulario').onsubmit=(e)=>{
       Array.from(e.target[1]).forEach(element => {
         if(element.selected){
           let indice=trufas.findIndex((item)=>item.id===element.value);
           sessionStorage.setItem(trufas[indice].id,JSON.stringify(
             {
+              'id':trufas[indice].id,
               'cantidad':parseInt(e.target[2].value),
               'valorUD':trufas[indice].valor,
             }
@@ -65,9 +66,11 @@ class usuario{
 
   carrito(){
     // console.log(JSON.parse(sessionStorage.getItem('corazones1')).cantidad*JSON.parse(sessionStorage.getItem('corazones1')).valorUD);
-    document.querySelector(".badge.bg-dark.text-white.ms-1.rounded-pill").innerHTML=sessionStorage.length-1==-1?0:sessionStorage.length-1;
+    document.querySelector(".badge.bg-dark.text-white.ms-1.rounded-pill.carrito").innerHTML=sessionStorage.length-1==-1?0:sessionStorage.length-1;
   }
+
 }
+
 
 
 
@@ -75,5 +78,6 @@ const usuarioActual=new usuario();
 usuarioActual.agregarItem();
 usuarioActual.muestraPrecio();
 usuarioActual.carrito();
+usuarioActual.muestraCheckOut();
 
 //contador de items
