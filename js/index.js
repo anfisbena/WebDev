@@ -78,6 +78,5 @@ const usuarioActual=new usuario();
 usuarioActual.agregarItem();
 usuarioActual.muestraPrecio();
 usuarioActual.carrito();
-usuarioActual.muestraCheckOut();
 
 //contador de items

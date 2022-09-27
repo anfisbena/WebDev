@@ -17,9 +17,24 @@ class usuario{
     }
     document.getElementById('Total').innerHTML=`$${total}`;
   }
+  
+  submission(){
+    document.querySelector(".needs-validation.submission").onsubmit=(e)=>{
+      e.preventDefault();
+      Swal.fire({
+        title: 'Gracias!',
+        text: 'Esperamos que disfrutes de tu compra',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+    }
+    sessionStorage.clear();
+  }
+
 }
 
 const usuarioActual=new usuario();
 usuarioActual.muestraCheckOut();
+usuarioActual.submission();
 
 //contador de items
