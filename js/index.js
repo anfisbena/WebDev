@@ -1,6 +1,5 @@
 //lista de items
 let totalTrufas,objectPos,subtotal,valorUD,cantidad;
-
 const trufas=[
   {
     id:'balones',
@@ -36,17 +35,21 @@ const trufas=[
 class usuario{
 
   agregarItem(){
-    document.querySelector('.mt-3.mb-3.formulario').onsubmit=(e)=>{
-      Array.from(e.target[1]).forEach(element => {
+    const carrito=sessionStorage.getItem('carrito')==null?[]:
+      JSON.parse(sessionStorage.getItem('carrito'));
+    document.querySelector('.mt-3.mb-3.formulario').onsubmit=(form)=>{
+      Array.from(form.target[1]).forEach(element => {
         if(element.selected){
           let indice=trufas.findIndex((item)=>item.id===element.value);
-          sessionStorage.setItem(trufas[indice].id,JSON.stringify(
-            {
+          let indiceProducto=carrito.findIndex((item)=>item.id===element.value);
+          let producto={
               'id':trufas[indice].id,
-              'cantidad':parseInt(e.target[2].value),
+              'cantidad':parseInt(form.target[2].value),
               'valorUD':trufas[indice].valor,
             }
-          ));
+            indiceProducto==-1?carrito.push(producto):
+              carrito[indiceProducto]=producto;
+          sessionStorage.setItem('carrito',JSON.stringify(carrito));
         }
       })
     }; 
@@ -65,8 +68,8 @@ class usuario{
   }
 
   carrito(){
-    // console.log(JSON.parse(sessionStorage.getItem('corazones1')).cantidad*JSON.parse(sessionStorage.getItem('corazones1')).valorUD);
-    document.querySelector(".badge.bg-dark.text-white.ms-1.rounded-pill.carrito").innerHTML=sessionStorage.length-1==-1?0:sessionStorage.length-1;
+    let carrito=JSON.parse(sessionStorage.carrito);
+    document.querySelector(".badge.bg-dark.text-white.ms-1.rounded-pill.carrito").innerHTML=carrito.length==-1?0:carrito.length;
   }
 
 }
@@ -78,5 +81,4 @@ const usuarioActual=new usuario();
 usuarioActual.agregarItem();
 usuarioActual.muestraPrecio();
 usuarioActual.carrito();
-
 //contador de items
