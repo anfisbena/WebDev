@@ -79,7 +79,6 @@ class usuario{
   agregarItem(){
     const carrito=sessionStorage.getItem('carrito')==null?[]:
       JSON.parse(sessionStorage.getItem('carrito'));
-
     document.querySelector('.mt-3.mb-3.formulario').onsubmit=(form)=>{
       Array.from(form.target[1]).forEach(element => {
         if(element.selected){
@@ -117,8 +116,6 @@ class usuario{
   }
 
 }
-
-
 
 
 const usuarioActual=new usuario();
