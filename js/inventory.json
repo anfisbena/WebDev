@@ -1,0 +1,72 @@
+[
+  {
+    "id":"CHO01",
+    "nombre":"Chocolate Balones",
+    "valor":800
+  },
+  {
+    "id":"CHO02",
+    "nombre":"Chocoratas",
+    "valor":300
+  },
+  {
+    "id":"CHO03",
+    "nombre":"Chocolate Corazones X 1",
+    "valor":400
+  },
+  {
+    "id":"CHO04",
+    "nombre":"Chocolate Corazones X 3",
+    "valor":700
+  },
+  {
+    "id":"CHO05",
+    "nombre":"Chocolate Tulipan",
+    "valor":600
+  },
+  {
+    "id":"CHO06",
+    "nombre":"Chocolate Manzanilla",
+    "valor":600
+  },
+  {
+    "id":"CHO07",
+    "nombre":"Chocolate Orquidea",
+    "valor":900
+  },
+  {
+    "id":"POS01",
+    "nombre":"Postre Arequipe",
+    "valor":2500
+  },
+  {
+    "id":"POS02",
+    "nombre":"Postre Fresa",
+    "valor":2500
+  },
+  {
+    "id":"POS03",
+    "nombre":"Postre Mora",
+    "valor":2500
+  },
+  {
+    "id":"POS04",
+    "nombre":"Postre Chocolate",
+    "valor":2500
+  },
+  {
+    "id":"POS05",
+    "nombre":"Postre Chantilli",
+    "valor":2500
+  },
+  {
+    "id":"POS06",
+    "nombre":"Postre Vainilla",
+    "valor":2500
+  },
+  {
+    "id":"POS07",
+    "nombre":"Postre Limón",
+    "valor":2500
+  }
+]

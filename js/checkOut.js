@@ -26,7 +26,7 @@ class usuario{
       document.querySelector('.list-group-item.d-flex.justify-content-between.listaItems').insertAdjacentHTML("beforebegin",
         `<li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-              <h6 class="my-0 ">${element.id}</h6>
+              <h6 class="my-0 ">${element.nombre}</h6>
               <small class="text-muted">${element.cantidad} UDS, a $${element.valorUD} C/U</small>
             </div>
             <span class="text-muted">$${element.cantidad*element.valorUD}</span>
