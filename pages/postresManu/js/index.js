@@ -100,13 +100,8 @@ class usuario{
 
   muestraPrecio(){
     document.getElementById('dropdown').onchange=(e)=>{
-      Array.from(e.target).forEach(element => {
-        if(element.selected && element.value!='Seleccione una opcion'){
-          let indice=inventario.findIndex((item)=>item.id===element.value);
-          document.querySelector('.valorUd').innerHTML=`$${inventario[indice].valor}`;
-          document.querySelector('.subtotal').innerHTML=``;
-        }
-      })
+      document.querySelector('.valorUd').innerHTML=`$${e.value}`;
+      document.querySelector('.subtotal').innerHTML=``;
     }; 
   }
 
