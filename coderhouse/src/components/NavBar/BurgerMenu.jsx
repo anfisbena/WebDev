@@ -1,3 +1,4 @@
+// Ref took from https://david-mohr.com/blog/react-hamburger-menu-navigation
 import React from 'react';
 import {Box,Button,Drawer,List,ListItemIcon,ListItemButton,ListItemText} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -34,7 +35,7 @@ export default function BurgerMenu () {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>  
-        {listMenu.map((text,index) => (
+        {listMenu.map((text) => (
           <ListItemButton>
             <ListItemIcon>
               {listData(text)}
