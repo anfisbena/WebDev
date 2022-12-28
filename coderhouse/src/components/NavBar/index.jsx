@@ -1,16 +1,15 @@
 import { 
   AppBar,
-  ThemeProvider
-} from "@mui/material"
+  ThemeProvider} from "@mui/material"
 import Theme  from "../Theme.jsx";
-import ToolBarContent from "./toolbar.jsx";
+import MenuBar from "./MenuBar.jsx";
 
 const NavBar=()=>{
 
   return(
     <ThemeProvider theme={Theme}>
       <AppBar position="static">
-        <ToolBarContent/>
+        <MenuBar/>
       </AppBar>
     </ThemeProvider>
   )
