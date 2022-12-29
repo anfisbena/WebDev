@@ -6,6 +6,7 @@ import {
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import BurgerMenu from "./BurgerMenu";
 
+
 const MenuBar=()=>{
   return(
     <Toolbar>
