@@ -1,35 +1,14 @@
 ////////TODO//////////
 //Change bar for the next one https://mui.com/material-ui/react-app-bar/#app-bar-with-responsive-menu
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
+import {AppBar,Avatar,Box,Button,Container,IconButton,Menu,MenuItem,Toolbar,Tooltip,Typography} from "@mui/material";
 import CakeIcon from '@mui/icons-material/Cake';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from './CartWidget.jsx';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const logo='MOCCA CAKES';
-
-const cart=()=>{
-  return(
-    <IconButton edge="start" aria-label="menu">
-      <Typography fontSize={16} component="div" sx={{ flexGrow: 1 }}  className="itemsInCart">
-        1 {/*Here goes the number of items in the cart */}
-      </Typography>          
-      <ShoppingCartIcon/>
-    </IconButton>
-)};
-  
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -145,7 +124,7 @@ function ResponsiveAppBar() {
 {/* USER OPTIONS */}
           <Box sx={{ flexGrow: 0 }}>
 {/* CART */}
-            {cart()}
+            {CartWidget}
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
