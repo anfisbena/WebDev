@@ -1,12 +1,12 @@
 import { Box } from '@mui/system';
-import NavBar from './components/NavBar/index.jsx';
-import LandPage from './components/Board/index.jsx';
+import Header from './components/Header/index.jsx';
+import Main from './components/Main/index.jsx';
 
 function App() {
   return (
-    <Box className="App" borderColor="primary.main" borderTop={4} borderBottom={4}>
-      <NavBar />
-      <LandPage/>
+    <Box className="App">
+      <Header />
+      <Main/>
     </Box>
   );
 }

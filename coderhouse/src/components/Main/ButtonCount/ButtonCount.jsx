@@ -25,4 +25,4 @@ function ButtonCount() {
   )
 }
 
-export default ButtonCOunt
+export default ButtonCount

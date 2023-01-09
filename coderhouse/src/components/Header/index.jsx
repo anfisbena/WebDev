@@ -3,14 +3,14 @@
 import * as React from "react";
 import {AppBar,Avatar,Box,Button,Container,IconButton,Menu,MenuItem,Toolbar,Tooltip,Typography} from "@mui/material";
 import CakeIcon from '@mui/icons-material/Cake';
-import CartWidget from './CartWidget.jsx';
+import CartWidget from './CartWidget/CartWidget.jsx';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const logo='MOCCA CAKES';
 
-function ResponsiveAppBar() {
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -158,4 +158,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Header;
