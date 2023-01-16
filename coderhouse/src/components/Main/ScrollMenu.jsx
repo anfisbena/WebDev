@@ -1,19 +1,17 @@
 import { useState } from 'react';
-import {Tabs,Typography,Tab,Box} from '@mui/material';
+import {Tabs,Tab,Box} from '@mui/material';
+import Endulzar from './Pages/Endulzar.jsx';
+import Compartir from './Pages/Compartir.jsx';
 
 
-
-export default function ScrollableMenu() {
+function ScrollableMenu() {
   const [tabIndex, setTabIndex] = useState(0);
-
-
   const handleChange = (event, newTabIndex) => {
     setTabIndex(newTabIndex);
   };
 
   return (
-    <Box sx={{ 
-      // maxWidth: { xs: 320, sm: 480 }, 
+    <Box sx={{  
       bgcolor: 'background.paper' }}
     >
       <Tabs value={tabIndex} onChange={handleChange} centered>
@@ -22,21 +20,14 @@ export default function ScrollableMenu() {
       </Tabs>
       <Box sx={{ padding: 2 }}>
         {tabIndex === 0 && (
-          <Box>
-            <Typography>The first tab</Typography>
-          </Box>
+          <Endulzar/>
         )}
         {tabIndex === 1 && (
-          <Box>
-            <Typography>The second tab</Typography>
-          </Box>
-        )}
-        {tabIndex === 2 && (
-          <Box>
-            <Typography>The third tab</Typography>
-          </Box>
+          <Compartir/>
         )}
       </Box>
     </Box>
   );
 }
+
+export default ScrollableMenu;
