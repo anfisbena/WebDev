@@ -1,10 +1,24 @@
-import {Box,Typography} from '@mui/material';
+import {Grid} from '@mui/material';
+import ButtonCount from '../ButtonCount/ButtonCount.jsx';
 
 function Compartir(){
   return(
-    <Box>
-      <Typography>The second tab</Typography>
-  </Box>
+    <Grid>
+      <ul>
+        <Grid display='flex'>
+        <li>Palitos de queso</li>
+        <ButtonCount/>
+        </Grid>
+        <Grid display='flex'>
+        <li>Pasteles de Pollo</li>
+        <ButtonCount/>
+        </Grid>
+        <Grid display='flex'>
+        <li>Empanadas</li>
+        <ButtonCount/>
+        </Grid>
+      </ul>
+  </Grid>
   )
 }
 
