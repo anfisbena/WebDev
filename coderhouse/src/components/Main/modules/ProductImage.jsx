@@ -1,11 +1,10 @@
-import { Link } from '@mui/material';
 import Image from 'mui-image';
 
 
 
-function ProductImage({src}){
+function ProductImage({src,url}){
   return (
-    <Link href='./Pages/ProductTemplate.jsx'>
+    <a href={url}>
       <Image
             src={src}
             height="350px"
@@ -20,7 +19,7 @@ function ProductImage({src}){
             shiftDuration={600}
             bgColor="inherit"
             />
-    </Link>
+    </a>
   )
 }
 
