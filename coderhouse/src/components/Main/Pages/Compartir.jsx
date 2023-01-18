@@ -36,8 +36,8 @@ function Compartir(){
   
   return(
     <Grid container>
-      {listItems.map((item)=>(
-        <Grid item display='flex' direction='column'xs={12}>
+      {listItems.map((item,index)=>(
+        <Grid item display='flex' direction='column'xs={12} key={index}>
         <ProductImage
           src={item.src}
           url={item.url}
