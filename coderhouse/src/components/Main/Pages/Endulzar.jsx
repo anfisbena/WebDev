@@ -5,7 +5,7 @@ import {useState,useEffect} from 'react';
 const items=[
   {
     src:"https://images.jumpseller.com/store/bread-cake/4667827/torta_hojarasca_bread_cake_22.jpg?1601152913",
-    url:'https://www.mercadolibre.com.ar/'
+    url:'#'
   },
   {
     src:"https://hispanaglobal.com/wp-content/uploads/2020/10/Candy-Charcuterie-Board-Set-5-11-rotated.jpg",
