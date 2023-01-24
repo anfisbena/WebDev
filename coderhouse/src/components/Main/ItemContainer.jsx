@@ -1,8 +1,8 @@
 import {Box,Slide} from '@mui/material';
-import ScrollableMenu from './ScrollMenu.jsx';
+import TabMenu from './modules/TabMenu.jsx';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Theme from './Theme.jsx';
-import Header from '../Header/index.jsx';
+import Header from '../Header/NavBar.jsx';
 
 export default function Main(){
   return(
@@ -23,7 +23,7 @@ export default function Main(){
       </Grid>
       
       <Grid>
-        <ScrollableMenu/>
+        <TabMenu/>
       </Grid>
     </Box>
   )

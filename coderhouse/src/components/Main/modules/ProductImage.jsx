@@ -1,3 +1,5 @@
+//props for img in root
+
 import Image from 'mui-image';
 
 function ProductImage({src,url}){

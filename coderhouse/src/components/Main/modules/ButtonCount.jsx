@@ -1,3 +1,5 @@
+//Generates a button with counter 0-infinite
+
 import {useState} from 'react';
 import {Button, ButtonGroup, TextField} from '@mui/material';
 

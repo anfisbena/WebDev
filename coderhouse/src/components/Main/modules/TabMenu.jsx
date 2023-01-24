@@ -1,10 +1,12 @@
+//tab menu from root
+
 import { useState } from 'react';
 import {Tabs,Tab,Box} from '@mui/material';
-import Endulzar from './Pages/Endulzar.jsx';
-import Compartir from './Pages/Compartir.jsx';
+import Endulzar from '../Pages/Endulzar.jsx';
+import Compartir from '../Pages/Compartir.jsx';
 
 
-function ScrollableMenu() {
+function TabMenu() {
   const [tabIndex, setTabIndex] = useState(0);
   const handleChange = (event, newTabIndex) => {
     setTabIndex(newTabIndex);
@@ -30,4 +32,4 @@ function ScrollableMenu() {
   );
 }
 
-export default ScrollableMenu;
+export default TabMenu;

@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
-import Image from './main.png';
+import Image from './images/main.png';
 
 const Theme = createTheme();
   Theme.palette= 

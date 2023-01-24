@@ -1,13 +1,13 @@
-import ItemListContainer from './components/Main/index.jsx';
+import ItemListContainer from './components/Main/ItemContainer.jsx';
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
-import ProductTemplate from './components/Main/Pages/ProductTemplate.jsx';
+import ItemDetail from './components/Main/Pages/ItemDetail.jsx';
 //quede en min 37
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
-        <Route path='/item' element={<ProductTemplate/>}/>
+        <Route path='/item' element={<ItemDetail/>}/>
       </Routes>
     </BrowserRouter>
   );
