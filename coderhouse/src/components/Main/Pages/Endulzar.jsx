@@ -5,15 +5,15 @@ import {useState,useEffect} from 'react';
 const items=[
   {
     src:"https://images.jumpseller.com/store/bread-cake/4667827/torta_hojarasca_bread_cake_22.jpg?1601152913",
-    url:'#'
+    url:'/item'
   },
   {
     src:"https://hispanaglobal.com/wp-content/uploads/2020/10/Candy-Charcuterie-Board-Set-5-11-rotated.jpg",
-    url:'#'
+    url:'/item'
   },
   {
     src:"https://3.bp.blogspot.com/-8f_jLhkiTaM/T19SX2KspHI/AAAAAAAAB4c/0_6G_2hT7vw/s1600/galletas-caseras-varias.JPG",
-    url:'#'
+    url:'/item'
   }
 ]
 

@@ -1,7 +1,5 @@
 import Image from 'mui-image';
 
-
-
 function ProductImage({src,url}){
   return (
     <a href={url}>

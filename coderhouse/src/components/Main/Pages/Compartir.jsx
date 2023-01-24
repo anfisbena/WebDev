@@ -5,15 +5,15 @@ import {useState,useEffect} from 'react';
 const items=[
   {
     src:"https://http2.mlstatic.com/200-deditos-de-queso-para-tus-fiestas-D_NQ_NP_895541-MCO25940946344_092017-F.jpg",
-    url:'https://www.mercadolibre.com.ar/'
+    url:'/item'
   },
   {
     src:"https://www.sweetysalado.com/wp-content/uploads/2016/09/DSC_0145N.jpg",
-    url:'#'
+    url:'/item'
   },
   {
     src:"https://eatlikepinoy.com/wp-content/uploads/2020/05/beef-empanada-1024x683.jpg",
-    url:'#'
+    url:'/item'
   }
 ]
 
