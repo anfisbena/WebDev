@@ -8,7 +8,7 @@ function Endulzar(){
 
   const getListItems=new Promise((resolve)=>{
     setTimeout(() => {
-      resolve(items)
+      resolve(items.endulzar)
     }, 2000);
   })
 
@@ -21,14 +21,7 @@ function Endulzar(){
 
   return(
     <Grid container>
-      {listItems.map((item)=>(
-        <Grid item display='flex' direction='column' xs={12} key={item.id}>
-          <ProductImage
-            src={item.src}
-            url={item.id} 
-            />
-        </Grid>
-      ))}
+          <ProductImage Item={listItems} category="endulzar"/>
     </Grid>
   )
 }
