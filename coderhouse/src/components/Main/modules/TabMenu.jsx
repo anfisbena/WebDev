@@ -8,9 +8,7 @@ import Compartir from '../Pages/Compartir.jsx';
 
 function TabMenu() {
   const [tabIndex, setTabIndex] = useState(0);
-  const handleChange = (event, newTabIndex) => {
-    setTabIndex(newTabIndex);
-  };
+  const handleChange = (event, newTabIndex) => {setTabIndex(newTabIndex)};
 
   return (
     <Box sx={{  

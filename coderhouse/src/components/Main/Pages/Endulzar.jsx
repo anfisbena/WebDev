@@ -21,7 +21,7 @@ function Endulzar(){
 
   return(
     <Grid container>
-          <ProductImage Item={listItems} category="endulzar"/>
+          <ProductImage objectList={listItems} category="endulzar"/>
     </Grid>
   )
 }

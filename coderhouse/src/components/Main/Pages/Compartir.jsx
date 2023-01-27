@@ -21,7 +21,7 @@ function Compartir(){
 
   return(
     <Grid container>
-          <ProductImage Item={listItems} category="compartir"/>
+          <ProductImage objectList={listItems} category="compartir"/>
     </Grid>
   )
 }

@@ -1,6 +1,6 @@
 ////////TODO//////////
 //Change bar for the next one https://mui.com/material-ui/react-app-bar/#app-bar-with-responsive-menu
-import * as React from "react";
+import {useState} from "react";
 import {AppBar,Avatar,Box,Button,Container,IconButton,Menu,MenuItem,Toolbar,Tooltip,Typography} from "@mui/material";
 import CakeIcon from '@mui/icons-material/Cake';
 import CartWidget from './CartWidget/CartWidget.jsx';
@@ -8,11 +8,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-const logo='MOCCA CAKES';
+const StoreName='MOCCA CAKES';
+const logo=null;
 
 function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -49,7 +50,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            {logo}
+            {StoreName}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

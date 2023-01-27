@@ -17,11 +17,10 @@ export default function Main(){
         justifyContent="flex-end"
         alignItems="center"
       >
-      <Slide direction='left' in={true} timeout={1000} mountOnEnter unmountOnExit>
-        <img src='https://pngimg.com/uploads/cake/cake_PNG13097.png' alt='main' z-index='1' width='35%'/>
-      </Slide>
+        <Slide direction='left' in={true} timeout={1000} mountOnEnter unmountOnExit>
+          <img src='https://pngimg.com/uploads/cake/cake_PNG13097.png' alt='main' z-index='1' width='35%'/>
+        </Slide>
       </Grid>
-      
       <Grid>
         <TabMenu/>
       </Grid>

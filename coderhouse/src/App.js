@@ -1,6 +1,7 @@
-import ItemListContainer from './components/Main/ItemContainer.jsx';
+import ItemListContainer from './components/Main/ItemListContainer.jsx';
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import ItemDetail from './components/Main/Pages/ItemDetail.jsx';
+import CheckOut from './components/Main/Pages/CheckOut.jsx';
 //quede en min 37
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path=':categoria/:id' element={<ItemDetail/>}/>
+        <Route path='/checkout' element={<CheckOut/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -1,14 +1,14 @@
 //props for img in root
 
 import Image from 'mui-image';
-import { Link } from 'react-router-dom';
+import {Link} from '@mui/material';
 import {Grid} from '@mui/material';
 
-function ProductImage({Item,category}){
+function ProductImage({objectList,category}){
   return (
-    Item.map((item)=>(
+    objectList.map((item)=>(
       <Grid container display='flex' direction='column' key={item.id}>
-        <Link to={`${category}/${item.id}`}>
+        <Link href={`${category}/${item.id}`}>
           <Image
             src={item.src}
             height="350px"
