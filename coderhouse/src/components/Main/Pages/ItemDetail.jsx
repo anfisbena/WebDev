@@ -5,9 +5,18 @@ import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Items from '../../json/items.json'; //bdd local
 
-function LoadItem(){
+
+
+function ItemDetail(){
   const {categoria,id}=useParams(); //captura parametros del url en este caso categoria e id
   const [Item,setItem]=useState([]);
+  const [qty,setQty]=useState(0);
+  const [flavour,setFlavour]=useState('sabor');
+  const handleQty= (event)=>setQty(event.target.value)
+  const handleFlavour = (event)=>setFlavour(event.target.value);
+  const SubmitItem=()=>{console.log(`Agregaste ${qty} items`)}
+
+
   
   const getItem=new Promise((resolve)=>{
     setTimeout(() => {
@@ -23,17 +32,7 @@ function LoadItem(){
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  
-  return Item;
-}
 
-function ItemDetail(){
-  const Item=LoadItem();
-  const [qty,setQty]=useState(0);
-  const [flavour,setFlavour]=useState('sabor');
-  const handleQty= (event)=>setQty(event.target.value)
-  const handleFlavour = (event)=>setFlavour(event.target.value);
-  const SubmitItem=()=>{console.log(`Agregaste ${qty} items`)}
 
   return (
     <Grid container>
