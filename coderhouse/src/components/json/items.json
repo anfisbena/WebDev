@@ -32,6 +32,7 @@
       "src":"https://http2.mlstatic.com/200-deditos-de-queso-para-tus-fiestas-D_NQ_NP_895541-MCO25940946344_092017-F.jpg",
       "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "precio": 15000,
+      "sabor":["Solo queso","Queso+Guayaba"],
       "tamaño":["pequeña(personal)","mediana(2 personas)","grande(4 personas)"]
     },
     {
@@ -40,6 +41,7 @@
       "src":"https://www.sweetysalado.com/wp-content/uploads/2016/09/DSC_0145N.jpg",
       "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "precio": 10000,
+      "sabor":["Solo pollo"],
       "tamaño":["5 porciones","10 porciones","20 porciones"]
     },
     {      
@@ -48,6 +50,7 @@
       "src":"https://eatlikepinoy.com/wp-content/uploads/2020/05/beef-empanada-1024x683.jpg",
       "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "precio": 10000,
+      "sabor":["Solo papa","Papa+carne"],
       "tamaño":["5 porciones","10 porciones","20 porciones"]
     }
   ]
