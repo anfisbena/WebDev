@@ -51,7 +51,7 @@ function ItemDetail(){
           <Box sx={{ minWidth: 120 }} display='flex' p={1}>
             <FormControl>
               <InputLabel id="demo-simple-select-label">Age</InputLabel>
-              {/* <Select
+              <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={flavour}
@@ -61,16 +61,16 @@ function ItemDetail(){
               >
                 <MenuItem value={''}>Selecciona</MenuItem>
                 {
-                  Item.sabor.map((value)=>(
+                  Item.sabor?.map((value)=>(
                     <MenuItem value={value}>{value}</MenuItem>
                   ))
                 }
-              </Select> */}
+              </Select>
             </FormControl>
           </Box>
         </Grid>
         <Grid container display='flex' alignItems='center' justifyContent='space-evenly'>
-          <Typography variant='h5'>{`$ ${Item.precio}`}</Typography>
+          <Typography variant='h5'>{`$ ${Item.precio?Item.precio:''}`}</Typography>
           <Grid display='flex' direction='column'>
             <TextField
               id="outlined-number"
