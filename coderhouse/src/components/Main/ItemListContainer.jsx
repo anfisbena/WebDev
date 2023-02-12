@@ -2,12 +2,10 @@ import {Box,Slide} from '@mui/material';
 import TabMenu from './modules/TabMenu.jsx';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Theme from './Theme.jsx';
-import Header from '../Header/NavBar.jsx';
 
 export default function Main(){
   return(
     <Box sx={{ flexGrow: 1 }}>
-      <Header/>
       <Grid 
         container 
         disableEqualOverflow 

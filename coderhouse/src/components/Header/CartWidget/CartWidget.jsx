@@ -1,17 +1,23 @@
-import {IconButton,Typography} from "@mui/material";
+import {IconButton} from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {Link} from "@mui/material";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 
-const CartWidget=()=>{
-  return(
-    <Link href='/checkout'>
+
+
+function CartWidget(){
+    const {cart}=useContext(CartContext)
+    console.log(cart.length)
+    return (
+        <Link href='/checkout'>
       <IconButton edge="start" aria-label="menu" >
-        <Typography fontSize={16} component="div" sx={{ flexGrow: 1 }}  className="itemsInCart">
-          420 {/*Here goes the number of items in the cart */}
-        </Typography>          
+        {cart.length}
         <ShoppingCartIcon/>
       </IconButton>
     </Link>
-)};
+    )
 
-export default CartWidget();
+};
+
+export default CartWidget;
