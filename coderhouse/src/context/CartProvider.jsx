@@ -25,7 +25,7 @@ const CartProvider = ({children}) => {
   };
   
   const clear=()=>setCart([])
-  const getCart=sessionStorage.getItem('cart')
+  const getCart=sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):'[]'
   return (
     <CartContext.Provider  value={{cart,addItem,clear,getCart}}>
       {children}
