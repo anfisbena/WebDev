@@ -6,9 +6,11 @@ import { useState } from "react"
 import { CartContext } from "./CartContext.jsx"
 
 const CartProvider = ({children}) => {
+  
   const [cart,setCart]=useState([])
   
   const addItem=(item)=>{
+    
     const newItem={
       id:item.id,
       name:item.name,
@@ -17,13 +19,15 @@ const CartProvider = ({children}) => {
       size:item.size,
       quantity:item.quantity
     };
+    
     setCart([...cart,newItem])
+    sessionStorage.setItem('cart', JSON.stringify(cart));
   };
-
+  
   const clear=()=>setCart([])
-
+  const getCart=sessionStorage.getItem('cart')
   return (
-    <CartContext.Provider  value={{cart,addItem,clear}}>
+    <CartContext.Provider  value={{cart,addItem,clear,getCart}}>
       {children}
     </CartContext.Provider>
   )
