@@ -8,7 +8,9 @@ import { CartContext } from "./CartContext.jsx"
 const CartProvider = ({children}) => {
   
   const [cart,setCart]=useState([])
-  
+  const clear=()=>setCart([])
+  const getCart=sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):'[]'
+
   const addItem=(item)=>{
     
     const newItem={
@@ -23,9 +25,7 @@ const CartProvider = ({children}) => {
     setCart([...cart,newItem])
     sessionStorage.setItem('cart', JSON.stringify(cart));
   };
-  
-  const clear=()=>setCart([])
-  const getCart=sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):'[]'
+      
   return (
     <CartContext.Provider  value={{cart,addItem,clear,getCart}}>
       {children}
