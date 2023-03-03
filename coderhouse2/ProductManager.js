@@ -2,7 +2,7 @@ import fs from 'fs';
 
 class ProductManager{
   constructor(){
-    this.path='./items.json';    
+    this.path='./items.json';
   }
 
   //false=send object / true=show on console
