@@ -1,35 +1,62 @@
 class ProductManager{
 
   constructor(){
-    this.products=[];
+    this.path='./items.json';
+    this.fs=require('fs');
   }
 
-  addProduct=(title,description,price,thumbnail,code,stock)=>{
-    const ItemIndex=this.products.findIndex(item=>item.id===id)
-    const product={
-      id:this.products.length+1,
-      title:title,
-      description:description,
-      price:price,
-      thumbnail:thumbnail,
-      code:code,
-      stock:stock};
+  addProduct=async (title,description,price,thumbnail,code,stock)=>{
+    !title||!description||!price||!thumbnail||!code||!stock
+      ?console.log('Porfavor complete todos los campos')
+      :this.fs.appendFile(this.path,
+        {
+          id:this.getProducts().length + 1,
+          title: title,
+          description: description,
+          price: price,
+          thumbnail: thumbnail,
+          code: code,
+          stock: stock
+        }
+      );  
+  }
 
-      ItemIndex!=-1
-      ?this.products[ItemIndex]
-      :this.products.push(product);
-    }
-
-  getProducts=()=>(
-    this.products
+  getProducts=async()=>(
+    JSON.parse(this.fs.promises.readFile(this.path,'utf-8',(err,data)=>(err??data)))
   )
 
   getProductsById=(id)=>(
-    this.products.find(item=>item.id===id)??'Not Found'
+    this.getProducts().find(item=>item.id===id)??'Id no existente'
   )
+
+  updateProduct=(id,title,description,price,thumbnail,code,stock)=>{
+    this.products.findIndex(item=>item.id===id)===-1
+      ?console.log('Id no existente')
+      :this.products[id]=
+        { 
+          id:id,
+          title:title,
+          description:description,
+          price:price,
+          thumbnail:thumbnail,
+          code:code,
+          stock:stock
+        };
+    }
+
+  deleteProduct=(id)=>{
+    this.products.findIndex(item=>item.id===id)===-1
+      ?console.log('Id no existente')
+      :this.products.splice(id,1)
+  }
+
 }
 
-// const laputa = new ProductManager();
-// laputa.addProduct('casa','rico',null,null,50)
-// console.log(laputa.getProducts())
-// console.log(laputa.getProductsById(1))
+const casas = new ProductManager();
+casas.addProduct('producto prueba','Este es un producto prueba',200,'Sin imagen','abc123',25)
+console.log(casas.getProducts())
+console.log(casas.getProductsById(21))
+casas.updateProduct(1,'producto prueba','Este es un producto prueba ACTUALIZADO',200,'Sin imagen','abc123',25)
+console.log(casas.getProductsById(1))
+casas.deleteProduct(1)
+console.log(casas.getProductsById(1))
