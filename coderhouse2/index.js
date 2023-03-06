@@ -1,4 +1,4 @@
-import ProductManager from './ProductManager.js';
+import ProductManager from './modules/ProductManager.js';
 
 const casiQueNo=new ProductManager()
 casiQueNo.getProducts(true)
