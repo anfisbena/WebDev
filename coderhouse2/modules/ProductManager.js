@@ -1,46 +1,63 @@
 import fs from 'fs';
 
 export default class ProductManager{
-  constructor(){
-    this.path='./database/products.json';
+  constructor(path){
+    this.path=path;
+    this.products=null;
   }
   
   //false=send object / true=show on console
-  getProducts=async(showInConsole)=>(    
-    await fs.promises.readFile(this.path,'utf-8',(err,data)=>(err??data))
-      .then(obj=>JSON.parse(obj))
-      .then(obj=>showInConsole?console.log(obj):obj)
-  )
-
-  addProduct=(title,description,price,thumbnail,code,stock)=>{
-    !title||!description||!price||!thumbnail||!code||!stock
-      ?console.log('Porfavor complete todos los campos')
-      :this.getProducts(false)
-        .then(obj=>[...obj,
-          { 
-            id: obj.length!==0?obj[obj.length-1].id+1:obj.length+1,
-            title:title,
-            description:description,
-            price:price,
-            thumbnail:thumbnail,
-            code:code,
-            stock:stock
-          }
-        ])
-        .then(async obj=>await fs.promises.writeFile(this.path,JSON.stringify(obj,null,"\t"),(err,data)=>err??data))
+  getProducts=async()=>{
+    try{
+      const getProducts=await fs.promises.readFile(this.path,'utf-8')
+      this.products=JSON.parse(getProducts)
+    }
+    catch(err){console.log(err)}
   }
 
-  getProductsById=async(id)=>(
-    await this.getProducts(false)
-      .then(obj=>obj.find(item=>item.id===id)??console.log('Id no existente'))
-  )
+  addProduct=async(title,description,price,thumbnail,code,stock)=>{
+    if(!title||!description||!price||!thumbnail||!code||!stock){
+      console.log('Porfavor complete todos los campos')
+    }
+    else{
+      this.products??await this.getProducts()
+      let newProduct={ 
+        id: this.products.length===0
+          ?1
+          :this.products[this.products.length-1].id+1,
+        title:title,
+        description:description,
+        price:price,
+        thumbnail:thumbnail,
+        code:code,
+        stock:stock
+      }
 
-  updateProduct=(id,title,description,price,thumbnail,code,stock)=>{
-    this.getProducts(false)
-      .then(obj=>obj.findIndex(item=>item.id===id)===-1||undefined
-        ?console.log('Id no existente')
-        :obj[id]=
-        { 
+      try{
+        await fs.promises.writeFile(this.path,JSON.stringify([...this.products,newProduct],null,"\t"),(err,data)=>err??data)
+      }
+      catch(err){ console.log(err)}
+    }
+  }
+
+  getProductsById=async(id)=>{
+    this.products??await this.getProducts()
+    try{
+      this.products.find(item=>item.id===id)??console.log('Id no existente')
+    }
+    catch(err){console.log(err)}
+  }
+
+  updateProduct=async(id,title,description,price,thumbnail,code,stock)=>{
+    this.products??await this.getProducts()
+    let Id=this.products.find(item=>item.id===id)
+
+    try{
+      if(Id===-1){
+        console.log('Id no existente')
+      }
+      else{
+        this.products[Id]={ 
           id:id,
           title:title,
           description:description,
@@ -49,17 +66,24 @@ export default class ProductManager{
           code:code,
           stock:stock
         }
-      )
-      .then(async obj=>await fs.promises.writeFile(this.path,JSON.stringify(obj),(err,data)=>err??data)) //queDe ACA
+        await fs.promises.writeFile(this.path,JSON.stringify(this.products),(err,data)=>err??data)
+      }
+    }
+    catch(err){console.log(err)} //queDe ACA
   }
 
-  deleteProduct=(id)=>{
-    this.getProducts(false)
-    .then(obj.findIndex(item=>item.id===id)===-1||console.log('Id no existente'))
-      ?console.log('Id no existente')
-      :obj.splice(id,1)
-    .then(async obj=>await fs.promises.writeFile(this.path,JSON.stringify(obj),(err,data)=>err??data))
+  deleteProduct=async(id)=>{
+    this.products??await this.getProducts()
+    let Id=this.products.findIndex(item=>item.id===id);
+    try{
+      if(Id===-1){
+        console.log('Id no existente')
+      }
+      else{
+        this.products.splice(Id,1)
+        await fs.promises.writeFile(this.path,JSON.stringify(this.products),(err,data)=>err??data)
+      }
+    }
+    catch(err){console.log(err)}
   }
 }
-
-
