@@ -4,7 +4,16 @@ import { useState,useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import Items from '../../json/items.json'; //bdd local
 import {CartContext} from '../../../context/CartContext.jsx'
+import {getFirestore,getDocs,collection} from 'firebase/firestore';
 
+//QUEDE EN FIREBASE 1  1:05 https://drive.google.com/file/d/1d15mlpU_x0Kz7tzTB4wijOmWF8V-PhdQ/view
+const getProduct=()=>{
+  const db=getFirestore();
+  const query=collection(db,'items');
+  const getData=getDocs(query)
+    .then(docList=>docList.find(doc=>doc.id==='HERE GOES THE ID'))
+    .catch(err=>console.log(err))
+}
 
 
 function ItemDetail(){
