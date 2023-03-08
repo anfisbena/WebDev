@@ -6,7 +6,7 @@ import CakeIcon from '@mui/icons-material/Cake';
 import CartWidget from './CartWidget/CartWidget.jsx';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ["Products", "Pricing", "Blog"];
+// const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const StoreName='MOCCA CAKES';
 const logo=null;
@@ -82,11 +82,11 @@ function Header() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
             </Menu>
           </Box>
 {/* LOGO */}
@@ -111,7 +111,7 @@ function Header() {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -119,7 +119,7 @@ function Header() {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
             
           </Box>
 {/* USER OPTIONS */}

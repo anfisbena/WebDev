@@ -9,7 +9,7 @@ const CartProvider = ({children}) => {
   
   const [cart,setCart]=useState([])
   const clear=()=>setCart([])
-  const getCart=sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):'[]'
+  const getCart=sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):sessionStorage.setItem('cart', JSON.stringify([]));
 
   const addItem=(item)=>{
     
