@@ -11,6 +11,7 @@ export default class ProductManager{
     try{
       const getProducts=await fs.promises.readFile(this.path,'utf-8')
       this.products=JSON.parse(getProducts)
+      return this.products
     }
     catch(err){console.log(err)}
   }
