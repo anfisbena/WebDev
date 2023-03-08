@@ -2,23 +2,15 @@ import { Button, Grid, Typography,TextField, Select, MenuItem, Box, FormControl,
 import Image from 'mui-image';
 import { useState,useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import Items from '../../json/items.json'; //bdd local
 import {CartContext} from '../../../context/CartContext.jsx'
-import {getFirestore,getDocs,collection} from 'firebase/firestore';
+import firebase from '../../json/firebase.jsx'
+
 
 //QUEDE EN FIREBASE 1  1:05 https://drive.google.com/file/d/1d15mlpU_x0Kz7tzTB4wijOmWF8V-PhdQ/view
-const getProduct=()=>{
-  const db=getFirestore();
-  const query=collection(db,'items');
-  const getData=getDocs(query)
-    .then(docList=>docList.find(doc=>doc.id==='HERE GOES THE ID'))
-    .catch(err=>console.log(err))
-}
-
 
 function ItemDetail(){
   const [loading,setLoading]=useState(true)
-  const {categoria,id}=useParams(); //captura parametros del url en este caso categoria e id
+  const {id}=useParams(); //captura parametros del url en este caso categoria e id
   const [Item,setItem]=useState([]);
   const [qty,setQty]=useState(1);
   const handleQty= (event)=>setQty(event.target.value)
@@ -33,14 +25,9 @@ function ItemDetail(){
     quantity:qty
   }
 
-  const getItem=new Promise((resolve)=>{
-    setTimeout(() => {
-      resolve(Items[categoria])
-    }, 2000);
-  })
   //useEffect que llama a la promesa
   useEffect(()=>{
-    getItem
+    firebase
       .then((response)=>response.find(item=>item.id===id))
       .then((db)=>{ 
         setItem(db)

@@ -1,19 +1,14 @@
 import {Grid} from '@mui/material';
 import ProductImage from '../modules/ProductImage.jsx';
 import {useState,useEffect} from 'react';
-import items from '../../json/items.json';
+import firebase from '../../json/firebase.jsx'
 
 function Compartir(){
   const [listItems,setListItems]=useState([]);
 
-  const getListItems=new Promise((resolve)=>{
-    setTimeout(() => {
-      resolve(items.compartir)
-    }, 2000);
-  })
-
   useEffect(()=>{
-    getListItems
+    firebase
+      .then((response)=>response.filter(val=>val.category==='compartir'))
       .then((response)=>setListItems(response))
       .catch((error)=>console.log(error))
       // eslint-disable-next-line react-hooks/exhaustive-deps
