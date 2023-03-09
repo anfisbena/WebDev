@@ -4,15 +4,17 @@ import ProductManager from '../modules/ProductManager.js';
 //Declaracion de variables
 const app=express()
 const ProdMan=new ProductManager('./database/products.json')
-let caca=async()=>{try{await ProdMan.getProducts()}catch(err){console.log(err)}}
-console.log(caca())
-// ProdMan.addProduct('producto prueba','Este es un producto prueba',200,'Sin imagen','abc123',25)
 
 
+app.get('/products',async(req,res)=>{
+  let limit=req.query.limit;
+  const productos=await ProdMan.getProducts()
+  let productLimit=productos.slice(0,limit||productos.length)
+  res.json(productLimit)
+})
+app.get('/products/:pid',async(req,res)=>{
+  let id=req.params.id
+  res.json(await ProdMan.getProductsById(id))
+})
 
-
-app.get('/bienvenida',(req,res)=>res.send('<h1 style="color:blue">LISTA usuarios</h1>'))
-app.get('/usuario',(req,res)=>res.send())
-
-
-app.listen(8080,()=>console.log('te escucho en el 8080 papu'))
+app.listen(420,()=>console.log('te escucho en el 420 papu'))
