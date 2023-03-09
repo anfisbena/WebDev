@@ -6,14 +6,21 @@ export default class ProductManager{
     this.products=null;
   }
   
-  //false=send object / true=show on console
-  getProducts=async()=>{
+  init=async()=>{
     try{
-      const getProducts=await fs.promises.readFile(this.path,'utf-8')
-      this.products=JSON.parse(getProducts)
+      const init=await fs.promises.readFile(this.path,'utf-8')
+      this.products=JSON.parse(init)
       return this.products
     }
     catch(err){console.log(err)}
+  }
+
+  getProducts=async()=>{
+    this.products??await this.init()
+    try{
+      return this.products
+    }
+    catch(err){console.log(err)} 
   }
 
   addProduct=async(title,description,price,thumbnail,code,stock)=>{
@@ -21,7 +28,7 @@ export default class ProductManager{
       console.log('Porfavor complete todos los campos')
     }
     else{
-      this.products??await this.getProducts()
+      this.products??await this.init()
       let newProduct={ 
         id: this.products.length===0
           ?1
@@ -42,7 +49,7 @@ export default class ProductManager{
   }
 
   getProductsById=async(id)=>{
-    this.products??await this.getProducts()
+    this.products??await this.init()
     try{
       this.products.find(item=>item.id===id)??console.log('Id no existente')
     }
@@ -50,7 +57,7 @@ export default class ProductManager{
   }
 
   updateProduct=async(id,title,description,price,thumbnail,code,stock)=>{
-    this.products??await this.getProducts()
+    this.products??await this.init()
     let Id=this.products.find(item=>item.id===id)
 
     try{
@@ -74,7 +81,7 @@ export default class ProductManager{
   }
 
   deleteProduct=async(id)=>{
-    this.products??await this.getProducts()
+    this.products??await this.init()
     let Id=this.products.findIndex(item=>item.id===id);
     try{
       if(Id===-1){

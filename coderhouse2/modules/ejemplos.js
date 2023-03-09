@@ -1,5 +1,5 @@
-import ProductManager from './modules/ProductManager.js';
-import userManager from './modules/userManager.js';
+import ProductManager from './ProductManager.js';
+import userManager from './userManager.js';
 import express from 'express';
 
 const app=express()
@@ -9,7 +9,7 @@ const productPath='./database/products.json';
 
 const product=new ProductManager(productPath)
 // product.getProducts()
-// product.addProduct('producto prueba','Este es un producto prueba',200,'Sin imagen','abc123',25)
+product.addProduct('producto prueba','Este es un producto prueba',200,'Sin imagen','abc123',25)
 // product.getProductsById(1)
 // product.updateProduct(1,'producto prueba ACTUALIZADO','Este es un producto prueba ACTUALIZADO',200,'Sin imagen','abc123',25)
 
