@@ -49,23 +49,19 @@ export default class ProductManager{
     try{
       const productList=await this.getProducts()
       let Id=productList.find(item=>item.id===id)
-      
-      if(Id===-1){
-        console.log('Id no existente')
+      Id===-1?console.log('Id no existente'):productList[Id]={
+        id:id,
+        title:title,
+        description:description,
+        price:price,
+        thumbnail:thumbnail,
+        code:code,
+        stock:stock
       }
-      else{
-        productList[Id]={ 
-          id:id,
-          title:title,
-          description:description,
-          price:price,
-          thumbnail:thumbnail,
-          code:code,
-          stock:stock
-        }
+
         await fs.promises.writeFile(this.path,JSON.stringify(productList),(err,data)=>err??data)
       }
-    }
+    
     catch(err){console.log(err)} //queDe ACA
   }
 

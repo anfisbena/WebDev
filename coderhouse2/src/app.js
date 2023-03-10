@@ -12,9 +12,10 @@ app.get('/products',async(req,res)=>{
   let productLimit=productos.slice(0,limit||productos.length)
   res.json(productLimit)
 })
-app.get('/products/:pid',async(req,res)=>{
-  let id=req.params.id
+app.get('/products/:pid',
+async(req,res)=>{
+  let id=parseInt(req.params.pid)
   res.json(await ProdMan.getProductsById(id))
 })
 
-app.listen(420,()=>console.log('te escucho en el 420 papu'))
+app.listen(8080,()=>console.log('te escucho en el 420 papu'))
