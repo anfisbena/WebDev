@@ -4,6 +4,7 @@ import ProductManager from '../modules/ProductManager.js';
 //Declaracion de variables
 const app=express()
 const ProdMan=new ProductManager('./database/products.json')
+const PUERTO=8080;
 
 
 app.get('/products',async(req,res)=>{
@@ -18,4 +19,4 @@ async(req,res)=>{
   res.json(await ProdMan.getProductsById(id))
 })
 
-app.listen(8080,()=>console.log('te escucho en el 420 papu'))
+app.listen(PUERTO,()=>console.log(`te escucho en http://localhost:${PUERTO}`))
