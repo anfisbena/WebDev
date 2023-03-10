@@ -19,4 +19,4 @@ async(req,res)=>{
   res.json(await ProdMan.getProductsById(id))
 })
 
-app.listen(PUERTO,()=>console.log(`te escucho en http://localhost:${PUERTO}`))
+app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http://localhost:${PUERTO}`))
