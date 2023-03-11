@@ -11,12 +11,15 @@ app.get('/products',async(req,res)=>{
   let limit=req.query.limit;
   const productos=await ProdMan.getProducts()
   let productLimit=productos.slice(0,limit||productos.length)
+  
   res.json(productLimit)
 })
-app.get('/products/:pid',
-async(req,res)=>{
-  let id=parseInt(req.params.pid)
-  res.json(await ProdMan.getProductsById(id))
+
+app.get('/products/:id',async(req,res)=>{
+  let id=parseInt(req.params.id)
+  let response=await ProdMan.getProductsById(id)
+  
+  res.json(response)
 })
 
 app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http://localhost:${PUERTO}`))
