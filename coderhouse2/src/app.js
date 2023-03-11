@@ -1,3 +1,5 @@
+//quede 1:04
+
 import express from 'express';
 import ProductManager from '../modules/ProductManager.js';
 
@@ -8,15 +10,16 @@ const PUERTO=8080;
 
 
 app.get('/products',async(req,res)=>{
-  let limit=req.query.limit;
   const productos=await ProdMan.getProducts()
+
+  let limit=req.query.limit;
   let productLimit=productos.slice(0,limit||productos.length)
-  
+
   res.json(productLimit)
 })
 
-app.get('/products/:id',async(req,res)=>{
-  let id=parseInt(req.params.id)
+app.get('/products/:pid',async(req,res)=>{
+  let id=parseInt(req.params.pid)
   let response=await ProdMan.getProductsById(id)
   
   res.json(response)

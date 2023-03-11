@@ -54,7 +54,7 @@ export default class ProductManager{
 
   updateProduct=async(id,title,description,price,thumbnail,code,stock)=>{
     const productList=await this.getProducts()
-    let Id=productList.find(item=>item.id===id)
+    let Id=productList.findIndex(item=>item.id===id)
     let newProduct=productList[Id]=
     {
       id:id,
