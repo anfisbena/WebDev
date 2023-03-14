@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "129276b5-daaf-45d2-87d1-d95504660c6b",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/api/products",
+    "url": "http://localhost:8080/api/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-03-14T21:41:25.340Z",
+    "modified": "2023-03-14T21:41:25.340Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "1b557a72-d460-49b1-af69-a01ba60ac463",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/api/products",
+    "url": "http://localhost:8080/api/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-03-14T21:46:08.760Z",
+    "modified": "2023-03-14T22:55:58.718Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"Zapatos Caros\",\n  \"description\":\"Lorem Ipsum\",\n  \"price\":5000,\n  \"thumbnail\":\"no hay\",\n  \"code\":123420,\n  \"stock\":500\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
