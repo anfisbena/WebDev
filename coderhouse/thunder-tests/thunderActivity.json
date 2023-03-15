@@ -31,5 +31,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "ab98b719-029a-4d5d-b378-ddae3d523df5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/api/products Copy",
+    "url": "http://localhost:8080/api/products/2",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-03-14T21:46:08.760Z",
+    "modified": "2023-03-15T01:54:58.733Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"Zapatos Caros\",\n  \"description\":\"Lorem Ipsum\",\n  \"price\":5000,\n  \"thumbnail\":\"no hay\",\n  \"code\":123420,\n  \"stock\":500\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

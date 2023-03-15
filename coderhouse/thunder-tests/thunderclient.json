@@ -1,1 +1,68 @@
-[]
+[
+  {
+    "_id": "80b6f5b2-5866-4a5c-903a-84b516900d09",
+    "colId": "be3ab471-8310-4ec6-b5cb-e313f6496b94",
+    "containerId": "",
+    "name": "addProducts",
+    "url": "http://localhost:8080/api/products",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2023-03-15T01:23:28.781Z",
+    "modified": "2023-03-15T01:23:28.781Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"Zapatos Caros\",\n  \"description\":\"Lorem Ipsum\",\n  \"price\":5000,\n  \"thumbnail\":\"no hay\",\n  \"code\":123420,\n  \"stock\":500\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "dbef491a-7f1f-4140-b7c7-934ca1883c15",
+    "colId": "be3ab471-8310-4ec6-b5cb-e313f6496b94",
+    "containerId": "",
+    "name": "getProducts",
+    "url": "http://localhost:8080/api/products",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-03-15T01:24:51.554Z",
+    "modified": "2023-03-15T01:24:51.554Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "3f212891-d686-40d5-b7b5-7121801d0898",
+    "colId": "be3ab471-8310-4ec6-b5cb-e313f6496b94",
+    "containerId": "",
+    "name": "updateProduct",
+    "url": "http://localhost:8080/api/products/7",
+    "method": "PUT",
+    "sortNum": 30000,
+    "created": "2023-03-15T01:55:16.312Z",
+    "modified": "2023-03-15T02:07:18.148Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"Zapatos Caros 2.0\",\n  \"description\":\"Lorem Ipsum\",\n  \"price\":5000,\n  \"thumbnail\":\"no hay\",\n  \"code\":123420,\n  \"stock\":500\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a071df1f-4fd3-4fd2-9a97-fb511a13b579",
+    "colId": "be3ab471-8310-4ec6-b5cb-e313f6496b94",
+    "containerId": "",
+    "name": "deleteProducts",
+    "url": "http://localhost:8080/api/products/7",
+    "method": "DELETE",
+    "sortNum": 15000,
+    "created": "2023-03-15T02:21:17.551Z",
+    "modified": "2023-03-15T02:27:50.844Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

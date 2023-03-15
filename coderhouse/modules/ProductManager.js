@@ -19,6 +19,7 @@ export default class ProductManager{
   getProducts=async()=>{
     const getProducts=await fs.promises.readFile(this.path,'utf-8')
     const result=JSON.parse(getProducts)
+
     try{return result}
     catch(err){console.log(err)}
   }
@@ -28,16 +29,18 @@ export default class ProductManager{
     let id=productList.length===0?1:productList[productList.length-1].id+1
     let newProduct=
     { 
-      id: object.id,
+      id:id,
       title:object.title,
       description:object.description,
-      price:object.price,
-      thumbnail:object.thumbnail,
       code:object.code,
-      stock:object.stock
+      price:object.price,
+      status:object.status||true,
+      stock:object.stock,
+      category:object.category,
+      thumbnails:object.thumbnail
     }
     const result=!object.title||!object.description||!object.price||!object.thumbnail||!object.code||!object.stock
-      ?420
+      ?'error'
       :await fs.promises.writeFile(this.path,JSON.stringify([...productList,newProduct],null,"\t"),(err,data)=>err??data)
     
     try{return result}
@@ -46,41 +49,45 @@ export default class ProductManager{
 
   getProductsById=async(id)=>{
     const productList=await this.getProducts()
-    const result=productList.find(item=>item.id===id)??'Id no existente'
+    const result=productList.find(item=>item.id===id)??'Id no existe'
 
     try{return result}
     catch(err){console.log(err)}
   }
 
-  updateProduct=async(id,title,description,price,thumbnail,code,stock)=>{
+  updateProduct=async(id,object)=>{
     const productList=await this.getProducts()
-    let Id=productList.findIndex(item=>item.id===id)
-    let newProduct=productList[Id]=
-    {
-      id:id,
-      title:title,
-      description:description,
-      price:price,
-      thumbnail:thumbnail,
-      code:code,
-      stock:stock
-    }
+    let Id=productList.find(item=>item.id===id)??'Id no existe'
     let result=await fs.promises.writeFile(this.path,JSON.stringify(productList),(err,data)=>err??data)
-    
-    if(Id===-1){console.log('Id no existente')}
+
+    if(Id==='Id no existe'){
+      return 'Id no existe'
+    }
     else{
-      newProduct
-      try{return result}
-      catch(err){console.log(err)} //queDe ACA
+    productList[id]=
+    { 
+      id:id,
+      title:object.title,
+      description:object.description,
+      code:object.code,
+      price:object.price,
+      status:object.status||true,
+      stock:object.stock,
+      category:object.category,
+      thumbnails:object.thumbnail
+    }
+    try{return result}
+    catch(err){console.log(err)} 
     }
   }
 
   deleteProduct=async(id)=>{
     const productList=await this.getProducts()
-    let Id=productList.findIndex(item=>item.id===id);
+    let Id=productList.findIndex(item=>item.id===id)
     let result=await fs.promises.writeFile(this.path,JSON.stringify(productList),(err,data)=>err??data)
-    if(Id===-1){
-      console.log('Id no existente')
+    console.log(Id)
+    if(Id==-1){
+      return 'Id no existe'
     }
     else{
       productList.splice(Id,1)
