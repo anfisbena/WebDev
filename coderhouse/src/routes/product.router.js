@@ -1,9 +1,9 @@
 import {Router} from 'express';
 // import {uploader} from './utils.js';
-import ProductManager from '../../modules/ProductManager.js';
+import ProductManager from '../modules/ProductManager.js';
 
 const router = Router();
-const ProdMan=new ProductManager('./database/products.json')
+const ProdMan=new ProductManager('./src/database/products.json')
 
 //GET
 router.get('/',async(req,res)=>{
