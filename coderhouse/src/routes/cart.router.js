@@ -2,7 +2,7 @@ import {Router} from 'express';
 import ProductManager from '../modules/ProductManager.js';
 
 const router = Router();
-const ProdMan=new ProductManager('./src/database/products.json')
+const ProdMan=new ProductManager('./src/database/cart.json')
 
 router.get('/',async(req,res)=>{
   const productos=await ProdMan.getProducts()
@@ -11,13 +11,13 @@ router.get('/',async(req,res)=>{
   return res.json(productLimit)
 })
 
-router.get('/:pid',async(req,res)=>{
-  let id=parseInt(req.params.pid)
+router.get('/:cid',async(req,res)=>{
+  let id=parseInt(req.params.cid)
   let response=await ProdMan.getProductsById(id)
   return res.json(response)
 })
 
-router.post('/',async(req,res)=>{
+router.post('/:cid/products/:pid',async(req,res)=>{
   let newProduct= req.body
   let addNewProduct=await ProdMan.addProduct(newProduct)
   if (addNewProduct==='error'){
@@ -30,9 +30,9 @@ router.post('/',async(req,res)=>{
     .send(`Producto agregado con exito`)
 })
 
-router.put('/:pid',async(req,res)=>{
+router.put('/:cid',async(req,res)=>{
   let updatedProduct=req.body;
-  let id=parseInt(req.params.pid)
+  let id=parseInt(req.params.cid)
   let updateProduct=await ProdMan.updateProduct(id,updatedProduct)
   if (updateProduct==='Id no existe'){
     return res
@@ -44,8 +44,8 @@ router.put('/:pid',async(req,res)=>{
     .send(`Producto actualizado con exito`)
 })
 
-router.delete('/:pid',async(req,res)=>{
-  let id=parseInt(req.params.pid)
+router.delete('/:cid',async(req,res)=>{
+  let id=parseInt(req.params.cid)
   let deleteProduct=await ProdMan.deleteProduct(id)
   if (deleteProduct==='Id no existe'){
     return res

@@ -22,12 +22,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-14T21:46:08.760Z",
-    "modified": "2023-03-14T22:55:58.718Z",
+    "modified": "2023-03-16T00:49:48.237Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"title\": \"Zapatos Caros\",\n  \"description\":\"Lorem Ipsum\",\n  \"price\":5000,\n  \"thumbnail\":\"no hay\",\n  \"code\":123420,\n  \"stock\":500\n}",
+      "raw": "{\n  \"title\": \"Zapatos Caros\",\n  \"description\":\"Lorem Ipsum\",\n  \"code\":123420,\n  \"price\":5000,\n  \"status\":true,\n  \"stock\":500,\n  \"category\":\"calzado\",\n  \"thumbnail\":[\"https://n4.sdlcdn.com/imgs/g/0/i/Nike-Multi-Color-Casual-Shoes-SDL051199315-3-f1d88.JPG\",\"https://n2.sdlcdn.com/imgs/g/0/i/Nike-Multi-Color-Casual-Shoes-SDL051199315-2-bc4ad.JPG\"]\n}",
       "form": []
     },
     "tests": []
@@ -37,16 +37,16 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/api/products Copy",
-    "url": "http://localhost:8080/api/products/2",
+    "url": "http://localhost:8080/api/products/3",
     "method": "PUT",
     "sortNum": 0,
     "created": "2023-03-14T21:46:08.760Z",
-    "modified": "2023-03-15T01:54:58.733Z",
+    "modified": "2023-03-16T04:45:29.620Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"title\": \"Zapatos Caros\",\n  \"description\":\"Lorem Ipsum\",\n  \"price\":5000,\n  \"thumbnail\":\"no hay\",\n  \"code\":123420,\n  \"stock\":500\n}",
+      "raw": "{\n  \"title\": \"Zapatos Caros 3.0\"\n}",
       "form": []
     },
     "tests": []
