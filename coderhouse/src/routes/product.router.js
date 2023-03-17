@@ -3,7 +3,7 @@ import {Router} from 'express';
 import ProductManager from '../modules/ProductManager.js';
 
 const router = Router();
-const ProdMan=new ProductManager('./src/database/products.json')
+const ProdMan=new ProductManager('./src/database/productos.json')
 
 //GET
 router.get('/',async(req,res)=>{

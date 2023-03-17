@@ -64,5 +64,19 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "ed55fc74-eeba-4a8d-83ed-e9266b2542dc",
+    "colId": "be3ab471-8310-4ec6-b5cb-e313f6496b94",
+    "containerId": "",
+    "name": "getCarts",
+    "url": "http://localhost:8080/api/carts",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2023-03-17T02:55:26.750Z",
+    "modified": "2023-03-17T02:55:26.750Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
