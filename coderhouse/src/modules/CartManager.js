@@ -45,13 +45,14 @@ export default class CartManager{
     }
     if(cart===-1){
       this.cartList=[...this.cartList,newCart]
+      
     }
     else{
       let productList=this.cartList[cart].products
       let productIndex=productList.findIndex(product=>product.product===pid)
 
       productIndex===-1
-        ?productList=[...productList,{product:pid,quantity:1}]
+        ?productList.push({product:pid,quantity:1})
         :productList[productIndex].quantity++;
 
       const result=await fs.promises.writeFile(this.path,JSON.stringify(this.cartList),(err,data)=>err??data)
