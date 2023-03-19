@@ -25,7 +25,7 @@ export default class ProductManager{
     catch(err){console.log(err)}
   }
 
-  addProduct=async(object)=>{
+  addProduct=async(object,filename)=>{
     this.productList=await this.getProducts()
     let id=this.productList.length===0?1:this.productList[this.productList.length-1].id+1
     let newProduct=
@@ -38,7 +38,7 @@ export default class ProductManager{
       status:object.status||true,
       stock:object.stock,
       category:object.category,
-      thumbnails:object.thumbnail
+      thumbnails:object.thumbnail=`http://localhost:8080/images/${filename}`
     }
     const result=!object.title||!object.description||!object.code||!object.price||!object.status||!object.stock||!object.category||!object.thumbnail
       ?'error'

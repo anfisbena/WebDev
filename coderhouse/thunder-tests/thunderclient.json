@@ -8,13 +8,48 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-15T01:23:28.781Z",
-    "modified": "2023-03-15T01:23:28.781Z",
+    "modified": "2023-03-19T02:37:21.851Z",
     "headers": [],
     "params": [],
     "body": {
-      "type": "json",
-      "raw": "{\n  \"title\": \"Zapatos Caros\",\n  \"description\":\"Lorem Ipsum\",\n  \"price\":5000,\n  \"thumbnail\":\"no hay\",\n  \"code\":123420,\n  \"stock\":500\n}",
-      "form": []
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "title",
+          "value": "Zapatos Caros 3"
+        },
+        {
+          "name": "description",
+          "value": "Lorem Ipsum"
+        },
+        {
+          "name": "code",
+          "value": "123420"
+        },
+        {
+          "name": "price",
+          "value": "5900"
+        },
+        {
+          "name": "status",
+          "value": "true"
+        },
+        {
+          "name": "stock",
+          "value": "300"
+        },
+        {
+          "name": "category",
+          "value": "calzado"
+        }
+      ],
+      "files": [
+        {
+          "name": "thumbnail",
+          "value": "..\\..\\..\\..\\..\\Downloads\\nike1.jpg"
+        }
+      ]
     },
     "tests": []
   },
@@ -75,6 +110,20 @@
     "sortNum": 40000,
     "created": "2023-03-17T02:55:26.750Z",
     "modified": "2023-03-17T02:55:26.750Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a764ea16-c907-4809-b034-f9472dddebad",
+    "colId": "be3ab471-8310-4ec6-b5cb-e313f6496b94",
+    "containerId": "",
+    "name": "addCart",
+    "url": "http://localhost:8080/api/carts/1/products/666",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2023-03-19T02:18:41.243Z",
+    "modified": "2023-03-19T02:18:41.243Z",
     "headers": [],
     "params": [],
     "tests": []

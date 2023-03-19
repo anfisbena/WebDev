@@ -9,7 +9,7 @@ const app=express()
 const PUERTO=8080;
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
-app.use(express.static('public'))
+app.use(express.static('./src/public'));
 app.use("/api/products",productRouter)
 app.use("/api/carts",cartRouter)
 

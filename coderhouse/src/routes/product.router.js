@@ -1,5 +1,5 @@
 import {Router} from 'express';
-// import {uploader} from './utils.js';
+import {uploader} from '../utils.js';
 import ProductManager from '../modules/ProductManager.js';
 
 const router = Router();
@@ -20,18 +20,27 @@ router.get('/:pid',async(req,res)=>{
 })
 
 //POST
-router.post('/',async(req,res)=>{
+router.post('/',uploader.single('thumbnail'),async(req,res)=>{
+  let filename=req.file.filename
   let newProduct= req.body
-  let addNewProduct=await ProdMan.addProduct(newProduct)
+  let addNewProduct=await ProdMan.addProduct(newProduct,filename)
+
+  if (!filename){
+    return res
+      .status(400)
+      .send('No se subio ninguna imagen')
+  }
   if (addNewProduct==='error'){
     return res
       .status(420)
       .send('Faltan datos')
   }
+
   return res
     .status(201)
     .send(`Producto agregado con exito`)
 })
+
 
 //PUT
 router.put('/:pid',async(req,res)=>{
