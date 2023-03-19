@@ -18,11 +18,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/api/products",
-    "url": "http://localhost:8080/api/carts/1/products/69",
+    "url": "http://localhost:8080/api/carts/1/products/666",
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-14T21:46:08.760Z",
-    "modified": "2023-03-18T18:16:20.751Z",
+    "modified": "2023-03-19T00:46:48.729Z",
     "headers": [],
     "params": [],
     "tests": []
