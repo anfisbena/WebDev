@@ -8,7 +8,9 @@
 		"status": "true",
 		"stock": "300",
 		"category": "calzado",
-		"thumbnails": "http://localhost:8080/images/1679193436045-nike1.jpg"
+		"thumbnails": [
+			"http://localhost:8080/images/1679361768000-nike1.jpg"
+		]
 	},
 	{
 		"id": 2,
@@ -19,17 +21,8 @@
 		"status": "true",
 		"stock": "300",
 		"category": "calzado",
-		"thumbnails": "http://localhost:8080/images/1679193439278-nike1.jpg"
-	},
-	{
-		"id": 3,
-		"title": "Zapatos Caros 3",
-		"description": "Lorem Ipsum",
-		"code": "123420",
-		"price": "5900",
-		"status": "true",
-		"stock": "300",
-		"category": "calzado",
-		"thumbnails": "http://localhost:8080/images/1679193441837-nike1.jpg"
+		"thumbnails": [
+			"http://localhost:8080/images/1679361842442-nike1.jpg"
+		]
 	}
 ]

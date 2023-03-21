@@ -53,7 +53,7 @@ export default class CartManager{
         :productList[productIndex].quantity++;
     }
 //RESULT    
-    const result=await fs.promises.writeFile(this.path,JSON.stringify(this.cartList),(err,data)=>err??data)
+    const result=await fs.promises.writeFile(this.path,JSON.stringify(this.cartList,null,"\t"),(err,data)=>err??data)
     try{return result}
     catch(err){ console.log(err)}
   }

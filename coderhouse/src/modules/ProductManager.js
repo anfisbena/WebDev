@@ -38,7 +38,7 @@ export default class ProductManager{
       status:object.status||true,
       stock:object.stock,
       category:object.category,
-      thumbnails:object.thumbnail=`http://localhost:8080/images/${filename}`
+      thumbnails:object.thumbnail=[`http://localhost:8080/images/${filename}`]
     }
     const result=!object.title||!object.description||!object.code||!object.price||!object.status||!object.stock||!object.category||!object.thumbnail
       ?'error'
@@ -63,6 +63,10 @@ export default class ProductManager{
       return 'Id no existe'
     }
     else{
+    let thumbnails=object.thumbnail
+      ?this.productList[Id].thumbnails.push(object.thumbnail)
+      :this.productList[Id].thumbnails;
+
     this.productList[Id]=
     { 
       id:id,
@@ -73,7 +77,7 @@ export default class ProductManager{
       status:object.status??this.productList[Id].status,
       stock:object.stock??this.productList[Id].stock,
       category:object.category??this.productList[Id].category,
-      thumbnails:object.thumbnail??this.productList[Id].thumbnails
+      thumbnails:thumbnails
     }
     let result=await fs.promises.writeFile(this.path,JSON.stringify(this.productList),(err,data)=>err??data);
 
