@@ -13,11 +13,7 @@ router.get('/',async(req,res)=>{
   {
     title:'Home',
     product:productLimit,
-    css:'/css/styles.css'
   })
 })
-
-
-
 
 export default router;

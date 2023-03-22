@@ -6,10 +6,17 @@ import productRouter from './routes/product.router.js';
 import cartRouter from './routes/cart.router.js';
 import {engine} from 'express-handlebars';
 import __dirname from './utils.js';
+import {Server} from 'socket.io';
 
 //Declaracion de variables Express
 const app=express()
 const PUERTO=8080;
+const httpServer=app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http://localhost:${PUERTO}`))
+const socketServer=new Server(httpServer);
+socketServer.on('connection',socket=>{
+  socket.on('message',confirmation=>console.log(confirmation))
+}) 
+
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())
@@ -22,11 +29,6 @@ app.use(express.static(`${__dirname}/public`)); //declaracion de folder public
 app.use('/',homeRouter)
 app.use("/api/products",productRouter)
 app.use("/api/carts",cartRouter)
-
-
-
-
-app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http://localhost:${PUERTO}`))
-
+app.use("/realtimeproducts",realTimeProducts)
 
 
