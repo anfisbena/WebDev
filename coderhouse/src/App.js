@@ -13,6 +13,10 @@ const app=express()
 const PUERTO=8080;
 const httpServer=app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http://localhost:${PUERTO}`))
 const socketServer=new Server(httpServer);
+socketServer.on('connection',socket=>{
+  socket.on('message',data=>console.log(data))
+})
+
 
 
 //Configuracion de handlebars
@@ -29,6 +33,3 @@ app.use("/api/carts",cartRouter)
 app.use("/realtimeproducts",realTimeProducts)
 
 
-socketServer.on('connection',socket=>{
-  socket.on('message',data=>console.log(data))
-})
