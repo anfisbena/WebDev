@@ -50,7 +50,7 @@ export default class ProductManager{
 
   getProductsById=async(id)=>{
     this.productList=await this.getProducts()
-    const result=this.productList.find(item=>item.id===id)??'Id no existe'
+    const result=this.productList.find(item=>{item.id===parseInt(id)})??'Id no existe'
 
     try{return result}
     catch(err){console.log(err)}
