@@ -1,12 +1,37 @@
 <div>
+  <form action="" method="post">
+    <fieldset>
+      <input type="text" name="title" placeholder="Title"><br/>
+      <input type="text" name="description" placeholder="Description"><br/>
+      <input type="text" name="code" placeholder="Code"><br/>
+      <input type="text" name="price" placeholder="Price"><br/>
+      <input type="number"name="stock" placeholder="Stock"><br/>
+      <input list="category" name="browser" id="browser" placeholder="Choose category">
+      <datalist id="category">
+        <option value="Calzado">
+        <option value="Miscelanea">
+        <option value="Electrodomesticos">
+        <option value="Ropa">
+        <option value="Farmacia">
+      </datalist>
+    </fieldset>
+    <fieldset>
+      <legend>Active</legend>
+      <input type="radio" name="status" placeholder="isActive"value="true" checked>Yes
+      <input type="radio" name="status" placeholder="isActive"value="false">No
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div>
 {{#each product}}
   <div>
-    <h2>{{this.title}}</h2>
     {{#each this.thumbnails}}
       <img src={{this}} alt="productItem">
     {{/each}}
+    <h2>{{this.title}}</h2><p>NKU:{{this.code}}</p>
     <p>{{this.description}}</p>
-    <p>{{this.price}}</p>
+    <h2>{{this.price}}</h2>
   </div>
 {{/each}}
 </div>
