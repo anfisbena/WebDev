@@ -10,6 +10,7 @@ Enjoy 🌴
 */
 
 import fs from 'fs';
+import socket from '../socket.js';
 
 export default class ProductManager{
   constructor(path){
@@ -43,8 +44,8 @@ export default class ProductManager{
     const result=!object.title||!object.description||!object.code||!object.price||!object.status||!object.stock||!object.category||!object.thumbnail
       ?'error'
       :await fs.promises.writeFile(this.path,JSON.stringify([...this.productList,newProduct],null,"\t"),(err,data)=>err??data)
-    
-    try{return result}
+      socket.io.emit('addProduct',newProduct)
+      try{return result}
     catch(err){ console.log(err)}
     }
 
@@ -79,7 +80,7 @@ export default class ProductManager{
       category:object.category??this.productList[Id].category,
       thumbnails:thumbnails
     }
-    let result=await fs.promises.writeFile(this.path,JSON.stringify(this.productList),(err,data)=>err??data);
+    let result=await fs.promises.writeFile(this.path,JSON.stringify(this.productList,null,"\t"),(err,data)=>err??data);
 
     try{return result}
     catch(err){console.log(err)} 

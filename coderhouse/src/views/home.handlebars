@@ -1,14 +1,13 @@
 <div>
 {{#each product}}
   <div>
-    <h2>{{this.title}}</h2>
     {{#each this.thumbnails}}
       <img src={{this}} alt="productItem">
     {{/each}}
+    <h2>{{this.title}}</h2><p>NKU:{{this.code}}</p>
     <p>{{this.description}}</p>
-    <p>{{this.price}}</p>
+    <h2>${{this.price}}</h2>
   </div>
 {{/each}}
 </div>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/homeProducts.js"></script>

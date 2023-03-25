@@ -20,6 +20,7 @@
       <input type="radio" name="status" placeholder="isActive"value="true" checked>Yes
       <input type="radio" name="status" placeholder="isActive"value="false">No
     </fieldset>
+    <input type="file" name="thumbnails" id=""><br>
     <button type="submit">Submit</button>
   </form>
 </div>
@@ -31,7 +32,7 @@
     {{/each}}
     <h2>{{this.title}}</h2><p>NKU:{{this.code}}</p>
     <p>{{this.description}}</p>
-    <h2>{{this.price}}</h2>
+    <h2>${{this.price}}</h2>
   </div>
 {{/each}}
 </div>
