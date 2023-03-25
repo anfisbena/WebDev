@@ -27,6 +27,10 @@ export default class ProductManager{
   }
 
   addProduct=async(object,filename)=>{
+    if (!object.title||!object.description||!object.code||!object.price||!object.status||!object.stock||!object.category||!filename){
+      return 'error'
+    }
+
     this.productList=await this.getProducts()
     let id=this.productList.length===0?1:this.productList[this.productList.length-1].id+1
     let thumbnails=filename.map(element =>`http://localhost:8080/images/${element}`);
@@ -42,13 +46,12 @@ export default class ProductManager{
       category:object.category,
       thumbnails:thumbnails
     }
-    const result=!object.title||!object.description||!object.code||!object.price||!object.status||!object.stock||!object.category||!filename
-      ?'error'
-      :await fs.promises.writeFile(this.path,JSON.stringify([...this.productList,newProduct],null,"\t"),(err,data)=>err??data)
-      await socket.io.emit('addProduct',newProduct)
-      try{return result}
+    let result=await fs.promises.writeFile(this.path,JSON.stringify([...this.productList,newProduct],null,"\t"),(err,data)=>err??data)
+    await socket.io.emit('realTimeProducts',[...this.productList,newProduct])
+    
+    try{return result}
     catch(err){ console.log(err)}
-    }
+  }
 
   getProductsById=async(id)=>{
     this.productList=await this.getProducts()

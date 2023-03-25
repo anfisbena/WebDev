@@ -1,6 +1,8 @@
+
 const socket=io();
 socket.emit("message","Cliente conectado a socket")
-socket.on('addProduct',(newProduct)=>{
+socket.on('realTimeProducts',(newProduct)=>{
   console.log(newProduct)
+  
 })
 
