@@ -7,7 +7,10 @@ socket.connect=(server)=>{
   
   socket.io.on('connection',(socket)=>{
     console.log(`${socket.id} connected`)
+    
   })
+
+
   
 }
 

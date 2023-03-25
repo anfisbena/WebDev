@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-15T01:23:28.781Z",
-    "modified": "2023-03-25T03:19:14.418Z",
+    "modified": "2023-03-25T16:26:39.970Z",
     "headers": [],
     "params": [],
     "body": {
@@ -46,8 +46,12 @@
       ],
       "files": [
         {
-          "name": "thumbnail",
+          "name": "thumbnails",
           "value": "..\\..\\..\\..\\..\\Downloads\\nike2.jpg"
+        },
+        {
+          "name": "thumbnails",
+          "value": "..\\..\\..\\..\\..\\Downloads\\nike1.jpg"
         }
       ]
     },

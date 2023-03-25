@@ -1,4 +1,5 @@
 import {Router} from 'express';
+import {uploader} from '../utils.js';
 import ProductManager from '../modules/ProductManager.js';
 
 const router = Router();
@@ -18,5 +19,6 @@ router.get('/',async(req,res)=>{
     }
   )
 })
+
 
 export default router;

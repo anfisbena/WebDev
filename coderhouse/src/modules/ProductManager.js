@@ -29,6 +29,7 @@ export default class ProductManager{
   addProduct=async(object,filename)=>{
     this.productList=await this.getProducts()
     let id=this.productList.length===0?1:this.productList[this.productList.length-1].id+1
+    let thumbnails=filename.map(element =>`http://localhost:8080/images/${element}`);
     let newProduct=
     { 
       id:id,
@@ -39,12 +40,12 @@ export default class ProductManager{
       status:object.status||true,
       stock:object.stock,
       category:object.category,
-      thumbnails:object.thumbnail=[`http://localhost:8080/images/${filename}`]
+      thumbnails:thumbnails
     }
-    const result=!object.title||!object.description||!object.code||!object.price||!object.status||!object.stock||!object.category||!object.thumbnail
+    const result=!object.title||!object.description||!object.code||!object.price||!object.status||!object.stock||!object.category||!filename
       ?'error'
       :await fs.promises.writeFile(this.path,JSON.stringify([...this.productList,newProduct],null,"\t"),(err,data)=>err??data)
-      socket.io.emit('addProduct',newProduct)
+      await socket.io.emit('addProduct',newProduct)
       try{return result}
     catch(err){ console.log(err)}
     }
@@ -64,8 +65,8 @@ export default class ProductManager{
       return 'Id no existe'
     }
     else{
-    let thumbnails=object.thumbnail
-      ?this.productList[Id].thumbnails.push(object.thumbnail)
+    let thumbnails=object.thumbnails
+      ?this.productList[Id].thumbnails.push(object.thumbnails)
       :this.productList[Id].thumbnails;
 
     this.productList[Id]=

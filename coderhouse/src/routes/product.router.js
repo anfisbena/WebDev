@@ -20,13 +20,13 @@ router.get('/:pid',async(req,res)=>{
 })
 
 //POST
-router.post('/',uploader.single('thumbnail'),async(req,res)=>{
-  if (!req.file){
+router.post('/',uploader.array('thumbnails',3),async(req,res)=>{
+  if (!req.files){
     return res
       .status(400)
       .send('No se subio ninguna imagen')
   }
-  let filename=req.file.filename
+  let filename=req.files.map(file=>file.filename)
   let newProduct= req.body
   let addNewProduct=await ProdMan.addProduct(newProduct,filename)
   if (addNewProduct==='error'){
