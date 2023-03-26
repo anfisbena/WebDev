@@ -37,47 +37,5 @@
 		"thumbnails": [
 			"http://localhost:8080/images/1679453186643-nike1.jpg"
 		]
-	},
-	{
-		"id": 4,
-		"title": "Zapatos Caros 4",
-		"description": "Lorem Ipsum",
-		"code": "123420",
-		"price": "59000",
-		"status": "true",
-		"stock": "300",
-		"category": "calzado",
-		"thumbnails": [
-			"http://localhost:8080/images/1679796515408-nike2.jpg",
-			"http://localhost:8080/images/1679796515411-nike1.jpg"
-		]
-	},
-	{
-		"id": 5,
-		"title": "Zapatos Caros 5",
-		"description": "Lorem Ipsum",
-		"code": "123420",
-		"price": "59000",
-		"status": "true",
-		"stock": "300",
-		"category": "calzado",
-		"thumbnails": [
-			"http://localhost:8080/images/1679796592395-nike2.jpg",
-			"http://localhost:8080/images/1679796592399-nike1.jpg"
-		]
-	},
-	{
-		"id": 6,
-		"title": "Zapatos Caros 6",
-		"description": "Lorem Ipsum",
-		"code": "123420",
-		"price": "59000",
-		"status": "true",
-		"stock": "300",
-		"category": "calzado",
-		"thumbnails": [
-			"http://localhost:8080/images/1679796691027-nike2.jpg",
-			"http://localhost:8080/images/1679796691031-nike1.jpg"
-		]
 	}
 ]
