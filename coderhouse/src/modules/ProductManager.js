@@ -47,8 +47,7 @@ export default class ProductManager{
       thumbnails:thumbnails
     }
     let result=await fs.promises.writeFile(this.path,JSON.stringify([...this.productList,newProduct],null,"\t"),(err,data)=>err??data)
-    await socket.io.emit('realTimeProducts',[...this.productList,newProduct])
-    
+    await socket.io.emit('realTimeProducts',newProduct)
     try{return result}
     catch(err){ console.log(err)}
   }
