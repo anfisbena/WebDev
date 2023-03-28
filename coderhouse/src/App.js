@@ -6,12 +6,13 @@ import cartRouter from './routes/cart.router.js';
 import __dirname from './utils.js';
 import {engine} from 'express-handlebars';
 import socket from './socket.js'
-
+import mongoose from 'mongoose';
 
 //Declaracion de Express
 const app=express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
+
 
 //Declaracion de rutas
 app.use(express.static(`${__dirname}/public`)); //declaracion de folder public
@@ -28,6 +29,11 @@ app.set('view engine','handlebars')
 //configuracion de server
 const PUERTO=8080;
 const httpServer=app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http://localhost:${PUERTO}`)) 
+mongoose.connect('mongodb+srv://coderhouse:<password>@coderhouse.7gvj83t.mongodb.net/?retryWrites=true&w=majority',(error)=>{
+  if(error){
+    console.log(`Error al conectar a la BDD: ${error}`);
+  }
+})
 
 //configuracion de socket
 socket.connect(httpServer);
