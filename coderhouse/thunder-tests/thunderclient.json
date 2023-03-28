@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-15T01:23:28.781Z",
-    "modified": "2023-03-28T01:31:56.234Z",
+    "modified": "2023-03-28T22:35:23.104Z",
     "headers": [],
     "params": [],
     "body": {
@@ -17,7 +17,7 @@
       "form": [
         {
           "name": "title",
-          "value": "Zapatos Caros 4"
+          "value": "Zapatos Caros 5"
         },
         {
           "name": "description",
@@ -47,11 +47,11 @@
       "files": [
         {
           "name": "thumbnails",
-          "value": "..\\..\\..\\..\\..\\Downloads\\nike2.jpg"
+          "value": "..\\..\\..\\..\\..\\Downloads\\nike3.jpg"
         },
         {
           "name": "thumbnails",
-          "value": "..\\..\\..\\..\\..\\Downloads\\nike1.jpg"
+          "value": "..\\..\\..\\..\\..\\Downloads\\nike4.jpg"
         }
       ]
     },

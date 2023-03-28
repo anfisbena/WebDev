@@ -29,11 +29,11 @@ app.set('view engine','handlebars')
 //configuracion de server
 const PUERTO=8080;
 const httpServer=app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http://localhost:${PUERTO}`)) 
-mongoose.connect('mongodb+srv://coderhouse:<password>@coderhouse.7gvj83t.mongodb.net/?retryWrites=true&w=majority',(error)=>{
-  if(error){
-    console.log(`Error al conectar a la BDD: ${error}`);
-  }
-})
+// mongoose.connect('mongodb+srv://coderhouse:<password>@coderhouse.7gvj83t.mongodb.net/?retryWrites=true&w=majority',(error)=>{
+//   if(error){
+//     console.log(`Error al conectar a la BDD: ${error}`);
+//   }
+// })
 
 //configuracion de socket
 socket.connect(httpServer);

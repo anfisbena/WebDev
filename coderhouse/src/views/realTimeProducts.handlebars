@@ -1,12 +1,13 @@
 <div>
   <form action="/api/products" method="post" id="newProduct">
     <fieldset>
-      <input type="text" name="title" placeholder="Title" id="tile"><br/>
-      <input type="text" name="description" placeholder="Description" id="description"><br/>
-      <input type="text" name="code" placeholder="Code" id="code"><br/>
-      <input type="text" name="price" placeholder="Price" id="price"><br/>
-      <input type="number"name="stock" placeholder="Stock" id="stock"><br/>
-      <input list="categoryList" name="browser" id="browser" placeholder="Choose category" id="category">
+      <input type="text" name="title" placeholder="Title" id="title"><br>
+      <input type="text" name="description" placeholder="Description" id="description"><br>
+      <input type="text" name="code" placeholder="Code" id="code"><br>
+      <input type="text" name="price" placeholder="Price" id="price"><br>
+      <input type="number" name="stock" placeholder="Stock" id="stock"><br>
+      <label for="category">Choose category:</label>
+      <input list="categoryList" name="browser" id="category">
       <datalist id="categoryList">
         <option value="Calzado">
         <option value="Miscelanea">
@@ -17,8 +18,8 @@
     </fieldset>
     <fieldset>
       <legend>Active</legend>
-      <input type="radio" name="status" placeholder="isActive"value="true" checked>Yes
-      <input type="radio" name="status" placeholder="isActive"value="false">No
+      <input type="radio" name="status" value="true" checked>Yes
+      <input type="radio" name="status" value="false">No
     </fieldset>
     <input type="file" name="thumbnails" multiple><br>
     <button type="submit">Submit</button>
@@ -26,16 +27,18 @@
 </div>
 
 <div id="itemList">
-{{#each product}}
-  <div class="Item">
-    {{#each this.thumbnails}}
-      <img src={{this}} alt="productItem">
-    {{/each}}
-    <h2>{{this.title}}</h2><p>NKU:{{this.code}}</p>
-    <p>{{this.description}}</p>
-    <h2>${{this.price}}</h2>
-  </div>
-{{/each}}
+  {{#each products}}
+    <div class="Item">
+      {{#each this.thumbnails}}
+        <img src="{{this}}" alt="productItem">
+      {{/each}}
+      <h2>{{this.title}}</h2>
+      <p>NKU:{{this.code}}</p>
+      <p>{{this.description}}</p>
+      <h2>${{this.price}}</h2>
+    </div>
+  {{/each}}
 </div>
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/realTimeProducts.js"></script>

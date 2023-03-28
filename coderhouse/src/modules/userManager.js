@@ -1,38 +1,39 @@
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import crypto from 'crypto';
 
-export default class userManager{
-  
-  constructor(path){
-    this.path=path;
-    this.users=null;
+export default class UserManager {
+  constructor(path) {
+    this.path = path;
+    this.users = null;
   }
 
-  getUsers=async()=>{
-    try{
-      let data=await fs.promises.readFile(this.path);
-      this.users=JSON.parse(data)
+  async getUsers() {
+    try {
+      const data = await fs.readFile(this.path);
+      this.users = JSON.parse(data);
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }    
   }
-  
-  addUser=async(usuario)=>{
-    //validation rules
-    this.users??await this.getUsers()
-    //encrypt password
-    usuario.salt=crypto.randomBytes(128).toString('base64')
-    usuario.contrasena=crypto
-      .createHmac('sha256',usuario.salt)
-      .update(usuario.contrasena)
-    //update database
-    try{
-      await fs.promises.writeFile(this.path,JSON.stringify([...this.users,usuario],null,"\t"))
+
+  async addUser(usuario) {
+    // validation rules
+    if (!usuario.nombre || !usuario.email || !usuario.contrasena) {
+      return 'error';
     }
-    catch(err){
-      console.log(err)
+
+    this.users ??= await this.getUsers();
+    // encrypt password
+    usuario.salt = crypto.randomBytes(128).toString('base64');
+    usuario.contrasena = crypto.createHmac('sha256', usuario.salt).update(usuario.contrasena).digest();
+
+    // update database
+    try {
+      const newUserList = [...this.users, usuario];
+      await fs.writeFile(this.path, JSON.stringify(newUserList, null, '\t'));
+      this.users = newUserList;
+    } catch (err) {
+      console.log(err);
     }
   }
 }
-

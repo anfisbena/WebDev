@@ -1,23 +1,18 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import ProductManager from '../modules/ProductManager.js';
 
 const router = Router();
-const ProdMan=new ProductManager('./src/database/productos.json')
+const productManager = new ProductManager('./src/database/productos.json');
 
-//GET
+router.get('/', async (req, res) => {
+  const productos = await productManager.getProducts();
+  const limit = parseInt(req.query.limit);
+  const productLimit = limit ? productos.slice(0, limit) : productos;
 
-router.get('/',async(req,res)=>{
-  const productos=await ProdMan.getProducts()
-  let limit=req.query.limit;
-  let productLimit=productos.slice(0,limit||productos.length)
-  return res.render(
-    'realTimeProducts',
-    {
-      title:'Real Time Products',
-      product:productLimit,
-    }
-  )
-})
-
+  return res.render('realTimeProducts', {
+    title: 'Real Time Products',
+    products: productLimit
+  });
+});
 
 export default router;
