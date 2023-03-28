@@ -3,6 +3,7 @@ import homeRouter from './routes/home.router.js'
 import realTimeProducts from './routes/realtimeproducts.router.js'
 import productRouter from './routes/product.router.js';
 import cartRouter from './routes/cart.router.js';
+import userRouter from './routes/users.router.js'
 import __dirname from './utils.js';
 import {engine} from 'express-handlebars';
 import socket from './socket.js'
@@ -20,6 +21,7 @@ app.use('/',homeRouter)
 app.use("/api/products",productRouter)
 app.use("/api/carts",cartRouter)
 app.use("/realtimeproducts",realTimeProducts)
+app.use('api/users',userRouter)
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())
