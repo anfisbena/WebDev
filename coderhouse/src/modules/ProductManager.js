@@ -33,7 +33,7 @@ export default class ProductManager{
 
     this.productList=await this.getProducts()
     let id=this.productList.length===0?1:this.productList[this.productList.length-1].id+1
-    let thumbnails=filename.map(element =>`http://localhost:8080/images/${element}`);
+    let thumbnails=await filename.map(element =>`http://localhost:8080/images/${element}`);
     let newProduct=
     { 
       id:id,
@@ -47,7 +47,8 @@ export default class ProductManager{
       thumbnails:thumbnails
     }
     let result=await fs.promises.writeFile(this.path,JSON.stringify([...this.productList,newProduct],null,"\t"),(err,data)=>err??data)
-    await socket.io.emit('realTimeProducts',newProduct)
+    console.log(newProduct.thumbnails)
+    socket.io.emit('realTimeProducts',newProduct)
     try{return result}
     catch(err){ console.log(err)}
   }

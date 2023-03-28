@@ -1,0 +1,29 @@
+// Select the database to use.
+use('colegio');
+
+// Insert a few documents into the sales collection.
+db.estudiantes.insertMany([
+  { 'nombre':'Andres', 'apellido':'Arcila', 'curso':'1-J', 'edad':15, 'correo':'andres.02010@hotmail.com', 'sexo':'M' },
+  { 'nombre':'Juan', 'apellido':'Perez', 'curso':'1-J', 'edad':15, 'correo':'rocaplastica@gmail.com', 'sexo':'M' },
+  { 'nombre':'Maria', 'apellido':'Gomez', 'curso':'1-J', 'edad':15, 'correo':'marialadelbarrio@yahoo.es', 'sexo':'F' },
+  { 'nombre':'Pedro', 'apellido':'Gomez', 'curso':'1-J', 'edad':15, 'correo':'crackcocaine@haboo.com', 'sexo':'M' },
+  { 'nombre':'Andres', 'apellido':'Gomez', 'curso':'1-J', 'edad':15, 'correo':'gomezplata_420@latinmail.com', 'sexo':'M'}
+]);
+
+// Insert a single document into the sales collection.
+db.estudiantes.insertOne({ 'nombre':'Andres', 'apellido':'Gomez', 'curso':'1-J'})
+
+//Find all documents in the sales collection.
+db.estudiantes.find();
+
+// Run a find command to view items sold on April 4th, 2014.
+db.estudiantes.find({ sexo:'M' });
+
+//count the number of documents in the sales collection.
+db.estudiantes.countDocuments({});
+db.estudiantes.countDocuments({sexo:'F'});
+db.estudiantes.find({$and:[{sexo:'M'},{nombre:'Andres'}]})
+db.estudiantes.find({$or:[{sexo:'M'},{nombre:'Andres'}]})
+db.estudiantes.find({curso:{$exists:false}})
+//ordenar de forma Ascendente
+db.estudiantes.countDocuments({}).sort({apellido:1})
