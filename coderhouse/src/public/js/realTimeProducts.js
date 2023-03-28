@@ -6,7 +6,6 @@ socket.on('realTimeProducts', (newProduct) => {
   const oldItemList = document.getElementById('itemList');
 
   const imageList = newProduct.thumbnails.map((element) => `<img src="${element}" alt="productItem">`).join('');
-  console.log(imageList);
 
   const newItem = document.createElement('div');
   newItem.classList.add('item');
