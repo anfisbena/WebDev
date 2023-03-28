@@ -38,7 +38,7 @@ export default class ProductManager {
       !object.category ||
       !filename
     ) {
-      return 'error';
+      return 'faltan datos';
     }
 
     this.productList = await this.getProducts();
