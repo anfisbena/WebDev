@@ -4,11 +4,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/api/products",
-    "url": "http://localhost:8080/api/carts",
+    "url": "http://localhost:8080/api/users",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-03-14T21:41:25.340Z",
-    "modified": "2023-03-17T02:55:10.662Z",
+    "modified": "2023-03-29T04:51:16.391Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -43,6 +43,38 @@
       "type": "json",
       "raw": "{\n  \"title\": \"Zapatos Caros 3.0\"\n}",
       "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "4cbeff7b-531b-4dbb-b1dd-7b7df8df1521",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/api/users",
+    "url": "http://localhost:8080/api/users",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-03-29T03:03:26.380Z",
+    "modified": "2023-03-29T04:55:50.888Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "first_name",
+          "value": "Andres"
+        },
+        {
+          "name": "last_name",
+          "value": "Arcila"
+        },
+        {
+          "name": "email",
+          "value": "simonesputo@gmail.com"
+        }
+      ]
     },
     "tests": []
   }

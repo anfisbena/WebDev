@@ -1,12 +1,13 @@
 import { Router } from 'express';
-import userModel from '../models/user.model.js';
+import Users from '../models/user.model.js';
 
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const users = await userModel.find();
-  return res.status(200).json({ result: 'Success', payload: users });
+  const users = await Users.find();
+  res.status(200).send({ result: 'Success', payload: users });
 });
+
 
 router.post('/', async (req, res) => {
   let {first_name,last_name,email}=req.body;
@@ -15,8 +16,8 @@ router.post('/', async (req, res) => {
     !last_name||
     !email
   )
-  {return res.status(400).json({result:'Error',message:'Missing data.'})}
-  let user=await userModel.create(
+  { return res.status(400).send({status:"error",error:"Incomplete Values"})}
+  let user=await Users.create(
     {
       first_name,
       last_name,
@@ -25,5 +26,8 @@ router.post('/', async (req, res) => {
   );
   return res.send({status:'Success',payload:user})
 })
+
+
+
 
 export default router;
