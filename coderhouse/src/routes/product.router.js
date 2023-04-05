@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { uploader } from '../utils.js';
 import ProductManager from '../modules/ProductManager.js';
+import {ErrorUploadFile} from '../modules/ErrorHandler.js'
 
 const router = Router();
 const productManager = new ProductManager('./src/database/productos.json');
@@ -25,17 +26,13 @@ router.get('/:pid', async (req, res) => {
 
 //POST
 router.post('/', uploader.array('thumbnails', 3), async (req, res) => {
-  if (!req.files.length) {
-    return res.status(400).send('No se subió ninguna imagen');
-  }
-  const filenames = req.files.map((file) => file.filename);
-  const newProduct = req.body;
-  const addNewProduct = await productManager.addProduct(newProduct, filenames);
-  if (addNewProduct==='faltan datos') {
-    return res.status(400).send(addNewProduct);
-  }
-
-  return res.status(201).send('Producto agregado con éxito.');
+  const {title,description,price,code,stock}=req.body
+  const thumbnails=req.files.map((file)=>file.filename)
+  const error=ErrorUploadFile(title,description,price,code,stock,thumbnails)
+  if(error){return res.status(error.status).send({status:errorHandler.status,payload:errorHandler.payload})}
+  else{await productManager.addProduct({title,description,price,code,stock}, filenames)}
+  
+  return res.status(200).send('Producto agregado con éxito.');
 });
 
 //PUT

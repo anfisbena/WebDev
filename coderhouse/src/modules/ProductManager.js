@@ -28,22 +28,8 @@ export default class ProductManager {
   }
 
   async addProduct(object, filename) {
-    if (
-      !object.title ||
-      !object.description ||
-      !object.code ||
-      !object.price ||
-      !object.status ||
-      !object.stock ||
-      !object.category ||
-      !filename
-    ) {
-      return 'faltan datos';
-    }
-
     this.productList = await this.getProducts();
-    const id =
-      this.productList.length === 0 ? 1 : this.productList[this.productList.length - 1].id + 1;
+    const id =this.productList.length === 0 ? 1 : this.productList[this.productList.length - 1].id + 1;
     const thumbnails = await Promise.all(
       filename.map((element) => `http://localhost:8080/images/${element}`)
     );
