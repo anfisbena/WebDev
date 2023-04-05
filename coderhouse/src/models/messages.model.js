@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import {Schema,model} from "mongoose";
 
-const messageSchema = new mongoose.Schema({
+const messageSchema = new Schema({
   user: String,  
   message: String
 });
 
-const Message = mongoose.model("messages", messageSchema);
+const Message = model("messages", messageSchema);
 
 export default Message;
