@@ -18,13 +18,57 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/api/products",
-    "url": "http://localhost:8080/api/carts/",
+    "url": "http://localhost:8080/api/products/",
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-14T21:46:08.760Z",
-    "modified": "2023-03-22T04:07:23.428Z",
+    "modified": "2023-04-09T00:39:03.609Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "title",
+          "value": "camisas mongo"
+        },
+        {
+          "name": "description",
+          "value": "lorem camisum"
+        },
+        {
+          "name": "code",
+          "value": "CA-01"
+        },
+        {
+          "name": "price",
+          "value": "60000"
+        },
+        {
+          "name": "stock",
+          "value": "500"
+        },
+        {
+          "name": "category",
+          "value": "Camisas"
+        },
+        {
+          "name": "status",
+          "value": "true"
+        }
+      ],
+      "files": [
+        {
+          "name": "thumbnails",
+          "value": "..\\..\\..\\..\\..\\Downloads\\camisa1.jpg"
+        },
+        {
+          "name": "thumbnails",
+          "value": "..\\..\\..\\..\\..\\Downloads\\camisa2.jpg"
+        }
+      ]
+    },
     "tests": []
   },
   {

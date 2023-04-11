@@ -1,13 +1,14 @@
 import express from 'express';
-import homeRouter from './dao/routes/home.router.js'
-import realTimeProducts from './routes/realtimeproducts.router.js'
-import productRouter from './routes/product.router.js';
-import cartRouter from './routes/cart.router.js';
-import userRouter from './dao/routes/users.router.js'
 import __dirname from './utils.js';
 import {engine} from 'express-handlebars';
 import socket from './socket.js'
 import mongoose from 'mongoose';
+import homeRouter from '../src/dao/mongo/routes/home.router.js'
+import realTimeProducts from '../src/dao/mongo/routes/realtimeproducts.router.js'
+import productRouter from '../src/dao/mongo/routes/product.router.js';
+import userRouter from '../src/dao/mongo/routes/users.router.js';
+import messageRouter from '../src/dao/mongo/routes/messages.router.js';
+import viewsRouter from '../src/dao/mongo/routes/views.router.js';
 
 //Declaracion de Express
 const app=express()
@@ -19,9 +20,10 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(`${__dirname}/public`)); //declaracion de folder public
 app.use('/',homeRouter)
 app.use("/api/products",productRouter)
-app.use("/api/carts",cartRouter)
 app.use("/realtimeproducts",realTimeProducts)
 app.use('api/users',userRouter)
+app.use('/api/messages',messageRouter)
+app.use('/views',viewsRouter)
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())
