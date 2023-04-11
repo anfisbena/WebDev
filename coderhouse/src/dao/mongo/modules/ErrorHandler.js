@@ -9,6 +9,11 @@ export const ErrorUploadFile=(title,description,code,price,status,stock,category
   if(!thumbnails.length){return {status:400,result:'error',payload:'falta las imagenes'}}
 }
 
+export const ErrorCreateUser=(first_name,last_name,email)=>{
+  if(!first_name){return {status:400,result:'error',payload:'falta el nombre'}}
+  if(!last_name){return {status:400,result:'error',payload:'falta el apellido'}}
+  if(!email){return {status:400,result:'error',payload:'falta el email'}}
+}
 
 const defaultFunction=()=>{'please provide a function to handle the error'}
 export default defaultFunction;

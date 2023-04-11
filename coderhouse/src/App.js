@@ -9,6 +9,7 @@ import productRouter from '../src/dao/mongo/routes/product.router.js';
 import userRouter from '../src/dao/mongo/routes/users.router.js';
 import messageRouter from '../src/dao/mongo/routes/messages.router.js';
 import viewsRouter from '../src/dao/mongo/routes/views.router.js';
+import chatRouter from '../src/dao/mongo/routes/chats.router.js';
 
 //Declaracion de Express
 const app=express()
@@ -19,11 +20,12 @@ app.use(express.urlencoded({extended:true}));
 //Declaracion de rutas
 app.use(express.static(`${__dirname}/public`)); //declaracion de folder public
 app.use('/',homeRouter)
-app.use("/api/products",productRouter)
 app.use("/realtimeproducts",realTimeProducts)
-app.use('api/users',userRouter)
-app.use('/api/messages',messageRouter)
 app.use('/views',viewsRouter)
+app.use('/api/chats',chatRouter)
+app.use('/api/messages',messageRouter)
+app.use("/api/products",productRouter)
+app.use('api/users',userRouter)
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())

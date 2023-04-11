@@ -31,7 +31,7 @@ export const addProduct=async(title,description,code,price,status,stock,category
     thumbnails:thumbnails,
   };
   
-  if(error){return {status:400,result:'error',payload:error}}
+  if(error){return {status:error.status,result:error.result,payload:error.payload}}
   else{
     await Product.create(newProduct)
     return {status:200,result:'ok',payload:'producto agregado'}
