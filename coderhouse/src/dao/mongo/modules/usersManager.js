@@ -3,15 +3,7 @@ import { ErrorCreateUser } from './ErrorHandler.js';
 
 const defaultFunction=()=>'please provide a function to handle the error'
 
-export const getUsers=async()=>{
-  try{
-    const users = await Users.find();
-    return {status:200,result:'ok',payload:users};
-  }
-  catch(error){
-    return {status:404,result:'error',payload:'no se encontraron usuarios'}
-  }
-}
+export const getUsers=async()=>await Users.find().lean();
 
 export const createUser=async(user)=>{
   try{
