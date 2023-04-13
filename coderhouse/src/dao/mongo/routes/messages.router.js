@@ -1,9 +1,11 @@
 import { Router } from "express";
+import { getMessages, createMessages } from "../modules/messagesManager.js";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send("hola");
+router.get("/",async (req, res) => {
+  const response = await getMessages();
+  return res.send(response);
 });
 
 export default router;

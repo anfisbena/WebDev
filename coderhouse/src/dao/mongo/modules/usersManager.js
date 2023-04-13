@@ -1,4 +1,4 @@
-import Users from '../models/user.model.js';
+import Users from '../models/users.model.js';
 import { ErrorCreateUser } from './ErrorHandler.js';
 
 const defaultFunction=()=>'please provide a function to handle the error'

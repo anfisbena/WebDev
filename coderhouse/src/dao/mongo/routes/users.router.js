@@ -5,7 +5,7 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   const response = await getUsers();
-  return res.status(response.status).send({status:response.status,payload:response.payload})
+  return res.send(response)
 });
 
 

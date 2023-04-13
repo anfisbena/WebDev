@@ -4,7 +4,11 @@ const ProductSchema = new Schema(
     {
         title: String,
         description: String,
-        code: String,
+        code: {
+            type: String,
+            unique: true,
+            index: true
+        },
         price: Number,
         status: Boolean,
         stock: Number,

@@ -25,7 +25,7 @@ app.use('/views',viewsRouter)
 app.use('/api/chats',chatRouter)
 app.use('/api/messages',messageRouter)
 app.use("/api/products",productRouter)
-app.use('api/users',userRouter)
+app.use('/api/users',userRouter)
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())
