@@ -1,6 +1,6 @@
 import Chats from '../models/chats.model.js';
 
-export const getChats= async () => await Chats.find().lean();
+export const getChats= async () => await Chats.paginate({},{lean:true,limit:10,page:1});
 
 export const createChat=async(chat)=>{
   try{

@@ -3,7 +3,7 @@ import { ErrorCreateUser } from './ErrorHandler.js';
 
 const defaultFunction=()=>'please provide a function to handle the error'
 
-export const getUsers=async()=>await Users.find().lean();
+export const getUsers=async()=>await Users.paginate({},{lean:true,limit:10,page:1});
 
 export const createUser=async(user)=>{
   try{

@@ -1,5 +1,5 @@
 <div>
-  {{#if products}}
+  {{#if products.length}}
     {{#each products}}
       <div>
         {{#each thumbnails}}
@@ -11,6 +11,9 @@
         <h2>${{this.price}}</h2>
       </div>
     {{/each}}
+      <div>
+        <h2>Pages</h2>
+      </div>
   {{else}}
     <h2>Product not found</h2>
   {{/if}} 

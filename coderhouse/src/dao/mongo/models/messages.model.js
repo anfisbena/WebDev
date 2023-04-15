@@ -1,6 +1,7 @@
 import {Schema,model} from "mongoose";
+import mongoosePaginate from 'mongoose-paginate-v2';
 
-const messageSchema = new Schema({
+const MessageSchema = new Schema({
   chat:{
       type: Schema.Types.ObjectId,
       ref: "chats"
@@ -16,6 +17,7 @@ const messageSchema = new Schema({
   date: Date
 });
 
-const Message = model("messages", messageSchema);
+MessageSchema.plugin(mongoosePaginate)
+const Message = model("messages", MessageSchema);
 
 export default Message;

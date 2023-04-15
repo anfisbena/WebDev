@@ -3,7 +3,7 @@ import {ErrorUploadFile} from './ErrorHandler.js'
 
 const defaultFunction=()=>'please provide a function to handle the error'
 
-export const getProducts=async()=>await Product.find().lean();
+export const getProducts=async()=>await Product.paginate({},{lean:true,limit:10,page:1});
 
 export const getProductsById=async(id)=>{
   try{
