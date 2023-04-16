@@ -3,7 +3,22 @@ import {ErrorUploadFile} from './ErrorHandler.js'
 
 const defaultFunction=()=>'please provide a function to handle the error'
 
-export const getProducts=async()=>await Product.paginate({},{lean:true,limit:10,page:1});
+export const getProducts=async(query,options)=>{
+  const result=await Product.paginate(query,options)
+
+  return {
+    status:'success',
+    payload:result,
+    totalPages:result.totalPages,
+    prevPage:result.prevPage,
+    nextPage:result.nextPage,
+    page:result.page,
+    hasPrevPage:result.hasPrevPage||null,
+    hasNextPage:result.hasNextPage||null,
+    prevLink:result.prevLink||null,
+    nextLink:result.nextLink||null
+  }
+};
 
 export const getProductsById=async(id)=>{
   try{

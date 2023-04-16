@@ -4,17 +4,20 @@ import {getProducts} from '../modules/ProductManager.js';
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const data = await getProducts()
-  const {totalDocs,page,totalPages,nextPage,prevPage,pagingCounter} = data
-  const products = data.docs;
-  const limit = parseInt(req.query.limit);
-  const productLimit = limit ? products.slice(0,limit) : products;
-
+  const query=req.query.query||{};
+  const options={
+    lean:true,
+    limit: parseInt(req.query.limit)||3,
+    page: parseInt(req.query.page)||1,
+    sort:req.query.sort?{price:req.query.sort}:{}
+  }
+  const data = await getProducts(query,options)
+  console.log(data)
   return res.render('home', {
     title: 'Home',
-    products: productLimit,
-    props:totalDocs
+    products: data.payload.docs
   });
 });
+
 
 export default router;

@@ -5,13 +5,18 @@ import {getProducts,getProductsById,addProduct,updateProduct,deleteProduct} from
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const productos = await getProducts();
-  const limit = parseInt(req.query.limit);
-  const productLimit = limit ? productos.slice(0, limit) : productos;
-
+  const query=req.query.query||{};
+  const options={
+    lean:true,
+    limit: parseInt(req.query.limit)||3,
+    page: parseInt(req.query.page)||1,
+    sort:req.query.sort?{price:req.query.sort}:{}
+  }
+  const data = await getProducts(query,options)
+  console.log(data)
   return res.render('home', {
     title: 'Home',
-    products: productLimit
+    products: data.payload.docs
   });
 });
 
