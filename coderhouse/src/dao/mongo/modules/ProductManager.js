@@ -5,7 +5,6 @@ const defaultFunction=()=>'please provide a function to handle the error'
 
 export const getProducts=async(query,options)=>{
   const result=await Product.paginate(query,options)
-
   return {
     status:'success',
     payload:result,
@@ -15,8 +14,8 @@ export const getProducts=async(query,options)=>{
     page:result.page,
     hasPrevPage:result.hasPrevPage||null,
     hasNextPage:result.hasNextPage||null,
-    prevLink:result.prevLink||null,
-    nextLink:result.nextLink||null
+    prevLink:result.prevPage?`http://localhost:8080/api/products?page=${result.prevPage}`:null,
+    nextLink:result.nextPage?`http://localhost:8080/api/products?page=${result.nextPage}`:null
   }
 };
 
