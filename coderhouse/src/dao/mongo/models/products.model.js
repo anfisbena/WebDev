@@ -13,7 +13,10 @@ const ProductSchema = new Schema(
         price: Number,
         status: Boolean,
         stock: Number,
-        category: String,
+        category:{
+            type:String,
+            enum:['Novartis','Viatris','Merck','Pfizer','AbbVie','Moderna','Roche','GMK','J&J']
+        },
         thumbnails: Array
     }
 );

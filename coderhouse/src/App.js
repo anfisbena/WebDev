@@ -10,6 +10,7 @@ import userRouter from '../src/dao/mongo/routes/users.router.js';
 import messageRouter from '../src/dao/mongo/routes/messages.router.js';
 import viewsRouter from '../src/dao/mongo/routes/views.router.js';
 import chatRouter from '../src/dao/mongo/routes/chats.router.js';
+import cartRouter from '../src/dao/mongo/routes/carts.router.js';
 
 //Declaracion de Express
 const app=express()
@@ -26,6 +27,7 @@ app.use('/api/chats',chatRouter)
 app.use('/api/messages',messageRouter)
 app.use("/api/products",productRouter)
 app.use('/api/users',userRouter)
+app.use('/api/carts',cartRouter)
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())

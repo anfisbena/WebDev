@@ -1,0 +1,22 @@
+<div>
+  {{#if cart.length}}
+    {{#each products}}
+      <div>
+        {{#each thumbnails}}
+          <img src="{{this}}" alt="productItem">
+        {{/each}}
+        <h2>{{this.title}}</h2>
+        <p>NKU:{{this.code}}</p>
+        <p>{{this.description}}</p>
+        <h2>${{this.price}}</h2>
+      </div>
+    {{/each}}
+      <div>
+        <h2>Pages</h2>
+      </div>
+  {{else}}
+    <h2>Product not found</h2>
+  {{/if}} 
+</div>
+
+<script src="/socket.io/socket.io.js"></script>

@@ -84,4 +84,11 @@ export const deleteProduct=async(id)=>{
   }
 }
 
+export const getMetrics=async()=>{
+  return await Product.aggregate([
+    {$group:{_id:"$category",Vendors:{$sum:1}}},
+  ])
+}
+
+
 export default defaultFunction;

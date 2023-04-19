@@ -16,4 +16,4 @@ export const ErrorCreateUser=(first_name,last_name,email)=>{
 }
 
 const defaultFunction=()=>{'please provide a function to handle the error'}
-export default defaultFunction;
+export default {ErrorCreateUser,ErrorUploadFile};
