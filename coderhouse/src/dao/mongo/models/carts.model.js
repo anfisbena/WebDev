@@ -1,10 +1,10 @@
-import {Schema,model} from "mongoose";
+import {Schema,model,SchemaTypes} from "mongoose";
 import mongoosePaginate from 'mongoose-paginate-v2';
 
 const CartSchema= new Schema({
   products:[{
     pid:{
-      type:Schema.Types.ObjectId,
+      type:SchemaTypes.ObjectId,
       ref:"products"
     }
     ,quantity:{

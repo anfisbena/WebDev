@@ -6,7 +6,6 @@ const router = Router();
 router.get('/', async (req, res) => {
   const metrics =await getMetrics();
   console.log(metrics)
-
   const query=req.query.query||{};
   const options={
     lean:true,
@@ -17,7 +16,11 @@ router.get('/', async (req, res) => {
   const data = await getProducts(query,options)
   return res.render('home', {
     title: 'Home',
-    products: data.payload.docs
+    products: data.payload.docs,
+    currentPage:data.page,
+    totalPages:data.totalPages,
+    hasPrevPage:data.prevLink,
+    hasNextPage:data.nextLink,
   });
 });
 

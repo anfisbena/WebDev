@@ -13,10 +13,13 @@ router.get('/', async (req, res) => {
     sort:req.query.sort?{price:req.query.sort}:{}
   }
   const data = await getProducts(query,options)
-  console.log(data)
   return res.render('home', {
     title: 'Home',
-    products: data.payload.docs
+    products: data.payload.docs,
+    currentPage:data.page,
+    totalPages:data.totalPages,
+    hasPrevPage:data.prevLink,
+    hasNextPage:data.nextLink,
   });
 });
 

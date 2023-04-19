@@ -15,11 +15,16 @@ const ProductSchema = new Schema(
         stock: Number,
         category:{
             type:String,
-            enum:['Novartis','Viatris','Merck','Pfizer','AbbVie','Moderna','Roche','GMK','J&J']
+            enum:['Novartis','Viatris','Merck','Pfizer','AbbVie','Moderna','Roche','GMK','J&J'],
         },
         thumbnails: Array
     }
 );
+
+ProductSchema.pre('save', function (next) {
+    this.updatedAt=Date.now();
+    next()
+})
 
 ProductSchema.plugin(mongoosePaginate)
 const Product = model('products', ProductSchema);

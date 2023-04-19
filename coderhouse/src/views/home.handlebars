@@ -12,7 +12,13 @@
       </div>
     {{/each}}
       <div>
-        <h2>Pages</h2>
+        <h2>Page {{currentPage}} of {{totalPages}}</h2>
+        {{#if hasPrevPage}}
+          <a href={{hasPrevPage}}><button>Previous</button></a>
+        {{/if}}
+        {{#if hasNextPage}}
+          <a href={{hasNextPage}}><button>Next</button></a>
+        {{/if}}
       </div>
   {{else}}
     <h2>Product not found</h2>

@@ -1,4 +1,4 @@
-import {Schema,model} from "mongoose";
+import {Schema,SchemaTypes,model} from "mongoose";
 import mongoosePaginate from 'mongoose-paginate-v2';
 
 const ChatSchema = new Schema({
@@ -7,7 +7,7 @@ const ChatSchema = new Schema({
     required:true
   },
   users:[{
-    type: Schema.Types.ObjectId,
+    type: SchemaTypes.ObjectId,
     ref:"users"
   }],
 });
