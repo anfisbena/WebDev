@@ -15,5 +15,4 @@ export const ErrorCreateUser=(first_name,last_name,email)=>{
   if(!email){return {status:400,result:'error',payload:'falta el email'}}
 }
 
-const defaultFunction=()=>{'please provide a function to handle the error'}
 export default {ErrorCreateUser,ErrorUploadFile};
