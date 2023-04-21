@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     currentPage:data.page,
     totalPages:data.totalPages,
     hasPrevPage:data.prevLink,
-    hasNextPage:data.nextLink,
+      hasNextPage:data.nextLink,
   });
 });
 

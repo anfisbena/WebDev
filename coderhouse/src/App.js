@@ -3,6 +3,9 @@ import __dirname from './utils.js';
 import {engine} from 'express-handlebars';
 import socket from './socket.js'
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
+import MongoStore from 'connect-mongo';
+import session from 'express-session';
 import homeRouter from '../src/dao/mongo/routes/home.router.js'
 import realTimeProducts from '../src/dao/mongo/routes/realtimeproducts.router.js'
 import productRouter from '../src/dao/mongo/routes/product.router.js';
@@ -11,6 +14,7 @@ import messageRouter from '../src/dao/mongo/routes/messages.router.js';
 import viewsRouter from '../src/dao/mongo/routes/views.router.js';
 import chatRouter from '../src/dao/mongo/routes/chats.router.js';
 import cartRouter from '../src/dao/mongo/routes/carts.router.js';
+import login from './dao/mongo/routes/session.router.js';
 
 //Declaracion de Express
 const app=express()
@@ -28,11 +32,27 @@ app.use('/api/messages',messageRouter)
 app.use("/api/products",productRouter)
 app.use('/api/users',userRouter)
 app.use('/api/carts',cartRouter)
+app.use('/login',login)
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())
 app.set('views',`${__dirname}/views`)
 app.set('view engine','handlebars')
+
+//Declaracion de cookies
+app.use(cookieParser('C0d3rH0u$3'));
+
+//configuracion de autenticacion de usuario
+app.use(session({
+  store:MongoStore.create({
+    mongoUrl :'mongodb+srv://coderhouse:1234@cluster0.bsrdbik.mongodb.net/test',
+    mongoOptions:{useNewUrlParser:true,useUnifiedTopology:true},
+    ttl:15
+  }),
+  secret:'kk420',
+  resave:false,
+  saveUninitialized:false,
+}))
 
 //configuracion de server
 const PUERTO=8080;
