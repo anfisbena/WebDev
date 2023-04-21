@@ -1,21 +1,24 @@
 import Product from '../models/products.model.js';
 import {ErrorUploadFile} from './ErrorHandler.js'
 
-const defaultFunction=()=>'please provide a function to handle the error'
-
 export const getProducts=async(query,options)=>{
-  const result=await Product.paginate(query,options)
-  return {
-    status:'success',
-    payload:result,
-    totalPages:result.totalPages,
-    prevPage:result.prevPage,
-    nextPage:result.nextPage,
-    page:result.page,
-    hasPrevPage:result.hasPrevPage||null,
-    hasNextPage:result.hasNextPage||null,
-    prevLink:result.prevPage?`http://localhost:8080/api/products?page=${result.prevPage}`:null,
-    nextLink:result.nextPage?`http://localhost:8080/api/products?page=${result.nextPage}`:null
+  try{
+    const result=await Product.paginate(query,options)
+    return {
+      status:'success',
+      payload:result,
+      totalPages:result.totalPages,
+      prevPage:result.prevPage,
+      nextPage:result.nextPage,
+      page:result.page,
+      hasPrevPage:result.hasPrevPage||null,
+      hasNextPage:result.hasNextPage||null,
+      prevLink:result.prevPage?`http://localhost:8080/api/products?page=${result.prevPage}`:null,
+      nextLink:result.nextPage?`http://localhost:8080/api/products?page=${result.nextPage}`:null
+    }
+  }
+  catch(error){
+    console.log(error);
   }
 };
 
@@ -32,23 +35,29 @@ export const getProductsById=async(id)=>{
 }
 
 export const addProduct=async(title,description,code,price,status,stock,category,filename)=>{
-  const thumbnails = await filename.map((element) => `http://localhost:8080/images/${element}`)
-  const error=ErrorUploadFile(title,description,code,price,status,stock,category,thumbnails);
-  const newProduct = {
-    title: title,
-    description: description,
-    code: code,
-    price: price,
-    status: status ?? true,
-    stock: stock,
-    category:category,
-    thumbnails:thumbnails,
-  };
-  
-  if(error){return {status:error.status,result:error.result,payload:error.payload}}
-  else{
-    await Product.create(newProduct)
-    return {status:200,result:'ok',payload:'producto agregado'}
+  try{
+    const thumbnails = await filename.map((element) => `http://localhost:8080/images/${element}`)
+    const error=ErrorUploadFile(title,description,code,price,status,stock,category,thumbnails);
+    const newProduct = {
+      title: title,
+      description: description,
+      code: code,
+      price: price,
+      status: status ?? true,
+      stock: stock,
+      category:category,
+      thumbnails:thumbnails,
+    };
+    
+    if(error){return {status:error.status,result:error.result,payload:error.payload}}
+    else{
+      await Product.create(newProduct)
+      return {status:200,result:'ok',payload:'producto agregado'}
+    }
+  }
+  catch(error){
+    console.log(error)
+    return {status:500,result:'error',payload:'error interno'}
   }
 };
 
@@ -85,10 +94,15 @@ export const deleteProduct=async(id)=>{
 }
 
 export const getMetrics=async()=>{
-  return await Product.aggregate([
-    {$group:{_id:"$category",Vendors:{$sum:1}}},
-  ])
+  try{
+    return await Product.aggregate([
+      {$group:{_id:"$category",Vendors:{$sum:1}}},
+    ])  
+  }
+  catch(error){
+    console.log(error)
+  }
 }
 
 
-export default defaultFunction;
+export default {getProducts,getProductsById,addProduct,updateProduct,deleteProduct,getMetrics};

@@ -2,18 +2,23 @@ import Carts from '../models/carts.model.js';
 import {ErrorUploadFile} from './ErrorHandler.js';
 
 export const getCarts=async(query,options)=>{
-  const result=await Carts.paginate(query,options)
-  return {
-    status:'success',
-    payload:result,
-    totalPages:result.totalPages,
-    prevPage:result.prevPage,
-    nextPage:result.nextPage,
-    page:result.page,
-    hasPrevPage:result.hasPrevPage||null,
-    hasNextPage:result.hasNextPage||null,
-    prevLink:result.prevPage?`http://localhost:8080/api/products?page=${result.prevPage}`:null,
-    nextLink:result.nextPage?`http://localhost:8080/api/products?page=${result.nextPage}`:null
+  try{
+    const result=await Carts.paginate(query,options)
+    return {
+      status:'success',
+      payload:result,
+      totalPages:result.totalPages,
+      prevPage:result.prevPage,
+      nextPage:result.nextPage,
+      page:result.page,
+      hasPrevPage:result.hasPrevPage||null,
+      hasNextPage:result.hasNextPage||null,
+      prevLink:result.prevPage?`http://localhost:8080/api/products?page=${result.prevPage}`:null,
+      nextLink:result.nextPage?`http://localhost:8080/api/products?page=${result.nextPage}`:null
+    }
+  }
+  catch(error){
+    console.log(error);
   }
 };
 
