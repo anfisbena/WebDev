@@ -41,6 +41,21 @@ export const addCartItem=async(cid,pid,qty)=>{
   }
 };
 
+export const addCartItem2=async(cid,pid,qty)=>{
+  try {
+    const updatedProduct= await Carts.updateOne(
+      {_id:cid},
+      {$push:{products:[{pid,qty}]}}
+    )
+    return {status:200,result:'ok',payload:updatedProduct};
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
 export const deleteCartItem=async(cid,pid)=>{
   return
 }
+
+export default {getCarts,addCartItem,addCartItem2,deleteCartItem};

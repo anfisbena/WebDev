@@ -1,11 +1,9 @@
 import { Router } from 'express';
-import {getProducts,getMetrics} from '../modules/ProductManager.js';
+import {getProducts,getMetrics} from '../managers/Product.manager.js';
 
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const metrics =await getMetrics();
-  console.log(metrics)
   const query=req.query.query||{};
   const options={
     lean:true,

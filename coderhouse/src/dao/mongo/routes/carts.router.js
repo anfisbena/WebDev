@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getCarts,addCartItem } from "../modules/cartsManager.js";
+import { getCarts,addCartItem,addCartItem2 } from "../managers/carts.manager.js  ";
 
 const router = Router();
 
@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
 router.post("/:cid/products/:pid", async (req, res) => {
   const {cid,pid} = req.params;
   const {quantity} = req.body;
-  const response = await addCartItem(cid,pid,quantity);
+  const response = await addCartItem2(cid,pid,quantity);
   return res.status(response.status).send({status:response.status,payload:'Producto Agregado'})
 });
 

@@ -34,7 +34,10 @@ const ProductSchema = new Schema(
             type:String,
             enum:['Novartis','Viatris','Merck','Pfizer','AbbVie','Moderna','Roche','GMK','J&J'],
         },
-        thumbnails: Array
+        thumbnails: {
+        type:Array,
+        defaul:[]
+        }
     }
 );
 

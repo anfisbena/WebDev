@@ -1,17 +1,18 @@
 import { Router } from 'express';
 import { uploader } from '../../../utils.js';
-import {getProducts,getProductsById,addProduct,updateProduct,deleteProduct} from '../modules/ProductManager.js';
+import {getProducts,getProductsById,addProduct,updateProduct,deleteProduct} from '../managers/Product.manager.js';
 
 const router = Router();
 
 router.get('/', async (req, res) => {
   const query=req.query.query||{};
-  const options={
+  const options=
+  {
     lean:true,
     limit: parseInt(req.query.limit)||2,
     page: parseInt(req.query.page)||1,
     sort:req.query.sort?{price:req.query.sort}:{}
-  }
+  };
   const data = await getProducts(query,options)
   return res.render('home', {
     title: 'Home',

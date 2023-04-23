@@ -8,9 +8,20 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-03-14T21:41:25.340Z",
-    "modified": "2023-03-29T04:51:16.391Z",
+    "modified": "2023-04-22T16:37:40.813Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "qty",
+          "value": "420",
+          "isDisabled": true
+        }
+      ]
+    },
     "tests": []
   },
   {
@@ -99,26 +110,13 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-29T03:03:26.380Z",
-    "modified": "2023-03-29T04:55:50.888Z",
+    "modified": "2023-04-23T01:00:30.555Z",
     "headers": [],
     "params": [],
     "body": {
-      "type": "formdata",
-      "raw": "",
-      "form": [
-        {
-          "name": "first_name",
-          "value": "Andres"
-        },
-        {
-          "name": "last_name",
-          "value": "Arcila"
-        },
-        {
-          "name": "email",
-          "value": "simonesputo@gmail.com"
-        }
-      ]
+      "type": "json",
+      "raw": "{\n  \"first_name\":\"Andres\",\n  \"last_name\":\"Arcila\",\n  \"email\":\"arcilacarmona@gmail.com\",\n  \"role\":\"admin\",\n  \"cart\":[\n    {\n      \"product_id\":\"643f4ce8fc13ae7ec4c91a97\",\n      \"quantity\":3\n    },\n    {\n      \"product_id\":\"643f4ce8fc13ae7ec4c91a98\",\n      \"quantity\":5\n    }\n  ]\n  \n}",
+      "form": []
     },
     "tests": []
   }

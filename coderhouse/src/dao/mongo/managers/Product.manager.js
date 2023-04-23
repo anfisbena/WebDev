@@ -104,5 +104,9 @@ export const getMetrics=async()=>{
   }
 }
 
+export const getProductByCode=async(code)=>{
+  return await Product.find({code:code}).lean()
+}
 
-export default {getProducts,getProductsById,addProduct,updateProduct,deleteProduct,getMetrics};
+
+export default {getProducts,getProductsById,addProduct,updateProduct,deleteProduct,getMetrics,getProductByCode};

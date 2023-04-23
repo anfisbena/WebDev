@@ -1,8 +1,7 @@
-console.log(document.querySelector('#qty'))
+console.log(document.querySelector('.code').value)
 
-const addToCartButton = document.querySelector('#add-to-cart');
-addToCartButton.addEventListener('click', () => {
-  const qtyInput = document.querySelector('#qty');
-  const qtyValue = qtyInput.value;
-  console.log(`Se ha agregado ${qtyValue} artículos al carrito.`);
-});
+document.querySelector('#add-to-cart').onclick=async() => {
+  const qtyInput =await document.querySelector('.qty').value;
+  const codeProduct=await document.querySelector('.code').value;
+  return {qtyInput,codeProduct};
+};

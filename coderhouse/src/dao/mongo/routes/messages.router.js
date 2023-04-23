@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getMessages, createMessages } from "../modules/messagesManager.js";
+import { getMessages, createMessages } from "../managers/messages.manager.js";
 
 const router = Router();
 

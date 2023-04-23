@@ -1,13 +1,9 @@
 <div>
   {{#if cart.length}}
-    {{#each products}}
+    {{#each cart}}
       <div>
-        {{#each thumbnails}}
-          <img src="{{this}}" alt="productItem">
-        {{/each}}
-        <h2>{{this.title}}</h2>
-        <p class="code">NKU:{{this.code}}</p>
-        <p class="code">{{this.description}}</p>
+        <h2>CART</h2>
+        <p></p>
         <h2>${{this.price}}</h2>
       </div>
     {{/each}}
