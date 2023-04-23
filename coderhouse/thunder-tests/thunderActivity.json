@@ -110,12 +110,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-29T03:03:26.380Z",
-    "modified": "2023-04-23T01:00:30.555Z",
+    "modified": "2023-04-23T18:37:00.503Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"first_name\":\"Andres\",\n  \"last_name\":\"Arcila\",\n  \"email\":\"arcilacarmona@gmail.com\",\n  \"role\":\"admin\",\n  \"cart\":[\n    {\n      \"product_id\":\"643f4ce8fc13ae7ec4c91a97\",\n      \"quantity\":3\n    },\n    {\n      \"product_id\":\"643f4ce8fc13ae7ec4c91a98\",\n      \"quantity\":5\n    }\n  ]\n  \n}",
+      "raw": "{\n  \"first_name\":\"Andres\",\n  \"last_name\":\"Arcila\",\n  \"email\":\"arcilacarmona@gmail.com\",\n  \"role\":\"admin\"\n}",
       "form": []
     },
     "tests": []

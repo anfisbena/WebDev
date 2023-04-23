@@ -1,10 +1,13 @@
 import Users from '../models/users.model.js';
 import { ErrorCreateUser } from './ErrorHandler.js';
+import {createCart} from './carts.manager.js';
 
 export const getUsers=async(query,options)=>{
   try{
     const result=await Users.paginate(query,options)
-    console.log(result.docs);
+    const cartArray=result.docs[0].cart
+    console.log(cartArray)
+
     return {
       status:'success',
       payload:result,
@@ -23,7 +26,6 @@ export const getUsers=async(query,options)=>{
   }
 }
 
-
 export const createUser=async(user)=>{
   try{
     const error=ErrorCreateUser(user.first_name,user.last_name,user.email)
@@ -31,11 +33,12 @@ export const createUser=async(user)=>{
       return {status:error.status,result:error.result,payload:error.payload}}
     else{
       const userCreated = await Users.create(user);
+      await createCart(userCreated._id)
       return {status:200,result:'ok',payload:userCreated};      
     }
   }
   catch(error){
-    return {status:404,result:'error',payload:'no se pudo crear el usuario'}
+    return {status:404,result:'error',payload:'Verifica tu correo, ya esta registrado'}
   }
 }
 

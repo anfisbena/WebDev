@@ -9,7 +9,6 @@
             <th>EMAIL</th>
             <th>ROLE</th>
             <th>ID</th>
-            <th>CART</th>
           </tr>
           {{#each users}}
             <tr>
@@ -18,11 +17,10 @@
               <td>{{email}}</td>
               <td>{{role}}</td>
               <td>{{_id}}</td>
-              <td>{{cart}}</td>
             </tr>
           {{/each}}
         </table>
-    
+
       <div>
         <h2>Page {{currentPage}} of {{totalPages}}</h2>
         {{#if hasPrevPage}}

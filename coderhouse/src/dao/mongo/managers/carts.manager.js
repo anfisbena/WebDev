@@ -22,6 +22,16 @@ export const getCarts=async(query,options)=>{
   }
 };
 
+export const createCart=async(userId)=>{
+  try{
+    const result=await Carts.create({uid:userId});
+    return {status:200,result:'ok',payload:result}
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
 export const addCartItem=async(cid,pid,qty)=>{
   try {
     const product={pid,quantity:qty};
@@ -58,4 +68,4 @@ export const deleteCartItem=async(cid,pid)=>{
   return
 }
 
-export default {getCarts,addCartItem,addCartItem2,deleteCartItem};
+export default {getCarts,addCartItem,addCartItem2,deleteCartItem,createCart};

@@ -145,5 +145,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "80296cc9-7407-44a1-b91b-ebe01a71c07c",
+    "colId": "be3ab471-8310-4ec6-b5cb-e313f6496b94",
+    "containerId": "",
+    "name": "addUser",
+    "url": "http://localhost:8080/api/users",
+    "method": "POST",
+    "sortNum": 70000,
+    "created": "2023-04-23T20:33:31.952Z",
+    "modified": "2023-04-23T20:33:31.952Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"first_name\":\"Andres\",\n  \"last_name\":\"Arcila\",\n  \"email\":\"arcilacarmona@gmail.com\",\n  \"role\":\"admin\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
