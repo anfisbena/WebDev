@@ -5,20 +5,33 @@ import {createCart} from './carts.manager.js';
 export const getUsers=async(query,options)=>{
   try{
     const result=await Users.paginate(query,options)
-    const cartArray=result.docs[0].cart
-    console.log(cartArray)
-
-    return {
-      status:'success',
-      payload:result,
-      totalPages:result.totalPages,
-      prevPage:result.prevPage,
-      nextPage:result.nextPage,
-      page:result.page,
-      hasPrevPage:result.hasPrevPage||null,
-      hasNextPage:result.hasNextPage||null,
-      prevLink:result.prevPage?`http://localhost:8080/api/users?page=${result.prevPage}`:null,
-      nextLink:result.nextPage?`http://localhost:8080/api/users?page=${result.nextPage}`:null
+    if(result.totalDocs!==0){
+      return {
+        status:200,
+        payload:result,
+        totalPages:result.totalPages,
+        prevPage:result.prevPage,
+        nextPage:result.nextPage,
+        page:result.page,
+        hasPrevPage:result.hasPrevPage||null,
+        hasNextPage:result.hasNextPage||null,
+        prevLink:result.prevPage?`http://localhost:8080/api/users?page=${result.prevPage}`:null,
+        nextLink:result.nextPage?`http://localhost:8080/api/users?page=${result.nextPage}`:null
+      }
+    }
+    else{
+      return {
+        status:404,
+        payload:'No se encontraron usuarios',
+        totalPages:result.totalPages,
+        prevPage:result.prevPage,
+        nextPage:result.nextPage,
+        page:result.page,
+        hasPrevPage:result.hasPrevPage||null,
+        hasNextPage:result.hasNextPage||null,
+        prevLink:result.prevPage?`http://localhost:8080/api/users?page=${result.prevPage}`:null,
+        nextLink:result.nextPage?`http://localhost:8080/api/users?page=${result.nextPage}`:null
+      }
     }
   }
   catch(error){

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { uploader } from '../../../utils.js';
-import {getProducts,getProductsById,addProduct,updateProduct,deleteProduct} from '../managers/Product.manager.js';
+import {getProducts,getProductsById,addProduct,updateProduct,deleteProduct} from '../managers/products.manager.js';
 
 const router = Router();
 
@@ -9,13 +9,13 @@ router.get('/', async (req, res) => {
   const options=
   {
     lean:true,
-    limit: parseInt(req.query.limit)||2,
+    limit: parseInt(req.query.limit)||5,
     page: parseInt(req.query.page)||1,
     sort:req.query.sort?{price:req.query.sort}:{}
   };
   const data = await getProducts(query,options)
-  return res.render('home', {
-    title: 'Home',
+  return res.render('products', {
+    title: 'products',
     products: data.payload.docs,
     currentPage:data.page,
     totalPages:data.totalPages,
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 router.get('/:pid', async (req, res) => {
   const id = req.params.pid;
   const response = await getProductsById(id);
-  return res.render('home', {
+  return res.render('products', {
     title: 'product',
     products: response
   });

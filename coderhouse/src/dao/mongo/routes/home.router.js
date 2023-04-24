@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import {getProducts,getMetrics} from '../managers/Product.manager.js';
+import {getProducts} from '../managers/products.manager.js';
 
 const router = Router();
 
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   }
   const data = await getProducts(query,options)
   return res.render('home', {
-    title: 'Home',
+    title: 'home',
     products: data.payload.docs,
     currentPage:data.page,
     totalPages:data.totalPages,

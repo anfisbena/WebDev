@@ -12,7 +12,7 @@ import messageRouter from '../src/dao/mongo/routes/messages.router.js';
 import viewsRouter from '../src/dao/mongo/routes/views.router.js';
 import chatRouter from '../src/dao/mongo/routes/chats.router.js';
 import cartRouter from '../src/dao/mongo/routes/carts.router.js';
-import Sessions from './dao/mongo/routes/session.router.js';
+
 
 
 //Declaracion de Express
@@ -35,7 +35,6 @@ app.use('/api/messages',messageRouter)
 app.use("/api/products",productRouter)
 app.use('/api/users',userRouter)
 app.use('/api/carts',cartRouter)
-app.use('/login',Sessions)
 app.use("/realtimeproducts",realTimeProducts)
 app.use('/views',viewsRouter)
 
