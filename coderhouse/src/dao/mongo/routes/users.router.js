@@ -52,49 +52,67 @@ const router = Router();
 
 
 router.get('/login', (req, res) => {
-  return res.render('login',{
-    title:'Login',
-  })
+  try{
+    return res.render('login',{
+      title:'Login',
+    })
+  }
+  catch(err){console.log(err)}
 })
 
 router.post('/login',async (req, res) => {
-  const cookieUser = req.body.email;
-  const query={
-    'email':`${req.body.email}`,
-    'password':`${req.body.password}`,
-  };
-  const options=
-  {
-    lean:           true,
-    limit:          parseInt(req.query.limit)||25,
-    page:           parseInt(req.query.page)||1,
-  };
-  const data = await getUsers(query,options)
-  console.log(data)
-  res.cookie('CoderCookie',cookieUser,{maxAge:10000});
-  return res.render('login', 
-  {
-    title:          'Users',
-    users:          data.payload.docs,
-    currentPage:    data.page,
-    totalPages:     data.totalPages,
-    hasPrevPage:    data.prevLink,
-    hasNextPage:    data.nextLink,
-  });
+  try{
+    const query=
+    {
+      'email':`${req.body.email}`,
+      'password':`${req.body.password}`,
+    };
+    const options=
+    {
+      lean:           true,
+      limit:          parseInt(req.query.limit)||25,
+      page:           parseInt(req.query.page)||1,
+    };
+    
+    const response = await getUsers(query,options)
+
+    if(response.status===400){return res.status(response.status).send({status:response.status,payload:response.payload})}
+    else{
+      req.session.user={
+        first_name:response.payload.docs[0].first_name,
+        last_name:response.payload.docs[0].last_name,
+        email:response.payload.docs[0].email,
+        role:response.payload.docs[0].role
+      }
+      return res.status(response.status).send({status:response.status,payload:req.session.user})
+    }
+  }
+  catch(err){console.log(err)}
 })
 
 router.get('/register', (req, res) => {
-  return res.render('register',{
-    title:'Register', 
-  })}
-);
+  try{
+    return res.render('register',{
+      title:'Register',
+    })
+  }
+  catch(err){console.log(err)}
+});
 
 router.post('/register', async (req, res) => {
-  const response=await createUser(req.body);
-  return res.status(response.status).send({status:response.status,payload:response.payload})
+  try{
+    const response=await createUser(req.body);
+    return res.status(response.status).send({status:response.status,payload:response.payload})
+  }
+  catch(err){console.log(err)}
 })
 
-
+router.get('/profile', (req, res) => {
+  res.render('profile',{
+    title:'Profile',
+    user:req.session.user
+  })
+})
 
 
 export default router;

@@ -1,8 +1,9 @@
 import express from 'express';
-import __dirname from './utils.js';
 import {engine} from 'express-handlebars';
-import socket from './socket.js'
 import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
+import __dirname from './utils.js';
+import socket from './socket.js'
 import {loadDatabase,loadLogin} from './mongoDB.js';
 import homeRouter from '../src/dao/mongo/routes/home.router.js'
 import realTimeProducts from '../src/dao/mongo/routes/realtimeproducts.router.js'
@@ -22,6 +23,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(loadLogin) //sistema de logueo
 app.use(cookieParser('C0d3rH0u$3')); //sistema de cookies
 app.use(express.static(`${__dirname}/public`)); //declaracion de folder public
+app.use(morgan('dev')) //sistema de logueo de peticiones http
 
 //Configuracion de handlebars
 app.engine('handlebars',engine())
@@ -48,10 +50,3 @@ const httpServer=app.listen(PUERTO,()=>console.log(`te escucho👂 en ↪ http:/
 
 //configuracion de socket
 socket.connect(httpServer);
-
-
-
-
-
-
-//////////////QYEDE MINUTO 26

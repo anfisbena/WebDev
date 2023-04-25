@@ -9,10 +9,11 @@ export const ErrorUploadFile=(title,description,code,price,status,stock,category
   if(!thumbnails.length){return {status:400,result:'error',payload:'falta las imagenes'}}
 }
 
-export const ErrorCreateUser=(first_name,last_name,email)=>{
+export const ErrorCreateUser=(first_name,last_name,email,userExist)=>{
   if(!first_name){return {status:400,result:'error',payload:'falta el nombre'}}
   if(!last_name){return {status:400,result:'error',payload:'falta el apellido'}}
   if(!email){return {status:400,result:'error',payload:'falta el email'}}
+  if(userExist){return {status:400,result:'error',payload:'Verifica tu correo, ya esta registrado'}}
 }
 
 export default {ErrorCreateUser,ErrorUploadFile};
