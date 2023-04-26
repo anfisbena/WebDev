@@ -4,27 +4,6 @@ import {getUsers,createUser} from '../managers/users.manager.js';
 
 const router = Router();
 
-// router.get('/', async (req, res) => {
-//   const query=req.query.query||{};
-//   const options=
-//   {
-//     lean:           true,
-//     limit:          parseInt(req.query.limit)||25,
-//     page:           parseInt(req.query.page)||1,
-//   };
-//   const data = await getUsers(query,options)
-//   return res.render('users', 
-//     {
-//       title:        'Users',
-//       users:        data.payload.docs,
-//       currentPage:  data.page,
-//       totalPages:   data.totalPages,
-//       hasPrevPage:  data.prevLink,
-//       hasNextPage:  data.nextLink,
-//     }
-//   );
-// });
-
 // router.get('/:id', async (req, res) => {
 //   const query={'_id':`${req.params.id}`};
 //   const options=
@@ -45,11 +24,6 @@ const router = Router();
 //   });
 // })
 
-// router.post('/', async (req, res) => {
-//   const response = await createUser(req.body);
-//   return res.status(response.status).send({status:response.status,payload:response.payload})
-// })
-
 
 router.get('/login', (req, res) => {
   try{
@@ -66,7 +40,7 @@ router.post('/login',async (req, res) => {
     {
       'email':`${req.body.email}`,
       'password':`${req.body.password}`,
-    };
+    }||{};
     const options=
     {
       lean:           true,
