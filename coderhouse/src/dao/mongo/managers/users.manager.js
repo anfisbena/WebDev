@@ -1,29 +1,20 @@
 import Users from '../models/users.model.js';
 import { ErrorCreateUser } from './ErrorHandler.js';
 import {createCart} from './carts.manager.js';
+import {hash,compare} from '../../../utils.js';
 
-export const getUsers=async(query,options)=>{
+export const getUsers=async(credentials)=>{
   try{
-    const result=await Users.paginate(query,options)
-    if(result.totalDocs!==0){
-      return {
-        status:200,
-        payload:result,
-        totalPages:result.totalPages,
-        prevPage:result.prevPage,
-        nextPage:result.nextPage,
-        page:result.page,
-        hasPrevPage:result.hasPrevPage||null,
-        hasNextPage:result.hasNextPage||null,
-        prevLink:result.prevPage?`http://localhost:8080/api/users?page=${result.prevPage}`:null,
-        nextLink:result.nextPage?`http://localhost:8080/api/users?page=${result.nextPage}`:null
-      }
+
+    const result=await Users.findOne({email:credentials.email})
+    if(!result){
+      return {status:400,error:'usuario no encontrado'}
+    }
+    else if(!compare(result,credentials.password)){
+      return {status:400,result:'error',error:'contraseña incorrecta'}
     }
     else{
-      return {
-        status:400,
-        payload:'Revisa tu usuario o contraseña'
-      }
+      return {status:200,result:'ok',payload:result}
     }
   }
   catch(error){
@@ -36,11 +27,18 @@ export const createUser=async(user)=>{
     const userExist=await Users.findOne({email:user.email})
     const error=ErrorCreateUser(user.first_name,user.last_name,user.email,userExist)
     if(error){
-      return {status:error.status,result:error.result,payload:error.payload}}
+      return {status:error.status,result:error.result,error:error.error}}
     else{
-      const userCreated = await Users.create(user);
+      const newUser=
+      {
+        first_name:user.first_name,
+        last_name:user.last_name,
+        email:user.email,
+        password:hash(user.password),
+      };
+      const userCreated = await Users.create(newUser);
       await createCart(userCreated._id)
-      return {status:200,result:'ok',payload:userCreated};      
+      return {status:201,result:'ok',payload:'user created'};      
     }
   }
   catch(error){

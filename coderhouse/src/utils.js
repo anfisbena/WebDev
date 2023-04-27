@@ -1,6 +1,7 @@
 import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import {hashSync,compareSync,genSaltSync} from 'bcrypt';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -15,4 +16,10 @@ const storage = multer.diskStorage({
 });
 
 export const uploader = multer({ storage });
+
+// PASS HASH
+export const hash = (password) => hashSync(password, genSaltSync(10)); // Hashea 10 saltos
+export const compare =(user, password) => compareSync(password, user.password);// Compara el password con el hash
+
+
 export default __dirname;

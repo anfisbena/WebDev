@@ -9,7 +9,7 @@ if(registerForm){
     const last_name=e.target.elements.last_name.value
     const obj={first_name,last_name,email,password};
     
-    await fetch('/api/users/register',{
+    await fetch('/register',{
       method:"POST",
       body: JSON.stringify(obj),
       headers: {

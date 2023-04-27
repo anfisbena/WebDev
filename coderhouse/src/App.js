@@ -1,3 +1,5 @@
+//QUEDE MIN 48:14 https://coderhouse.zoom.us/rec/play/820r32gA7IHdJEQxjSiD3ApkLAzzHo_hcDn3j9T2nUMEpyuUsZ-6NC4jBkV2-hXpA4DbypSO-y6XgYgk.Rs45uQz5f3U4yoKB?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fcoderhouse.zoom.us%2Frec%2Fshare%2FAQ7SVY_SCuuN_ops_KmjNJep121uuNB1m75mS-XeZk9QqgmBIakFj1CHWSF3-WqP.oBWQwBOlRGGF5Ype
+
 import express from 'express';
 import {engine} from 'express-handlebars';
 import cookieParser from 'cookie-parser';
@@ -35,7 +37,7 @@ app.use('/',homeRouter)
 app.use('/api/chats',chatRouter)
 app.use('/api/messages',messageRouter)
 app.use("/api/products",productRouter)
-app.use('/api/users',userRouter)
+app.use('/',userRouter)
 app.use('/api/carts',cartRouter)
 app.use("/realtimeproducts",realTimeProducts)
 app.use('/views',viewsRouter)

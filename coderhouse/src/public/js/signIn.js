@@ -7,7 +7,7 @@ loginForm.addEventListener('submit',async(e)=>{
   const password=e.target.elements.password.value
   const obj={email,password};
 
-  await fetch('/api/users/login',{
+  await fetch('/login',{
     method:"POST",
     body: JSON.stringify(obj),
     headers: {

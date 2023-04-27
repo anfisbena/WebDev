@@ -4,61 +4,36 @@ import {getUsers,createUser} from '../managers/users.manager.js';
 
 const router = Router();
 
-// router.get('/:id', async (req, res) => {
-//   const query={'_id':`${req.params.id}`};
-//   const options=
-//   {
-//     lean:           true,
-//     limit:          parseInt(req.query.limit)||25,
-//     page:           parseInt(req.query.page)||1,
-//   };
-//   const data = await getUsers(query,options)
-//   return res.render('users', 
-//   {
-//     title:          'Users',
-//     users:          data.payload.docs,
-//     currentPage:    data.page,
-//     totalPages:     data.totalPages,
-//     hasPrevPage:    data.prevLink,
-//     hasNextPage:    data.nextLink,
-//   });
-// })
-
-
 router.get('/login', (req, res) => {
   try{
-    return res.render('login',{
-      title:'Login',
-    })
+    if(!req.cookies.coderUser){
+      return res.render('login',{
+        title:'Login',
+      })
+    }
+    else{
+      return res.redirect('/profile')
+    }
   }
   catch(err){console.log(err)}
 })
 
 router.post('/login',async (req, res) => {
   try{
-    const query=
-    {
-      'email':`${req.body.email}`,
-      'password':`${req.body.password}`,
-    }||{};
-    const options=
-    {
-      lean:           true,
-      limit:          parseInt(req.query.limit)||25,
-      page:           parseInt(req.query.page)||1,
-    };
-    
-    const response = await getUsers(query,options)
-
-    if(response.status===400){return res.status(response.status).send({status:response.status,payload:response.payload})}
+    const response = await getUsers(req.body);
+    if(response.status===400){
+      return res.status(response.status).send({status:response.status,error:response.error})
+    }
     else{
-      req.session.user={
-        first_name:response.payload.docs[0].first_name,
-        last_name:response.payload.docs[0].last_name,
-        email:response.payload.docs[0].email,
-        role:response.payload.docs[0].role
+      req.session.user=
+      {
+        first_name:response.payload.first_name,
+        last_name:response.payload.last_name,
+        email:response.payload.email,
+        role:response.payload.role
       }
-      return res.status(response.status).send({status:response.status,payload:req.session.user})
+      res.cookie('coderUser',req.session.user)
+      return res.status(response.status).send({status:response.status,payload:response.payload})
     }
   }
   catch(err){console.log(err)}
@@ -66,9 +41,13 @@ router.post('/login',async (req, res) => {
 
 router.get('/register', (req, res) => {
   try{
-    return res.render('register',{
-      title:'Register',
-    })
+    if(!req.cookies.coderUser){
+      return res.render('register',{
+        title:'Register',
+      })}
+    else{
+      return res.redirect('/profile')
+    }
   }
   catch(err){console.log(err)}
 });
@@ -84,9 +63,16 @@ router.post('/register', async (req, res) => {
 router.get('/profile', (req, res) => {
   res.render('profile',{
     title:'Profile',
-    user:req.session.user
+    user:req.cookies.coderUser
   })
 })
 
+router.get('/logout', (req, res) => {
+  try{
+    res.clearCookie('coderUser')
+    return res.redirect('/login')
+  }
+  catch(err){console.log(err)}
+})
 
 export default router;
