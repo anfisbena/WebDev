@@ -1,5 +1,3 @@
-console.log(document.querySelector('.code').value)
-
 document.querySelector('#add-to-cart').onclick=async() => {
   const qtyInput =await document.querySelector('.qty').value;
   const codeProduct=await document.querySelector('.code').value;

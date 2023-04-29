@@ -12,7 +12,7 @@ router.get('/login', (req, res) => {
       })
     }
     else{
-      return res.redirect('/profile')
+      return res.redirect('/')
     }
   }
   catch(err){console.log(err)}
@@ -61,6 +61,8 @@ router.post('/register', async (req, res) => {
 })
 
 router.get('/profile', (req, res) => {
+  const user=req.cookies.coderUser;
+  if(!user){return res.redirect('/login')}
   res.render('profile',{
     title:'Profile',
     user:req.cookies.coderUser

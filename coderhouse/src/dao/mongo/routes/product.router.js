@@ -6,6 +6,8 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   const query=req.query.query||{};
+  const user=req.cookies.coderUser;
+  if(!user){return res.redirect('/login')}
   const options=
   {
     lean:true,
@@ -17,6 +19,7 @@ router.get('/', async (req, res) => {
   return res.render('products', {
     title: 'products',
     products: data.payload.docs,
+    user:user,
     currentPage:data.page,
     totalPages:data.totalPages,
     hasPrevPage:data.prevLink,

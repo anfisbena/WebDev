@@ -1,6 +1,10 @@
 <div>
   <a href="/"><button>HOME</button></a>
-  <a href="/api/users/login"><button>LOGIN</button></a>
+  {{#if user}}
+    <a href="/profile"><button>PROFILE</button></a>
+  {{else}}
+    <a href="/login"><button>LOGIN</button></a>
+  {{/if}}
   {{#if products.length}}
     {{#each products}}
       <div>
