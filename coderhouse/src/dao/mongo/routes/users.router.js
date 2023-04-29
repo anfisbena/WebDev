@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {getUsers,createUser} from '../managers/users.manager.js';
+import Swal from 'sweetalert2';
 
 
 const router = Router();
@@ -32,7 +33,12 @@ router.post('/login',async (req, res) => {
         email:response.payload.email,
         role:response.payload.role
       }
-      res.cookie('coderUser',req.session.user)
+      res.cookie('coderUser',req.session.user,{maxAge:1000*60*60})
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
       return res.status(response.status).send({status:response.status,payload:response.payload})
     }
   }

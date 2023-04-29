@@ -14,6 +14,6 @@ loginForm.addEventListener('submit',async(e)=>{
       'Content-Type': 'application/json'
     },
   })
-  window.location.reload();
+  .then(async(res)=>console.log(await res.json()))
 })
 }
