@@ -2,26 +2,16 @@ import Users from '../models/users.model.js';
 import { ErrorCreateUser } from './ErrorHandler.js';
 import {createCart} from './carts.manager.js';
 import {hash,compare} from '../../../utils.js';
-import Swal from 'sweetalert2'
+
 
 export const getUsers=async(credentials)=>{
   try{
 
     const result=await Users.findOne({email:credentials.email})
     if(!result){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Usuario no encontrado',
-      });
       return {status:400,error:'usuario no encontrado'}
     }
     else if(!compare(result,credentials.password)){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Contraseña incorrecta',
-      });
       return {status:400,result:'error',error:'contraseña incorrecta'}
     }
     else{
