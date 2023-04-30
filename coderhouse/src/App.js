@@ -16,8 +16,6 @@ import viewsRouter from '../src/dao/mongo/routes/views.router.js';
 import chatRouter from '../src/dao/mongo/routes/chats.router.js';
 import cartRouter from '../src/dao/mongo/routes/carts.router.js';
 
-
-
 //Declaracion de Express
 const app=express()
 app.use(express.json()) //sistema de json

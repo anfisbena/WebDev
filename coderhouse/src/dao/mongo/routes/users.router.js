@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import {getUsers,createUser} from '../managers/users.manager.js';
+import {getUsers,createUser,updateUser} from '../managers/users.manager.js';
 import Swal from 'sweetalert2';
 
 
@@ -79,6 +79,28 @@ router.get('/logout', (req, res) => {
   try{
     res.clearCookie('coderUser')
     return res.redirect('/login')
+  }
+  catch(err){console.log(err)}
+})
+
+router.get('/recover', (req, res) => {
+  try{
+    res.render('recover',{
+      title:'Recover'
+    })
+  }
+  catch(err){console.log(err)}
+});
+
+router.post('/recover', async (req, res) => {
+  try{
+    const response=await updateUser(req.body);
+    if (response.status===400){
+      return res.status(response.status).send({status:response.status,error:response.error})
+    }
+    else{
+      return res.redirect('/login')
+    }
   }
   catch(err){console.log(err)}
 })

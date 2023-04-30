@@ -1,7 +1,7 @@
 import Users from '../models/users.model.js';
 import { ErrorCreateUser } from './ErrorHandler.js';
 import {createCart} from './carts.manager.js';
-import {hash,compare} from '../../../utils.js';
+import {hash,validatePassword} from '../../../utils.js';
 
 
 export const getUsers=async(credentials)=>{
@@ -11,7 +11,7 @@ export const getUsers=async(credentials)=>{
     if(!result){
       return {status:400,error:'usuario no encontrado'}
     }
-    else if(!compare(result,credentials.password)){
+    else if(!validatePassword(result,credentials.password)){
       return {status:400,result:'error',error:'contraseña incorrecta'}
     }
     else{
@@ -25,7 +25,7 @@ export const getUsers=async(credentials)=>{
 
 export const createUser=async(user)=>{
   try{
-    const userExist=await Users.findOne({email:user.email})
+    const userExist=await Users.findOne({email:user.email}).lean()
     const error=ErrorCreateUser(user.first_name,user.last_name,user.email,userExist)
     if(error){
       return {status:error.status,result:error.result,error:error.error}}
@@ -47,4 +47,19 @@ export const createUser=async(user)=>{
   }
 }
 
-export default {getUsers,createUser}
+const updateUser=async(user)=>{
+  try{
+    const update=await Users.findOneAndUpdate({email:user.email},{password:user.password},{new:true})
+    if(!update){
+    return {status:400,result:'error',error:'usuario no encontrado'}
+    }
+    else{
+      return {status:200,result:'ok',payload:update}
+    }
+  }
+  catch(error){
+    return {status:500,result:'error',payload:'error en servidor'}
+  }
+}
+
+export default {getUsers,createUser,updateUser}
