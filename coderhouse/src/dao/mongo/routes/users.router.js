@@ -1,9 +1,12 @@
 import { Router } from 'express';
 import {getUsers,createUser,updateUser} from '../managers/users.manager.js';
-import Swal from 'sweetalert2';
-
+import passport from 'passport';
 
 const router = Router();
+
+router.get('/github', passport.authenticate('github',{scope:['user:email']}),(req,res)=>{
+  res.redirect('/')
+});
 
 router.get('/login', (req, res) => {
   try{
@@ -19,30 +22,19 @@ router.get('/login', (req, res) => {
   catch(err){console.log(err)}
 })
 
-router.post('/login',async (req, res) => {
-  try{
-    const response = await getUsers(req.body);
-    if(response.status===400){
-      return res.status(response.status).send({status:response.status,error:response.error})
-    }
-    else{
-      req.session.user=
-      {
-        first_name:response.payload.first_name,
-        last_name:response.payload.last_name,
-        email:response.payload.email,
-        role:response.payload.role
-      }
-      res.cookie('coderUser',req.session.user,{maxAge:1000*60*60})
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-      })
-      return res.status(response.status).send({status:response.status,payload:response.payload})
-    }
+router.post('/login',passport.authenticate('login',{failureRedirect:'/failLogin'}),async (req, res) => {
+  req.session.user={
+    first_name:req.user.first_name,
+    last_name:req.user.last_name,
+    email:req.user.email,
+    role:req.user.role,
   }
-  catch(err){console.log(err)}
+  res.cookie('coderUser',req.session.user,{maxAge:1000*60*60*24})
+  return res.send({status:req.status,message:'User logged in',payload:req.user})
+})
+
+router.get('/failLogin',(req,res)=>{
+  return res.send({status:'status',error:'Authentication error'})
 })
 
 router.get('/register', (req, res) => {
@@ -58,12 +50,12 @@ router.get('/register', (req, res) => {
   catch(err){console.log(err)}
 });
 
-router.post('/register', async (req, res) => {
-  try{
-    const response=await createUser(req.body);
-    return res.status(response.status).send({status:response.status,payload:response.payload})
-  }
-  catch(err){console.log(err)}
+router.post('/register', passport.authenticate('register',{failureRedirect:'/failRegister'}),async (req, res) => {
+  return res.send({status:'status',message:'User created'})
+})
+
+router.get('/failRegister',(req,res)=>{
+  return res.send({status:'status',error:'Authentication error'})
 })
 
 router.get('/profile', (req, res) => {
@@ -95,12 +87,7 @@ router.get('/recover', (req, res) => {
 router.post('/recover', async (req, res) => {
   try{
     const response=await updateUser(req.body);
-    if (response.status===400){
-      return res.status(response.status).send({status:response.status,error:response.error})
-    }
-    else{
-      return res.redirect('/login')
-    }
+    return res.status(response.status).send({status:response.status,error:response.error})
   }
   catch(err){console.log(err)}
 })

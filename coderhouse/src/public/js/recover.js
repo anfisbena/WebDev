@@ -6,17 +6,27 @@ loginForm.addEventListener('submit',async(e)=>{
   const password=e.target.elements.password.value
   const validatePassword=e.target.elements.validatePassword.value
   if(password!==validatePassword){
-    alert("Passwords do not match")
+    alert("Contraseña no coincide")
     return
   }
   const obj={email,password};
 
-  await fetch('/login',{
+  await fetch('/recover',{
     method:"POST",
     body: JSON.stringify(obj),
     headers: {
       'Content-Type': 'application/json'
     },
   })
-  .then(async(res)=>console.log(await res.json()))
+  .then(res=>res.json())
+  .then(data=>{
+    if(data.status===200){
+      alert('Contraseña actualizada')
+      window.location.href='/login'
+    }
+    else{
+      alert('Error al actualizar contraseña')
+    }
+  })
+
 })

@@ -14,6 +14,15 @@ loginForm.addEventListener('submit',async(e)=>{
       'Content-Type': 'application/json'
     },
   })
-  .then(async(res)=>console.log(await res.json()))
+  .then(res=>res.json())
+  .then(data=>{
+    if(data.status===200){
+      window.location.href='/'
+    }
+    else{
+      alert('Error al iniciar sesión')
+    }
+  })
+  
 })
 }

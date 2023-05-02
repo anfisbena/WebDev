@@ -47,13 +47,18 @@ export const createUser=async(user)=>{
   }
 }
 
-const updateUser=async(user)=>{
+export const updateUser=async(user)=>{
   try{
-    const update=await Users.findOneAndUpdate({email:user.email},{password:user.password},{new:true})
+    const update=await Users.findOneAndUpdate(
+      {email:user.email},
+      {password:hash(user.password)},
+      {new:true}
+    ).lean();
     if(!update){
     return {status:400,result:'error',error:'usuario no encontrado'}
     }
     else{
+      delete update.password;
       return {status:200,result:'ok',payload:update}
     }
   }
