@@ -6,9 +6,11 @@ const router = Router();
 
 router.get('/auth/github', passport.authenticate('githubAuth',{scope:['user:email']}),(req,res)=>{});
 
-router.get('/auth/githubcallback', passport.authenticate('githubAuth',{failureRedirect:'/login'}),async (req,res)=>{
+router.get('/auth/github/success', passport.authenticate('githubAuth',{failureRedirect:'/login'}),async (req,res)=>{
+  delete req.user.password
   req.session.user=req.user;
-  req.redirect('/');
+  res.cookie('coderUser',req.session.user,{maxAge:1000*60*60*24})
+  res.redirect('/');
 })
 
 router.get('/login', (req, res) => {

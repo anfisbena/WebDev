@@ -60,7 +60,6 @@ const initializePassport=()=>{
     },
     async(accessToken,refreshToken,profile,done)=>{
       try{
-        console.log(profile)
         let user =await User.findOne({email:profile._json.email})
         if(!user){
           const newUser={
@@ -70,9 +69,9 @@ const initializePassport=()=>{
             role:'user',
             password:''
           }
-          let result=user=await User.create(newUser)
-          await Carts.create({uid:result._id});
-          return done(null,result)
+          let user=await User.create(newUser)
+          await Carts.create({uid:user._id});
+          return done(null,user)
         }
         else{
           return done(null,user)
