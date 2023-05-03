@@ -4,9 +4,12 @@ import passport from 'passport';
 
 const router = Router();
 
-router.get('/github', passport.authenticate('github',{scope:['user:email']}),(req,res)=>{
-  res.redirect('/')
-});
+router.get('/auth/github', passport.authenticate('githubAuth',{scope:['user:email']}),(req,res)=>{});
+
+router.get('/auth/githubcallback', passport.authenticate('githubAuth',{failureRedirect:'/login'}),async (req,res)=>{
+  req.session.user=req.user;
+  req.redirect('/');
+})
 
 router.get('/login', (req, res) => {
   try{

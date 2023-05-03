@@ -2,6 +2,7 @@ import passport from "passport";
 import local from "passport-local";
 import github from "passport-github2";
 import User from "../dao/mongo/models/users.model.js";
+import Carts from "../dao/mongo/models/carts.model.js";
 import {hash,validatePassword} from '../utils.js';
 import {config} from 'dotenv';
 
@@ -63,13 +64,14 @@ const initializePassport=()=>{
         let user =await User.findOne({email:profile._json.email})
         if(!user){
           const newUser={
-            first_name:profile._json.name,
+            first_name:profile._json.name??profile._json.login,
             last_name:'',
-            email:profile._json.value,
+            email:profile._json.email,
             role:'user',
             password:''
           }
           let result=user=await User.create(newUser)
+          await Carts.create({uid:result._id});
           return done(null,result)
         }
         else{

@@ -11,7 +11,6 @@ const UserSchema = new Schema(
         last_name:
         {
             type:String,
-            required:true
         },
         email: 
         {
@@ -21,8 +20,6 @@ const UserSchema = new Schema(
         },
         password:{
             type:String,
-            required:true,
-            minlength:4,
         },
         role:
         {
