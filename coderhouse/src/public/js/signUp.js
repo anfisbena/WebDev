@@ -16,5 +16,15 @@ if(registerForm){
         'Content-Type': 'application/json'
       },
     })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data.status)
+      if(data.status===200){
+        window.location.href='/login'
+      }
+      else{
+        alert('Error al registrar usuario')
+      }
+    })
   })
   }

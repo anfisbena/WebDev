@@ -35,11 +35,11 @@ router.post('/login',passport.authenticate('login',{failureRedirect:'/failLogin'
     role:req.user.role,
   }
   res.cookie('coderUser',req.session.user,{maxAge:1000*60*60*24})
-  return res.send({status:req.status,message:'User logged in',payload:req.user})
+  return res.send({status:200,message:'User logged in',payload:req.user})
 })
 
 router.get('/failLogin',(req,res)=>{
-  return res.send({status:'status',error:'Authentication error'})
+  return res.send({status:400,error:'Authentication error'})
 })
 
 router.get('/register', (req, res) => {
@@ -56,11 +56,11 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register', passport.authenticate('register',{failureRedirect:'/failRegister'}),async (req, res) => {
-  return res.send({status:'status',message:'User created'})
+  return res.send({status:200,message:'User created'})
 })
 
 router.get('/failRegister',(req,res)=>{
-  return res.send({status:'status',error:'Authentication error'})
+  return res.send({status:400,error:'Authentication error'})
 })
 
 router.get('/profile', (req, res) => {
@@ -89,12 +89,12 @@ router.get('/recover', (req, res) => {
   catch(err){console.log(err)}
 });
 
-router.post('/recover', async (req, res) => {
-  try{
-    const response=await updateUser(req.body);
-    return res.status(response.status).send({status:response.status,error:response.error})
-  }
-  catch(err){console.log(err)}
+router.post('/recover',passport.authenticate('recover',{failureRedirect:'/failRecover'}) ,async (req, res) => {
+  return res.send({status:200,message:'User recovered'})
+})
+
+router.get('/failRecover',(req,res)=>{
+  return res.send({status:400,error:'Authentication error'})
 })
 
 export default router;
